@@ -3,7 +3,7 @@
 初次下载资料：
 
 ```bash
-git clone git@gitee.com:leetc/class-notes-90.git
+git clone git@gitee.com:leetc/class-notes-93.git
 ```
 
 每次资料更新后：
