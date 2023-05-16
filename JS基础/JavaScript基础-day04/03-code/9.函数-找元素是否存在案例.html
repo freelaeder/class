@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 传入一个数组和要找的元素, 返回布尔值表示是否找到了
+    function some(name, arr) {
+      // console.log(name, arr)
+      // 分析思路 - 假设法
+      // 1. 先定义一个变量, 假设没找到
+      // flag 标志 标记的意思, 一般在开发中表示一个记号
+      let flag = false
+      // 2. 遍历数组真实的找一下
+      for (let i = 0; i < arr.length; i++) {
+        // console.log(`我循环了第${i + 1}次`)
+        // 3. 如果找到了就将 flag 改成 true
+        if (name === arr[i]) {
+          flag = true
+          // 性能优化
+          break
+        }
+      }
+      // 4. 循环结束将 flag 返回
+      return flag
+    }
+
+    let arr1 = ['红毛丹', '芭乐', '人参果', '榴莲', '黑加仑']
+    
+    console.log(some('人参果', arr1))
+    // console.log(some('橙子', arr1))
+  </script>
+</body>
+</html>

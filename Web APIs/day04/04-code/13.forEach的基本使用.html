@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = ['张晓', '成耀文', '班长', '张泽文']
+    
+    // 遍历数组
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i])
+      console.log(i)
+    }
+
+    // 遍历数组的新方法 ECMAScript5 之后
+    // forEach() 为了简化我们 for 循环
+    // 函数名() 是调用函数
+    // 传入的这个函数, 我们没有调用它
+    // 该函数会自动执行
+    // 我们管这种函数叫 回调函数
+    // 该函数的执行次数与数组长度有关, 数组中有多少个元素, 该函数会自动执行多少次
+    arr.forEach(function(item, i) {
+      console.log('forEach', item)
+      console.log('forEach', i)
+    })
+  </script>
+</body>
+</html>

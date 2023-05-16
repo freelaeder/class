@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+    const zs = new Person('张三', 18)
+
+    // 简单版本:
+    // instanceof 运算符返回结果是布尔值
+    // instance 实例  a of b   b 的 a
+    // a instanceof b   a 是 b 的实例对象吗?
+    // 对象 instanceof 构造函数, 是指当前对象是不是构造函数的实例对象 (只可简单理解, 不可外传, 自己知道就行)
+    console.log(zs instanceof Person) // true
+
+    const arr = []
+    console.log(arr.__proto__)
+
+    // 精确的判断引用数据类型
+    console.log(arr instanceof Array) // true
+    console.log(zs instanceof Array) // false
+
+    // 理解原理:
+    // 对象 instanceof 构造函数, 判断构造函数的原型对象是否在实例对象的原型链上
+    // true 万物皆对象
+    console.log(arr instanceof Object) // true
+    console.log(zs instanceof Object) // true
+
+    // 总结:
+    // instanceof 一般可用于判断具体的引用数据类型, 比 typeof 更准确, typeof 一般只用于判断基本数据类型
+    // 对象 instanceof 构造函数, 判断构造函数的原型对象是否在实例对象的原型链上
+    // 也可以通俗的理解为, 当前的对象, 是否是构造函数原型底下的孩子
+
+    // // 通常会对变量的值进行判断
+    // // 判断是否为 string 类型
+    // console.log(typeof arr === 'string')
+    // // 同理判断 布尔 / 数值 等基本数据类型, 均可这样判断
+    
+    // // 但是判断数组呢?
+    // console.log(typeof [])
+    // // 判断日期对象呢?
+    // // Date()
+    // const d = new Date()
+    // console.log(typeof d)
+    // // typeof 判断引用数据类型都是 object
+    // // 所以无法精确的判断是否为数组 / 日期对象
+
+  </script>
+</body>
+</html>

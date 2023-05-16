@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 4000px;
+    }
+    button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button>回到顶部</button>
+  <script>
+    // 可以被赋值
+    // document.documentElement.scrollTop = 1000
+    // 页面/元素滚动事件
+    // scroll 事件: 滚动事件
+    window.addEventListener('scroll', function() {
+      // console.log('滚了')
+      // document DOM 对象
+      // document.documentElement HTML 对象
+      // 获取网页往上滚动了多少: scrollTop
+      console.log(document.documentElement.scrollTop)
+    })
+
+    const button = document.querySelector('button')
+    button.addEventListener('click', function() {
+      document.documentElement.scrollTop = 0
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '龙志豪'
+    }
+
+    // 这不是拷贝对象
+    // 而是直接将 obj 的地址值赋给了 newObj 变量
+    // const newObj = obj
+
+    // 对象的浅拷贝
+    // 1. Object.assign()
+    // const newObj = Object.assign({}, obj)
+    // 2. 展开运算符
+    const newObj = { ...obj }
+
+    newObj.name = '李紫薇'
+    console.log(obj)
+    console.log(newObj)
+
+    const arr = ['卢宇', '余烽', '姚丹阳']
+    
+    // 这不是拷贝数组
+    // 而是直接将 arr 的地址值赋给了 newArr 变量
+    // const newArr = arr
+    
+    // 数组的浅拷贝
+    // 1. concat 方法合并一个空数组
+    // const newArr = [].concat(arr)
+    // 2. 展开运算符
+    const newArr = [...arr]
+
+    newArr[2] = '卢云洁'
+
+    console.log(arr)
+    console.log(newArr)
+
+    // 总结:
+    // 浅拷贝就是把对象里的属性和值复制一份, 放到新对象中存储, 新老对象是不同的地址值, 所以修改其中一个对象, 不会影响另一个对象的属性
+  </script>
+</body>
+</html>

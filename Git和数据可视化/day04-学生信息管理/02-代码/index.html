@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页</title>
+  <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="./bootstrap/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./css/common.css" />
+  <style>
+    .card-stats .bi {
+      width: 50px;
+      height: 50px;
+      display: block;
+      background-color: #e4e4e4;
+      color: #fff;
+      border-radius: 50%;
+      line-height: 50px;
+      text-align: center;
+      font-size: 24px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+
+<body class="application application-offset">
+  <div class="container-fluid container-application">
+    <div class="sidenav show" id="sidenav-main">
+      <!-- Sidenav header -->
+      <div class="sidenav-header d-flex align-items-center">
+        <a class="navbar-brand" href="./index.html">
+          <span class="logo">·ITCAST·</span>
+        </a>
+      </div>
+      <!-- User mini profile -->
+      <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
+        <!-- Avatar -->
+        <div>
+          <a href="#" class="avatar rounded-circle avatar-xl">
+            <img alt="Image placeholder" src="https://yanxuan-item.nosdn.127.net/8b27deb1670c53e67c42ca3e1ed6fd12.jpg"
+              class="" />
+          </a>
+          <div class="mt-5">
+            <h5 class="mb-0 text-white">黑马前端</h5>
+            <span class="d-block text-sm text-white opacity-8 mb-3">数据可视化</span>
+            <a href="javascript:;" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
+              <span class="btn-inner--text">学前端来黑马</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Application nav -->
+      <div class="nav-application clearfix">
+        <a href="./index.html" class="btn btn-square text-sm active">
+          <span class="btn-inner--icon d-block"><i class="bi bi-house bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">首页</span>
+        </a>
+        <a href="./student.html" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-people bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">学生</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-columns bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">排版</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-files bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">资料</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-receipt bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">就业</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-gear bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">设置</span>
+        </a>
+      </div>
+      <!-- Misc area -->
+      <div class="card bg-gradient-warning">
+        <div class="card-body">
+          <h5 class="text-white">哈喽, 朋友!</h5>
+          <p class="text-white mb-4">为什么不现在开始学习前端，创造一些令人惊叹的东西呢？</p>
+          <a href="http://itcast.cn" class="btn btn-sm btn-block btn-white rounded-pill" target="_blank">Get started</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-content position-relative">
+      <nav class="navbar navbar-main navbar-expand-lg navbar-dark navbar-border" id="navbar-main">
+        <div class="container-fluid">
+          <!-- Navbar nav -->
+          <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
+            <ul class="navbar-nav align-items-lg-center">
+              <!-- Home  -->
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 首页 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 传智教育 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 黑马程序员 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 文档 </a>
+              </li>
+            </ul>
+            <!-- Right menu -->
+            <ul class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex">
+              <li class="nav-item dropdown dropdown-animate">
+                <a class="nav-link pr-lg-0" href=".dropdown-menu" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <div class="media media-pill align-items-center">
+                    <span class="avatar rounded-circle">
+                      <img alt="Image placeholder"
+                        src="https://yanxuan-item.nosdn.127.net/8b27deb1670c53e67c42ca3e1ed6fd12.jpg" />
+                    </span>
+                    <div class="ml-2 d-none d-lg-block">
+                      <span class="mb-0 text-sm font-weight-bold">Admin</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" id="logout" href="javascript:;"> 退出 </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="page-content">
+        <!-- Page Title -->
+        <div class="page-title">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <h5 class="h3 font-weight-400 mb-0 text-white">Dashboard</h5>
+              <span class="text-sm text-white opacity-8">上海前端 xx 期</span>
+            </div>
+          </div>
+        </div>
+        <!-- charts -->
+        <div class="row">
+          <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-muted mb-1">就业薪资</h6>
+                    <span name="salary" class="h3 font-weight-bold mb-0 ">15500</span>
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-coin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-muted mb-1">班级人数</h6>
+                    <span name="student_count" class="h3 font-weight-bold mb-0 ">80</span>
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-people"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-muted mb-1">平均年龄</h6>
+                    <span name="age" class="h3 font-weight-bold mb-0 ">24.40</span>
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-calendar2-week"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="card card-stats">
+              <!-- Card body -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-muted mb-1">小组个数</h6>
+                    <span name="group_count" class="h3 font-weight-bold mb-0 ">8</span>
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-collection"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-xl-8">
+            <div class="card" id="line" style="height: 400px;"></div>
+          </div>
+          <div class="col col-xl-4">
+            <div class="card" id="salary" style="height: 400px;"></div>
+          </div>
+          <div class="col col-xl-12">
+            <div class="card" style="height: 400px;">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h6 class="mb-0">班级每组薪资</h6>
+                  <div id="btns">
+                    <button type="button" class="btn btn-xs btn-blue">1</button>
+                    <button type="button" class="btn btn-xs ">2</button>
+                    <button type="button" class="btn btn-xs ">3</button>
+                    <button type="button" class="btn btn-xs ">4</button>
+                    <button type="button" class="btn btn-xs ">5</button>
+                    <button type="button" class="btn btn-xs ">6</button>
+                    <button type="button" class="btn btn-xs ">7</button>
+                    <button type="button" class="btn btn-xs ">8</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body p-0" id="lines"></div>
+            </div>
+          </div>
+          <div class="col col-xl-4">
+            <div class="card" id="gender" style="height: 500px;"></div>
+          </div>
+          <div class="col col-xl-8">
+            <div class="card" id="map" style="height: 500px;"></div>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="footer pt-5 pb-4 footer-light" id="footer-main">
+          <div class="row text-center text-sm-left align-items-sm-center">
+            <div class="col-sm-6">
+              <p class="text-sm mb-0">© 2022 <a href="https://itcast.cn" class="h6 text-sm" target="_blank">前端学科</a>.
+                All rights reserved.</p>
+            </div>
+            <div class="col-sm-6 mb-md-0">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Terms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pr-0" href="#">Privacy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/axios.js"></script>
+  <script src="./lib/echarts.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./lib/china.js"></script>
+  <!-- 公共 -->
+  <script>
+    axios.defaults.baseURL = 'http://ajax-api.itheima.net'
+    // 判断是否有token, 如果无则强制回到登录页面
+    if (localStorage.getItem('token') === null) {
+      location.href = './login.html'
+    }
+    // 设置用户名
+    let userNameSpan = document.querySelector('.navbar-nav .font-weight-bold')
+    userNameSpan.innerHTML = localStorage.getItem('username')
+    // 退出登录功能
+    document.querySelector('#logout').addEventListener('click', e => {
+      localStorage.clear()
+      location.href = './login.html'
+    })
+
+  </script>
+
+  <!-- 数据铺设 -->
+  <script>
+    // 尝试请求统计数据
+    document.addEventListener('DOMContentLoaded', async () => {
+      const res = await axios({
+        url: '/dashboard'
+      })
+      console.log(res.data);
+      let { overview, year, salaryData, groupData, provinceData } = res.data
+
+
+      // 一. 概览数据铺设
+      // 1. 确认标签和数据的映射关系
+      // res.data.overview里是概览数据
+      // 发现数据对象属性和标签name属性值一致, 于是我有了一个大胆的想法
+      // 用数据对象属性名去获取标签
+      // 2. 循环数据并设置给标签内容
+      for (let key in overview) {
+        document.querySelector(`[name=${key}]`).innerHTML = overview[key]
+      }
+
+      // 薪资走势
+      initYearChartFn(year)
+      // 薪资分布
+      initSalaryChartFn(salaryData)
+      // 每组薪资
+      initGroupChartFn(groupData)
+      // 男女薪资分布
+      initSalaryPieChartFn(salaryData)
+      // 籍贯分布
+      initMapChartFn(provinceData)
+
+
+    })
+
+    // 二. 薪资走势
+    const initYearChartFn = (yearArr) => {
+      // 1. 先找到类似的折线图使用
+      // 2. 设置x轴和y轴的数据
+      let xData = yearArr.map(obj => obj.month) // ['1月', '2月', ...]
+      let yData = yearArr.map(obj => obj.salary) // [19300, 22300, ...]
+      const myEchart = echarts.init(document.querySelector('#line'))
+      myEchart.setOption({
+        title: { // 新增标题
+          text: '2021全学科薪资走势',
+          top: 15,
+          left: 10,
+          textStyle: {
+            fontSize: 16
+          }
+        },
+        grid: { // 绘图网格距离上面组件距离(高度百分比)
+          top: '20%',
+        },
+        tooltip: { // 提示组件
+          trigger: 'axis',
+        },
+        xAxis: {
+          type: 'category',
+          // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: xData, // x轴数据
+          axisLine: { // 坐标轴轴线相关设置
+            lineStyle: {
+              color: '#ccc',
+              type: 'dashed',
+            },
+          },
+          axisLabel: { // 坐标轴刻度标签的相关设置
+            color: '#999',
+          }
+        },
+        yAxis: {
+          type: 'value',
+          splitLine: { // 分割线样式
+            lineStyle: {
+              type: 'dashed',
+            }
+          }
+        },
+        series: [
+          {
+            // data: [820, 932, 901, 934, 1290, 1330, 1320],
+            data: yData, // 系列数据(影响y轴)
+            type: 'line',
+            smooth: true,
+            symbolSize: 10, // 标记的大小
+            lineStyle: { // 线条宽度和颜色
+              width: 6,
+              color: {
+                type: 'linear',
+                x: 0,
+                y: 0,
+                x2: 1,
+                y2: 0,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: '#499FEE', // 0% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: '#5D75F0', // 100% 处的颜色
+                  },
+                ],
+              }
+            },
+            areaStyle: {
+              color: {
+                // 前四个参数分别是 x0, y0, x2, y2, 范围从 0 - 1，相当于在图形包围盒中的百分比
+                type: 'linear', // 线性渐变
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [{
+                  offset: 0, color: '#499FEE' // 0% 处的颜色
+                }, {
+                  offset: 0.8, color: 'rgba(255, 255, 255, 0.2)' // 80% 处的颜色
+                }, {
+                  offset: 1, color: 'rgba(255, 255, 255, 0)' // 100% 处的颜色
+                }],
+                global: false // 缺省为 false(为ture, x, y值就是坐标点, 否则为百分比, 建议百分比)
+              }
+            }
+          }
+        ]
+      })
+    }
+
+
+    // 三. 薪资分布
+    const initSalaryChartFn = (salaryList) => {
+      const myEchart = echarts.init(document.querySelector('#salary'))
+      myEchart.setOption({
+        tooltip: { // 提示框组件
+          trigger: 'item' // 放到某项触发提示框
+        },
+        legend: { // 图例组件(表示每种颜色的概念)
+          bottom: '6%',
+          left: 'center' // 图例组件居中显示
+        },
+        title: {
+          text: '班级薪资分布',
+          top: 15,
+          left: 10,
+          textStyle: {
+            fontSize: 16
+          }
+        },
+        color: ['#FDA224', '#5097FF', '#3ABCFA', '#34D39A'],
+        series: [ // 系列数据(重要)
+          {
+            name: '班级薪资分布', // 系列名称，用于tooltip的显示
+            type: 'pie', // 图形类型'pie'固定代表饼状图
+            radius: ['50%', '64%'], // 饼图的半径(内圈, 外圈) 表示外半径为可视区尺寸（容器高宽中较小一项）的 20%
+            center: ['50%', '45%'],
+
+            itemStyle: { // 图形样式
+              borderRadius: 10, // 表示内圆角半径和外圆角半径
+              borderColor: '#fff', // 图形的描边颜色
+              borderWidth: 2 // 描边线宽(为0无描边)
+            },
+            label: { // 饼图图形上的文本标签(默认上来显示的, 鼠标移入是另外配置)
+              show: false, // 隐藏
+              position: 'center' // 让他们出现在中心
+            },
+
+            labelLine: { // 标签的视觉引导线配置(就是解释每块图形的文本标签连线)
+              show: false
+            },
+            data: salaryList.map(obj => {
+              return {
+                value: obj.g_count + obj.b_count,
+                name: obj.label
+              }
+            })
+          }
+        ]
+      })
+    }
+
+
+    // 四. 每组薪资
+    const initGroupChartFn = (groupObj) => {
+      // 初始化图表
+      const myEchart = echarts.init(document.querySelector('#lines'))
+
+      // 默认显示第1组的数据
+      let firstArr = groupObj[1] // 注意groupObj是个对象, 后台返回此对象key从1开始(不是数组下标)
+
+      // 准备配置项
+      let options = {
+        grid: {
+          left: 70,
+          top: 30,
+          right: 30,
+          bottom: 50,
+        },
+        tooltip: {
+          trigger: 'item',
+        },
+        xAxis: {
+          type: 'category',
+          data: firstArr.map(obj => obj.name),
+          axisLine: {
+            lineStyle: {
+              color: '#ccc',
+              type: 'dashed'
+            }
+          },
+          axisLabel: {
+            color: '#999'
+          }
+        },
+        yAxis: {
+          type: 'value',
+          splitLine: {
+            lineStyle: {
+              type: 'dashed'
+            }
+          }
+        },
+        series: [
+          {
+            data: firstArr.map(obj => obj.hope_salary),
+            type: 'bar',
+            name: '期望薪资'
+          },
+          {
+            data: firstArr.map(obj => obj.salary),
+            type: 'bar',
+            name: '就业薪资'
+          }
+        ],
+        color: [
+          {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [
+              {
+                offset: 0,
+                color: '#34D39A', // 0% 处的颜色
+              },
+              {
+                offset: 1,
+                color: 'rgba(52,211,154,0.2)', // 100% 处的颜色
+              },
+            ],
+          },
+          {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [
+              {
+                offset: 0,
+                color: '#499FEE', // 0% 处的颜色
+              },
+              {
+                offset: 1,
+                color: 'rgba(73,159,238,0.2)', // 100% 处的颜色
+              },
+            ],
+          },
+        ],
+      }
+      myEchart.setOption(options)
+
+
+      // 事件委托
+      const btns = document.querySelector('#btns')
+      btns.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+          // 先做点击高亮
+          btns.querySelector('.btn-blue').classList.remove('btn-blue')
+          e.target.classList.add('btn-blue')
+
+          // 获取内容(1-8数字字符串)
+          const group = e.target.innerText
+          // 切换数据
+          options.xAxis.data = groupObj[group].map((item) => item.name);
+          options.series[0].data = groupObj[group].map((item) => item.hope_salary);
+          options.series[1].data = groupObj[group].map((item) => item.salary);
+          myEchart.setOption(options)
+        }
+      })
+    }
+
+
+    // 五. 男女薪资分布
+    const initSalaryPieChartFn = (salaryList) => {
+      const myEchart = echarts.init(document.querySelector('#gender'))
+
+      myEchart.setOption({
+        title: [
+          {
+            text: '男女薪资分布',
+            left: 10,
+            top: 10,
+            textStyle: {
+              fontSize: 16,
+            },
+          },
+          {
+            text: '男生',
+            left: '50%',
+            top: '45%',
+            textAlign: 'center',
+            textStyle: {
+              fontSize: 12,
+            },
+          },
+          {
+            text: '女生',
+            left: '50%',
+            top: '85%',
+            textAlign: 'center',
+            textStyle: {
+              fontSize: 12,
+            },
+          },
+        ],
+        tooltip: {
+          trigger: 'item'
+        },
+        color: ['#FDA224', '#5097FF', '#3ABCFA', '#34D39A'],
+        series: [
+          {
+            type: 'pie',
+            radius: 50,
+            radius: ['20%', '30%'],
+            center: ['50%', '30%'],
+            datasetIndex: 1,
+            // data: [{name:'1万以下',value: 4},...]
+            data: salaryList.map((item) => ({ name: item.label, value: item.b_count })),
+          },
+          {
+            type: 'pie',
+            radius: 50,
+            radius: ['20%', '30%'],
+            center: ['50%', '70%'],
+            datasetIndex: 2,
+            // data: [{name:'1万以下',value: 4},...]
+            data: salaryList.map((item) => ({ name: item.label, value: item.g_count })),
+          },
+        ]
+      })
+    }
+
+
+    // 六. 籍贯地图分布
+    const initMapChartFn = (data) => {
+      const myEchart = echarts.init(document.querySelector('#map'))
+
+      const dataList = [
+        { name: '南海诸岛', value: 0 },
+        { name: '北京', value: 0 },
+        { name: '天津', value: 0 },
+        { name: '上海', value: 0 },
+        { name: '重庆', value: 0 },
+        { name: '河北', value: 0 },
+        { name: '河南', value: 0 },
+        { name: '云南', value: 0 },
+        { name: '辽宁', value: 0 },
+        { name: '黑龙江', value: 0 },
+        { name: '湖南', value: 0 },
+        { name: '安徽', value: 0 },
+        { name: '山东', value: 0 },
+        { name: '新疆', value: 0 },
+        { name: '江苏', value: 0 },
+        { name: '浙江', value: 0 },
+        { name: '江西', value: 0 },
+        { name: '湖北', value: 0 },
+        { name: '广西', value: 0 },
+        { name: '甘肃', value: 0 },
+        { name: '山西', value: 0 },
+        { name: '内蒙古', value: 0 },
+        { name: '陕西', value: 0 },
+        { name: '吉林', value: 0 },
+        { name: '福建', value: 0 },
+        { name: '贵州', value: 0 },
+        { name: '广东', value: 0 },
+        { name: '青海', value: 0 },
+        { name: '西藏', value: 0 },
+        { name: '四川', value: 0 },
+        { name: '宁夏', value: 0 },
+        { name: '海南', value: 0 },
+        { name: '台湾', value: 0 },
+        { name: '香港', value: 0 },
+        { name: '澳门', value: 0 },
+      ]
+
+      // 数据设置
+      dataList.forEach((item) => {
+        // 把每个城市对象遍历过来, 去数组data里循环数据的value, 然后设置到dataList的对象中, 应用到图表里
+        // 数据里名字和上面的名字有点不太一样, 需要把多余的文字去掉(替换成空字符串)
+        const obj = data.find((it) => it.name.replace(/省|回族自治区|吾尔自治区|壮族自治区|特别行政区|自治区/g, '') === item.name)
+        if (obj) item.value = obj.value
+      })
+
+      let option = {
+        title: {
+          text: '籍贯分布',
+          top: 10,
+          left: 10,
+          textStyle: {
+            fontSize: 16,
+          },
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b}: {c} 位学员',
+          borderColor: 'transparent',
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          textStyle: {
+            color: '#fff',
+          },
+        },
+        visualMap: {
+          min: 0,
+          max: 6,
+          left: 'left',
+          bottom: '20',
+          text: ['6', '0'],
+          inRange: {
+            color: ['#ffffff', '#0075F0'],
+          },
+          show: true,
+          left: 40,
+        },
+        geo: { // 地理坐标系组件
+          map: 'china',
+          roam: false,
+          zoom: 1.0,
+          label: {
+            normal: {
+              show: true,
+              fontSize: '10',
+              color: 'rgba(0,0,0,0.7)',
+            },
+          },
+          itemStyle: {
+            normal: {
+              borderColor: 'rgba(0, 0, 0, 0.2)',
+              color: '#e0ffff',
+            },
+            emphasis: {
+              areaColor: '#34D39A',
+              shadowOffsetX: 0,
+              shadowOffsetY: 0,
+              shadowBlur: 20,
+              borderWidth: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)',
+            },
+          },
+        },
+        series: [
+          {
+            name: '籍贯分布',
+            type: 'map',
+            geoIndex: 0,
+            data: dataList,
+          },
+        ],
+      }
+      myEchart.setOption(option)
+    }
+
+  </script>
+</body>
+
+</html>

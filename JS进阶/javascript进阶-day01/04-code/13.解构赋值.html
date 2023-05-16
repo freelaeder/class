@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 解构赋值: 将数组或对象里的成员解构出来, 赋给变量
+    // let obj = {
+    //   name: '龙志豪',
+    //   age: 18
+    // }
+    // let name = obj.name
+    // let age = obj.age
+
+    // let arr = [1, 2, 3]
+    // let a = arr[0]
+    // let b = arr[1]
+    // let c = arr[2]
+    
+    // 数组解构
+    // let arr = [1, 2, 3]
+    // let [a, b, c] = arr
+    // console.log(a, b, c)
+
+    // 对象解构
+    let obj = {
+      name: '龙志豪',
+      age: 18
+    }
+    // console.log(obj.name, obj.age)
+    let { name, age } = obj
+    console.log(name, age)
+  </script>
+</body>
+</html>

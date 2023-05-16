@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // reduce() 累加器
+    // 作用: 一般用于求和, 可以将数组中所有的元素进行累加
+    const arr = [1, 2, 3, 4, 5]
+    // let sum = 0
+    // arr.forEach(item => {
+      // forEach 的回调函数:
+      // 参数1: 遍历的每一个元素
+      // 参数2: 索引
+    //   sum += item
+    // })
+    // console.log(sum)
+    
+    // 参数1: 回调函数
+    // 前一次的值, 遍历的每一个元素
+    // 参数2: 初始值
+    // 如果没有传第二个参数, 则会默认把数组的第一个元素作为初始值, 并且遍历会从第二个元素开始(索引为 1 开始)
+    // 返回值: 和
+    // 第一次循环:  prev 1   item 2   返回值 3
+    // 第二次循环:  prev 3   item 3   返回值 6
+    // 第三次循环:  prev 6   item 4   返回值 10
+    // 第四次循环:  prev 10   item 5   返回值 15
+    // 结束循环, 把 15 给 reduce 来返回
+    let sum = arr.reduce((prev, item) => {
+      console.log('我是 reduce 执行的')
+      return prev + item
+    })
+    console.log(sum)
+    
+  </script>
+</body>
+</html>

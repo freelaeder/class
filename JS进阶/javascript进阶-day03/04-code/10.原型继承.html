@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Man() {
+      // this.eyes = 2
+      // this.eat = function() {
+      //   console.log('我会吃饭')
+      // }
+    }
+    // Man.prototype.eyes = 2
+    // Man.prototype.eat = function() {
+    //   console.log('我会吃饭')
+    // }
+
+    function Woman() {
+      // this.eyes = 2
+      // this.eat = function() {
+      //   console.log('我会吃饭')
+      // }
+    }
+    // Woman.prototype.eyes = 2
+    // Woman.prototype.eat = function() {
+    //   console.log('我会吃饭')
+    // }
+
+    // 不要用字面量创建对象后赋值给原型, 因为多个构造函数的原型对象指向同一个对象, 会导致修改时都修改, 应该每个构造函数的原型对象各自独立
+    // const person = {
+    //   eyes: 2,
+    //   eat() {
+    //     console.log('我会吃饭')
+    //   }
+    // }
+
+    // 原型继承
+    // Man.prototype = person
+    // Woman.prototype = person
+    
+    // 创建一个 Person 构造函数, 将公共的方法放在 Person 构造函数的原型对象中
+    // 将公共的属性放在 Person 的实例对象中
+    function Person() {
+      this.eyes = 2
+    }
+    Person.prototype.eat = function() {
+      console.log('我会吃饭')
+    }
+
+    // JS 里面一切都是对象
+    // 对象 Object
+    // 数组 Array
+    // 函数 function
+    // 字符串 => String
+    Man.prototype = new Person()
+    Man.prototype.constructor = Man
+    Woman.prototype = new Person()
+    Woman.prototype.constructor = Woman
+    // console.log(Man.prototype)
+
+    Woman.prototype.baby = function() {
+      console.log('我能生娃!')
+    }
+
+    const m1 = new Man()
+    m1.eat()
+    // m1.baby()
+    console.log(m1.eyes)
+    const w1 = new Woman()
+    w1.eat()
+    w1.baby()
+    console.log(w1.eyes)
+
+    // 原型继承总结:
+    // 1. 创建父级构造函数
+    // 2. 将所有公共的方法放到父级的原型对象上
+    // 3. 将子级构造函数的原型对象 指向 父级构造函数 创建的 实例对象
+    // Man.prototype = new Person()
+    </script>
+</body>
+</html>

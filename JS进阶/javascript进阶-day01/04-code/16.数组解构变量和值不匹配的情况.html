@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组解构变量和值不匹配的情况</title>
+</head>
+
+<body>
+  <script>
+    // 数组解构变量和值不匹配的情况
+
+    // 1. 变量多，值少的情况
+    // let [a, b, c, d] = ['龙志豪', '陈厚霖', '张泽文']
+    // console.log(a)
+    // console.log(b)
+    // console.log(c)
+    // console.log(d)
+    
+    // 2. 防止 undefined 传值，可以设置默认值
+    // let [a = '大亚亚', b, c, d = '小亚亚'] = ['龙志豪', '陈厚霖', '张泽文']
+    // console.log(a)
+    // console.log(b)
+    // console.log(c)
+    // console.log(d)
+
+    // 3. 变量少，值多的情况
+    // 4. 利用剩余参数解决变量少值多的情况
+    // let [a, ...b] =  ['龙志豪', '陈厚霖', '张泽文']
+    // console.log(a)
+    // console.log(b)
+
+    // 5. 按需导入，忽略某些值
+    // let [a, , c] = ['龙志豪', '陈厚霖', '张泽文']
+    // console.log(a)
+    // console.log(c)
+
+    // 拓展: 交换变量
+    let a = 10
+    let b = 20;
+    // let temp = a
+    // a = b
+    // b = temp
+    // console.log(a, b)
+
+    [a, b] = [b, a]
+    console.log(a, b)
+
+    // JS 中通常有 2 个情况必须要加分号: ()  []
+    // (function() {})()
+    // ;(function() {})()
+    // ;(function() {})()
+  </script>
+</body>
+
+</html>

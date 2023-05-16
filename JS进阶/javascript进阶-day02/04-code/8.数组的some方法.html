@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 数组的 some() 方法, 同样是遍历方法
+    // 作用: 查找数组中有没有满足条件的元素, 如果有就返回 true 否则返回 false
+    const arr = [{
+      name: '张三',
+      age: 18
+    }, {
+      name: '李四',
+      age: 28
+    }, {
+      name: '王五',
+      age: 38
+    }]
+
+    // 总结: some 和 find 的区别
+    // find 是找满足条件的元素, 有就返回对象, 没有就返回 undefined
+    // some 是找满足条件的元素, 返回的是布尔值
+    console.log(arr.some(item => item.name === '王五'))
+    console.log(arr.some(item => item.name === '李五'))
+  </script>
+</body>
+</html>

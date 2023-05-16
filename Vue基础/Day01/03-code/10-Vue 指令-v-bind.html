@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 
+      v-bind: 动态设置标签属性的
+      v-bind:属性名="表达式"
+
+      支持简写:
+        :属性名="表达式"
+     -->
+    <!-- <img :src="imgUrl" v-bind:title="msg" alt=""> -->
+    <img :src="imgUrl" :title="msg" alt="">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标:
+     *  使用 v-bind 指令动态绑定标签属性
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        imgUrl: './imgs/10-02.png',
+        msg: 'hello 波仔'
+      }
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const o1 = new Object()
+    // o1.toString() // 实例方法
+
+    // Object.values() // 静态方法
+    // 需求: 循环取出对象所有的属性名和属性值
+    const o = {
+      name: '余烽',
+      age: 18,
+      hobby: '懂 JS'
+    }
+
+    // 老方法: for-in
+    // for (let k in o) {
+    //   console.log(k)
+    //   console.log(o[k])
+    // }
+
+    // 新方法: Object.keys()
+    // 作用: 获取对象所有的键 (属性名)
+    // 参数1: 传入对象
+    // 返回值: 数组
+    // const keys = Object.keys(o)
+    // keys.forEach(k => console.log(k))
+    // console.log(keys)
+    // Object.keys(o).forEach(k => console.log(k))
+    
+    // 新方法: Object.values()
+    // 作用: 获取对象所有的值 (属性值)
+    // 参数1: 传入对象
+    // 返回值: 数组
+    // const values = Object.values(o)
+    // console.log(values.join('-'))
+
+    // 拷贝对象
+    // Object.assign()
+    // const o2 = o // 只是复制了地址值, 不是拷贝对象
+    // o2.name = '姚丹阳'
+    // console.log(o)
+    // console.log(o2)
+
+    // 老方法
+    // const o2 = {}
+    // for (let k in o) {
+    //   // console.log(k)
+    //   // console.log(o[k])
+    //   o2[k] = o[k]
+    // }
+    // o2.name = '姚丹阳'
+    // console.log(o)
+    // console.log(o2)
+
+    // 新方法
+    // Object.assign()
+    // 作用: 将源对象的所有属性复制给目标对象
+    // 参数1: 目标对象
+    // 参数2: 源对象
+    // 返回值: 拷贝好的目标对象
+    const o2 = Object.assign({}, o)
+    o2.name = '姚丹阳'
+    console.log(o)
+    console.log(o2)
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+    // Person.prototype.sayHi = function() {
+    //   console.log('你好哇, 我是' + this.name)
+    // }
+
+    // 原型链(对象属性的查找规则):
+    // 实例对象中找属性和方法时, 如果找不到, 会找__proto__
+    // 原型对象中也找不到, 再寻找原型对象的__proto__
+    // 逐级向上查找, 直到 Object 的原型对象为止, 如果都找不到就真没有
+    Object.prototype.sayHi = function() {
+      console.log('你好哇, 我是 Object 的 sayHi')
+    }
+    const zs = new Person('张三', 18)
+    zs.sayHi()
+
+    console.log(zs.__proto__ === Person.prototype)
+    console.log(Person.prototype.__proto__ === Object.prototype)
+    console.log(zs)
+    console.log(Object.prototype.__proto__)
+    
+  </script>
+</body>
+</html>

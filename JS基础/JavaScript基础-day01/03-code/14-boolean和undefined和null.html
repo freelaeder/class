@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // boolean 布尔值
+    // 一般用于判断, 只有两个值: true / false
+    let isLogin = false
+    console.log(isLogin)
+    console.log(typeof isLogin)
+
+    // undefined 未定义
+    // 声明变量不赋值就是这个值, 一般用于 在不确定变量值的情况下, 先声明, 后使用
+    let age
+    console.log(age)
+    console.log(typeof age)
+
+    // null 空
+    // 可以手动将某个变量设置为 null 来清空变量的值
+    // js 有个小 bug, 使用 typeof 判断 null 的类型时, 会显示 object
+    let uname = '紫阳'
+    console.log(uname)
+    // 置空
+    uname = null
+    console.log(uname)
+    console.log(typeof uname)
+  </script>
+</body>
+</html>

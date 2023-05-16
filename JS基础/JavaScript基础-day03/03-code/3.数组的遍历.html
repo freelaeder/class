@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 数组
+    // 作用: 存储一组数据
+    // 用法:
+    // let 数组名 = [数据1, 数据2, 数据3 ....]
+    // 特点:
+    // 1. 数组是有序的 (有顺序)
+    // 2. 序号我们称之为索引/下标/角标, 它是从 0 开始的
+    // 3. 数组可以存储的数据类型是不限的
+    // 4. 数组里的每个数据, 我们称之为 元素
+    // 5. 所有的数组都有一个 length, 表示数组的长度(有多少个数据)
+    let names = ['陈厚霖', '王五', '张三', '纯真丁一郎', '芝士雪豹', '大帅比小博子']
+    console.log(names)
+    // console.log(names[5])
+    // console.log(names[6])
+
+    // 如果数组中有 5 个数据, 怎么写?
+    // 难道每次都去数一遍数组有多少个元素吗? 很不方便
+    // 有没有一个方法能帮我们获取到数组有多少个元素?
+    // 数组.length  长度
+    for (let i = 0; i < names.length; i++) {
+      console.log(names[i])
+    }
+  </script>
+</body>
+</html>

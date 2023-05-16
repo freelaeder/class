@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [44, 33, 22, 11]
+
+    // 外层循环控制比较的趟数
+    // 内层循环控制两两比较的次数
+    // [44, 33, 22, 11]
+    // 永远都是 minIndex 和 i 的位置进行调换
+    // i = 0 [11, 33, 22, 44]
+    // i = 1 [11, 22, 33, 44]
+    // i = 2 [11, 22, 33, 44]
+
+    // 通过嵌套循环来实现选择排序
+    for (let i = 0; i < arr.length - 1; i++) {
+      // 一次遍历, 只能找到一个最小值
+      let minIndex = i
+      for (let j = i; j < arr.length; j++) {
+        if (arr[j] < arr[minIndex]) {
+          minIndex = j
+        }
+      }
+      // console.log(minIndex)
+      // 进行交换
+      // 谁和谁交换? minIndex 和 i 对应的值进行交换
+      // if (i !== minIndex) {
+      let temp = arr[i]
+      arr[i] = arr[minIndex]
+      arr[minIndex] = temp
+      // }
+    }
+    console.log(arr)
+
+    // 冒泡排序
+  </script>
+</body>
+</html>

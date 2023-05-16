@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 箭头函数基本语法
+    // const fn = function() {
+    //   console.log('我是 function 函数表达式')
+    // }
+    // fn()
+    // Arrow Function
+    // 在小括号里写参数
+    // const fn = (a, b) => {
+    //   console.log(a + b)
+    // }
+    // fn(1, 2)
+    // 1. 如果箭头函数没有参数, 必须要写小括号, 多个参数也需要写小括号
+    // const fn = (a, b) => {
+    //   console.log('我是箭头函数')
+    // }
+    // fn()
+    // 2. 如果箭头函数只有一个参数可以省略括号
+    // const fn = a => {
+    //   console.log('我是箭头函数', a)
+    // }
+    // fn(10)
+    // 3. 返回值还是 return, 但如果箭头函数只有一行代码, 并且返回值就是这行代码的结果, 可以省略大括号 + return
+    // const fn = a => {
+    //   console.log('我是箭头函数', a)
+    //   return 123
+    // }
+    // 计算 123 + 456 后返回结果
+    // const fn = a => 123 + 456
+    // console.log(fn(10))
+
+    let arr = ['李紫薇', '陈厚霖', '张泽文', '龙志豪']
+    // map 实现, xxx 真是个人才, 放到新数组中
+    // const newArr = arr.map(function(item) {
+    //   return item + '真是个人才'
+    // })
+    // console.log(newArr)
+    const newArr = arr.map(item => item + '真是个人才')
+    console.log(newArr)
+
+    // 特殊注意事项:
+    // 1. 返回的结果如果是对象
+    // const fn = () => ({ name: '龙志豪', age: 28 })
+    // console.log(fn())
+    // // 2. 箭头函数没有 arguments 但是支持剩余参数
+    // // 剩余参数必须用小括号包裹
+    // const sum = (...nums) => {
+    //   console.log(nums)
+    //   // console.log(arguments) // 报错, 未定义
+    // }
+    // sum(1, 2, 3)
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="./js/lodash.min.js"></script>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+
+    let i = 0
+
+    function moveFn() {
+      i++
+      this.innerHTML = i
+    }
+
+    // 防抖: 单位时间内, 多次触发时间, 只执行最后一次
+    // 节流: 单位时间内, 多次触发事件, 只会生效一次
+    // 节流方法
+    // box.addEventListener('mousemove', _.throttle(moveFn, 1000))
+    box.addEventListener('mousemove', throttle(moveFn, 500))
+
+    function throttle(fn, t) {
+      let timerId
+      // 一样有返回值, 同样返回值是函数
+      return function() {
+        // 该函数会不断触发
+        // console.log('不断执行')
+        // 判断是否开启过定时器, 如果没有才能开启
+        if (!timerId) {
+          // 开启定时器 => 进厕所关门
+          timerId = setTimeout(() => {
+            // 修改 this 的指向
+            fn.call(this)
+            // 清空 timerId 变量 => 出厕所开门
+            timerId = null
+          }, t)
+        }
+      }
+    }
+
+    // 总结:
+    // 手写防抖函数: 只要有定时器就要清除定时器后开启
+    // 手写节流函数: 判断内存中有没有正在开启的定时器, 如果有就不能再开了, 如果没有才开启定时器, 定时器执行时记得清除定时器 id 标识
+  </script>
+</body>
+
+</html>

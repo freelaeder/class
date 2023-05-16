@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <title>记事本</title>
+</head>
+
+<body>
+
+  <!-- 主体区域 -->
+  <section id="app">
+    <!-- 输入框 -->
+    <header class="header">
+      <h1>小黑记事本</h1>
+      <input placeholder="请输入任务" class="new-todo" v-model="taskname" />
+      <button class="add" @click="add">添加任务</button>
+    </header>
+    <!-- 列表区域 -->
+    <section class="main">
+      <ul class="todo-list">
+        <li class="todo" v-for="(item, index) in list" :key="item.id">
+          <div class="view">
+            <span class="index">{{ index + 1 }}.</span> <label>{{ item.name }}</label>
+            <button class="destroy" @click="del(item.id)"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- 统计和清空 -->
+    <footer class="footer" v-show="list.length > 0">
+      <!-- 统计 -->
+      <span class="todo-count">合 计:<strong> {{ list.length }} </strong></span>
+      <!-- 清空 -->
+      <button @click="clear" class="clear-completed">
+        清空任务
+      </button>
+    </footer>
+  </section>
+
+  <!-- 底部 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标1: 列表渲染
+     * 1.1 使用 v-for 循环渲染 list
+     * 1.2 设置 :key
+     * 1.3 使用索引作为序号
+     * 
+     * 目标2: 删除功能
+     * 2.1 给小叉叉绑定点击事件
+     * 2.2 传入 id
+     * 2.3 使用 filter 筛选删除
+     * 
+     * 目标3: 添加功能
+     * 3.1 定义 taskname 数据, 使用 v-model 进行双向数据绑定
+     * 3.2 给添加任务按钮绑定点击事件
+     * 3.3 非空校验
+     * 3.4 将数据组装后添加到数组的第一个元素位置
+     * 3.5 清空文本框 (给 taskname 赋值为 '')
+     * 
+     * 目标4: 清空任务和底部统计
+     * 4.1 底部统计就是 list.length
+     * 4.2 清空任务就是给 list 赋值为空数组
+     * 4.3 使用 v-show 控制底部的显示隐藏
+     * */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        list: [
+          { id: 1, name: '跑步一公里' },
+          { id: 2, name: '打球一小时' },
+          { id: 3, name: '游泳100米' },
+        ],
+        taskname: ''
+      },
+      methods: {
+        del(id) {
+          // 使用 filter 筛选删除
+          this.list = this.list.filter(item => item.id !== id)
+        },
+        add() {
+          // 判断空值的情况
+          if (this.taskname.trim() === '') return alert('请输入任务名称')
+          // console.log(this.taskname)
+          // 将数据插入到数组的前面
+          this.list.unshift({
+            id: +new Date(),
+            name: this.taskname
+          })
+          // 清空输入框的内容
+          this.taskname = ''
+        },
+        clear() {
+          this.list = []
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>

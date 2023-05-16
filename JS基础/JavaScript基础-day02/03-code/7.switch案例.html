@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 用户输入 1 显示 星期一, 输入 2 显示星期二, 以此类推
+    let num = +prompt('请输入数字')
+
+    // 用于等值比较, 应用场景比 if 的多分支结构更小
+    // switch 语法:
+    // switch (表达式) {
+    //   case 值:
+    //     要执行的代码
+    //     ...
+    //     break
+    //   case 可以写多个
+
+    //   default:
+    //     代码...
+    // }
+
+    switch (num) {
+      case 1:
+        // 执行这里的代码
+        alert('星期一')
+        // 如果不加 break 会导致 case 的穿透
+        break // 中断
+      case 2:
+        // 执行这里的代码
+        alert('星期二')
+        break
+      case 3:
+        // 执行这里的代码
+        alert('星期三')
+        break
+      default:
+        alert('没有查到该数值对应的星期')
+    }
+  </script>
+</body>
+</html>

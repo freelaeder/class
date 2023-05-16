@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      // this => 指向新创建的对象
+      this.name = name
+      this.age = age
+      this.sayHi = function() {
+        console.log('你好哇')
+      }
+    }
+
+    const zs = new Person('张三', 18)
+    // zs.name = '张三'
+    console.log(zs)
+    zs.sayHi()
+    
+    const ls = new Person('李四', 19)
+    // ls.name = '李四'
+    console.log(ls)
+    ls.sayHi()
+
+    // 验证 zs 和 ls 的函数不是同一个函数
+    // 总结: 通过构造函数创建对象时, 如果把方法放到实例对象身上, 会导致创建多个对象时, 方法也跟着创建了多个, 造成内存浪费
+    console.log(zs.sayHi === ls.sayHi)
+  </script>
+</body>
+</html>

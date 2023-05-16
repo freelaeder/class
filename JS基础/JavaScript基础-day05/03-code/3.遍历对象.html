@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person = {
+      // 属性: 对象的一些信息, 通常是名词, 用来描述对象的
+      // 属性名: 属性值, 多个属性用 , 隔开
+      uname: '郑凯亚',
+      gender: '男',
+      age: 18,
+      hobby: '唱 跳 RAP 打篮球',
+      // 方法: 对象的一些功能, 通常是动词, 指对象可以做的事情
+      // 方法名: 函数
+      sing: function(name) { // 形参
+        console.log('我很会唱歌, 鸡你太美!, 唱一首:' + name)
+      },
+      dance: function() {
+        console.log('我很会跳舞, 鸡你太美!')
+      },
+      // nickname
+      // 属性名如果是非法字符, 可以通过 '' 把他变成字符串, 合法的存储到对象中
+      'nick-name': '小亚亚'
+    }
+    // for i 的循环适合遍历数组, i 是有序的, 数组也是有序的
+    // for (let i = 0; i < arr.length; i++) {}
+    // console.log(person)
+    // 遍历对象的语法
+    // for (let 变量 in 对象) {}
+    // key: 键
+    for (let k in person) {
+      // 这个循环会执行 n 次, n 取决于对象属性和方法的数量
+      // k 就是对象的属性名
+      // console.log(k)
+      // 访问对象属性的两种方式:
+      // 1. 对象.属性名
+      // person.k 表示我去 person 对象里找一个属性叫 'k'
+      // console.log(person.k)
+      // 2. 对象['属性名']
+      console.log(person[k])
+    }
+  </script>
+</body>
+</html>

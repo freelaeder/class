@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      border: 1px dashed gray;
+      overflow: hidden;
+    }
+    .item {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .3s;
+    }
+    .active {
+      transform: translateX(-52px);
+    }
+    .item > div {
+      background-color: red;
+      height: 100%;
+      line-height: 40px;
+      padding: 0 10px;
+      transform: translateX(100%);
+    }
+  </style>
+  <script src="./alloy_finger.js"></script>
+</head>
+<body>
+  <div class="box">
+    <div class="item">
+      <span>张学友</span>
+      <div>删除</div>
+    </div>
+  </div>
+  <script>
+    const item = document.querySelector('.item')
+    new AlloyFinger(item, {
+      swipe: function (evt) {
+        // console.log(evt.direction)
+        if (evt.direction === 'Left') {
+          // console.log('此时用户在左滑')
+          item.classList.add('active')
+        } else {
+          item.classList.remove('active')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

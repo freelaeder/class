@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let students = [
+      { name: '小亚亚', age: 18, gender: '男', hometown: '河南'},
+      { name: '胡昊', age: 20, gender: '男', hometown: '河北'},
+      { name: '叶召威', age: 28, gender: '男', hometown: '湖北'},
+      { name: '蠢沐沐', age: 8, gender: '男', hometown: '山西'},
+      { name: '小棕熊', age: 38, gender: '男', hometown: '陕西'},
+    ]
+
+    // 需求: 将所有同学的家乡打印在控制台
+    // console.log(students)
+    for (let i = 0; i < students.length; i++) {
+      // console.log(students[i])
+      // 对象访问属性两种方式:
+      // 1. 对象.属性名 - 已知属性名的情况
+      console.log(students[i].name)
+      console.log(students[i].hometown)
+    }
+  </script>
+</body>
+</html>

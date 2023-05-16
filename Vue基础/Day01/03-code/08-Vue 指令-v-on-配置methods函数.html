@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="change">切换显示隐藏</button>
+    <h1 v-show="isShow">黑马程序员</h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标:
+     *    点击切换 h1 标签显示隐藏
+     * 思路:
+     *  1. 定义 isShow 变量, 默认值为 true
+     *  2. 使用 v-show 控制 h1 标签的显示隐藏
+     *  3. 给 button 绑定点击事件, 对 isShow 变量进行取反
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        isShow: true
+      },
+      // methods 中存放函数
+      // 注意: 只要是定义在 methods 中的函数, 最终都会放到实例对象上, 所以内部的 this 指向实例对象
+      // app.change()
+      methods: {
+        change() {
+          // console.log('我被点了')
+          // 不要用 app 变量来修改, 不然变量名修改每个地方都需要修改
+          // app.isShow = !app.isShow
+          // console.log(this === app)
+          // console.log(this)
+          this.isShow = !this.isShow
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

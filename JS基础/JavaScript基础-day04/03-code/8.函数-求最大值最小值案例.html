@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 封装一个函数, 求任意数组的最大值或最小值, 返回该数
+    // 形参就是变量, 定义函数时没有具体的值, 在调用函数时才会传递实参作为具体的值来执行
+    function minArray(arr = []) {
+      // 假设法: 准备一个变量, 假设第一个是最大的
+      let min = arr[0]
+      // 遍历所有的数据, 打擂台, 谁比假设的 min 大, 谁就当 min
+      for (let i = 1; i < arr.length; i++) {
+        if (min > arr[i]) {
+          min = arr[i]
+        }
+      }
+      return min
+    }
+
+    function maxArray(arr = []) {
+      // 假设法: 准备一个变量, 假设第一个是最大的
+      let max = arr[0]
+      // 遍历所有的数据, 打擂台, 谁比假设的 max 大, 谁就当 max
+      for (let i = 1; i < arr.length; i++) {
+        if (max < arr[i]) {
+          max = arr[i]
+        }
+      }
+      // console.log(max)
+      return max
+    }
+
+    let arr1 = [12, 54, 66, 2, 89]
+    let arr2 = [66, 333, 32, 25, 123]
+    document.write(maxArray(arr1))
+    console.log(maxArray(arr2))
+    console.log(minArray(arr1))
+    console.log(minArray(arr2))
+  </script>
+</body>
+</html>

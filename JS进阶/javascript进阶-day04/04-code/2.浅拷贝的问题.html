@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '龙志豪',
+      family: {
+        father: '龙傲天'
+      }
+    }
+
+    // 对象的浅拷贝
+    // 1. Object.assign()
+    // const newObj = Object.assign({}, obj)
+    // 2. 展开运算符
+    const newObj = { ...obj }
+
+    newObj.name = '李紫薇'
+    newObj.family.father = '李傲天'
+    console.log(obj)
+    console.log(newObj)
+
+    // 总结:
+    // 浅拷贝就是只拷贝对象第一层的数据, 如果全部都是基本数据类型则没有任何问题, 只要有引用数据类型的属性, 就会将其地址值复制一份, 导致两个对象的属性共用同一个对象
+  </script>
+</body>
+</html>

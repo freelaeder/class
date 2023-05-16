@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [{
+      name: '张三',
+      salary: 10000
+    }, {
+      name: '李四',
+      salary: 15000
+    }, {
+      name: '王五',
+      salary: 20000
+    }]
+
+    // reduce 工资求和
+    // 由于是对象数组, 如果不传入初始值, 则第一次 prev 是数组中第一个对象
+    // 进行累加会导致字符串拼接, 无法正确求和
+    // const sum = arr.reduce((prev, item) => {
+    //   return prev + item.salary
+    // })
+    // 以后对象数组求和固定写法, 传入回调函数和初始值 0
+    const sum = arr.reduce((prev, item) => prev + item.salary, 0)
+    console.log(sum)
+  </script>
+</body>
+
+</html>

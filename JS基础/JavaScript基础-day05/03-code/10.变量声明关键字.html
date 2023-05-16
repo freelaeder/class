@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const num1 = +prompt('请输入第一个数字:')
+    // const num2 = +prompt('请输入第二个数字:')
+    // alert(`两者相加的结果是:${num1 + num2}`)
+
+    // num1 = 123 才叫修改
+    // num1 + num2 不叫修改, 把 num1 和 num2 的值取出来相加了
+
+    // function sum() {
+    //   const x = 10
+    //   const y = 20
+    //   console.log(x + y)
+    // }
+
+    // sum()
+
+    // 结论: 以后声明变量优先使用 const, 如果 const 用了之后有问题(后期可能还要修改变量的值)就换成 let
+
+    // const x = 10
+    // x = x + 20
+    // console.log(x)
+
+    // let 可以改成 const 吗?
+    // const arr = ['red', 'green']
+    // arr.push('purple')
+
+    // // arr = ['yellow']
+    // console.log(arr)
+
+    // 什么时候用 const 不会出错, 就看有没有对变量直接赋值
+
+    // const pig = {
+    //   uname: '佩奇',
+    //   age: 4,
+    //   sex: '女',
+    //   weight: 12.6
+    // }
+
+    // // 添加 color 属性
+    // pig.color = 'pink'
+
+    // console.log(pig)
+
+    // 对象字面量: {}
+    // 数组字面量: []
+
+    // undefined 和 null 有什么区别 ?
+    // 不同点:
+    // 1. undefined 是变量声明后没有赋值的情况, null 一般是手动给变量清空时使用
+    // 2. 转换成数字的时候不一样
+    console.log(Number(undefined)) // NaN
+    console.log(Number(null)) // 0
+    // 3. 使用 typeof 时 null 是 object, undefined 就是其本身
+    console.log(typeof null) // object JS 的bug
+    console.log(typeof undefined)
+
+    // 相同:
+    // 1. 转换为布尔值都是 false
+
+    // if 小括号中的内容都会转成布尔值
+    // if (1) {}
+
+
+    let sex = '男'
+    let uname = '紫阳道长'
+    let age = 18
+
+  </script>
+</body>
+</html>

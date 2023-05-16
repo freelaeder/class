@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 逻辑中断
+    // 与逻辑运算符的区别:
+    // 1. 逻辑中断可以连接不同数据类型的数据
+    // 2. 逻辑运算符一般用于两个条件的连接, 左右两边都得是布尔值
+    // && 短路与
+    // 一假则假
+    // 如果左边是假的, 直接返回左边, 不看右边
+    // console.log(false && true)
+    // 如果左边是真的, 则返回右边
+    // console.log(true && false)
+    // console.log(0 && '你好')
+    // console.log('' && '你好')
+    // console.log('世界' && '你好')
+    // console.log(NaN && '你好')
+    // console.log(undefined && '你好')
+    // console.log('0' && '你好')
+
+    // || 短路或
+    // 一真则真
+    // 如果左边是真的, 直接返回左边, 不看右边
+    // 如果左边是假的, 则返回右边
+    // console.log(true || false)
+    // console.log(false || true)
+
+    // console.log(0 || '你好') // 你好
+    // console.log('' || '你好') // 你好
+    // console.log('世界' || '你好') // 世界
+    // console.log(NaN || '你好') // 你好
+    // console.log(undefined || '你好') // 你好
+    // console.log('0' || '你好') // 0
+
+    // 短路或主要用于给函数的参数设置默认值
+    function sum(x, y) {
+      // 如果调用者没有传第二个参数, y 就是 undefined
+      // x + undefined 就是 NaN
+      // 为了避免这种情况出现, 如果能给 y 加一个默认值就好了
+      x = x || 0
+      y = y || 0
+      return x + y
+    }
+    
+    console.log(sum())
+    
+    // let a = undefined
+    // a()
+    // if (a) {
+    //   a()
+    // }
+    // a && a()
+    
+  </script>
+</body>
+</html>

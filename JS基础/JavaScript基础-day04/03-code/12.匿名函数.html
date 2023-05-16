@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // // 调用函数
+    // fn()
+
+    // // 函数声明: 具名函数
+    // // 只要能够访问到函数, 就可以调用, 不用看声明的时机和顺序
+    // function fn() {
+    //   console.log('你好哇 我是具名函数 fn')
+    // }
+
+    // // 调用函数
+    // // foo()
+
+    // // 函数表达式, 类似于变量声明, 必须先声明后使用
+    // let foo = function() {
+    //   console.log('你好哇, 我是函数表达式 foo')
+    // }
+
+    // // console.log(num)
+    // let num = 10
+
+    // 立即执行函数 IIFE
+    // 语法:
+    // (匿名函数)()
+    // (function(){
+    //   // 避免全局作用域被污染
+    //   console.log('你好哇 我会立即执行')
+    // })()
+
+    (function () {
+      let num1 = 10
+      let num2 = 20
+      let name = '牛逼'
+      let age = 18
+    })()
+
+
+  </script>
+</body>
+</html>

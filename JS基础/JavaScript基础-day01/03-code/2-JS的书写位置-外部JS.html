@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>你好我是div</div>
+  <p>我是p</p>
+  <!-- 外部 js -->
+  <!-- script 的 src 属性引入外部 js -->
+  <!-- 注意事项: 外部 js 的 script 标签中不能再写代码了, 否则会被忽略掉 -->
+  <script src="./my.js">
+    // 这里的代码会被忽略掉
+    // 如果非要写, 就单开一个 script
+    alert('我就是调皮')
+  </script>
+
+  <script>
+    // 这里写是没有问题的
+  </script>
+</body>
+</html>

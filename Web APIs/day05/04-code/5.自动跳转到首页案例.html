@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  注册成功, <span>5</span> 秒后自动跳转到
+  <a href="https://www.baidu.com">首页</a>
+  <script>
+    const span = document.querySelector('span')
+    // 1. 定义一个用于倒计时的变量
+    let n = 5
+    // 2. 开启间歇定时器 每隔一秒减 1
+    const timerId = setInterval(function() {
+      n--
+      span.innerHTML = n
+      // 3. 判断 n 如果到 0 了, 就停止定时器, 并跳转到首页
+      if (n === 0) {
+        clearInterval(timerId)
+        location.href = 'https://www.baidu.com'
+      }
+    }, 1000)
+  </script>
+</body>
+</html>

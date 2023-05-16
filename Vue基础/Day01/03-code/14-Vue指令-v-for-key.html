@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h3>小黑的书架</h3>
+    <ul>
+      <!-- 
+        复用: 
+          Vue 不会轻易删除 DOM 并重新创建 DOM, 因为这样很消耗性能, 它会想尽一切办法少的去销毁 DOM
+
+        v-for 的默认复用策略: 就地更新, 当前删除一个元素后, 还剩 3 个 li, 那么 Vue 就会把最后一个 li 删除, 里面的内容平移, 以复用所有现存的 li
+
+        v-for 时建议加上 key 属性, 一般用唯一标识: id
+        key 的设置要求:
+          1. 一定要在当前 v-for 中唯一
+            Duplicate keys detected: '1'. This may cause an update error.
+          2. 必须是 string 或 number
+            Avoid using non-primitive value as key, use string/number value instead.
+       -->
+      <li v-for="(item, index) in booksList" :key="item.id">
+        <input type="checkbox">
+        <span>{{ item.name }}</span>
+        <span>{{ item.author }}</span>
+        <button @click="del(item.id)">删除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标: 理解 v-for 中 :key 的作用
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        booksList: [
+          { id: 1, name: '《红楼梦》', author: '曹雪芹' },
+          { id: 2, name: '《西游记》', author: '吴承恩' },
+          { id: 3, name: '《水浒传》', author: '施耐庵' },
+          { id: 4, name: '《三国演义》', author: '罗贯中' }
+        ]
+      },
+      methods: {
+        del(id) {
+          this.booksList = this.booksList.filter(item => item.id !== id)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  // 需求: 封装一个 every 的函数, 传入一个数组, 检查 「所有的」 元素是否都大于 10, 如果都大于就返回 true, 只要有一个不大于 10 就返回 false
+  function every(arr = []) {
+    // 假设法: 假设所有的元素都符合条件 (true)
+    let isRight = true
+    // 1. 遍历数组
+    for (let i = 0; i < arr.length; i++) {
+      // console.log(arr[i])
+      // 2. 如果找到一个不符合条件的, 就把原先假设的值设为 false
+      if (arr[i] <= 10) {
+        isRight = false
+        break
+      }
+    }
+    // 3. 返回结果
+    return isRight
+  }
+  console.log(every([19, 7, 30]))   // true
+  // console.log(every([10, 3, 30]))   // false
+  </script>
+</body>
+</html>

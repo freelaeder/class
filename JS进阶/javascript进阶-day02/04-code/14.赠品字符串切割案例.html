@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <!-- <li>【赠品】50g茶叶</li>
+    <li>【赠品】清洗球</li> -->
+  </ul>
+  <script>
+    const gift = '50g茶叶,清洗球'
+    // 1. 将字符串进行切割
+    // const arr = gift.split(',')
+    // console.log(arr)
+    // 2. 使用 map + join 进行渲染
+    document.querySelector('ul').innerHTML = gift.split(',').map(item => `<li>【赠品】${item}</li>`).join('')
+  </script>
+</body>
+</html>

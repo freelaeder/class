@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 变量声明提升, 仅限 var
+    // 只会提升声明操作, 不会提升赋值操作
+    // console.log(x)
+    // var x = 10 
+
+    function fn() {
+      console.log(a)
+      var a = 100 // 提升到当前作用域的最前面
+    }
+
+    fn()
+    console.log(a) // 这是全局, 没有 a 变量
+
+    // ChatGPT 题目 1
+    console.log(a); 
+    var a = 1;
+    if (true) {
+      console.log(a);
+      var a = 2;
+      console.log(a); 
+    }
+    console.log(a);
+
+    // 2
+    var a = 1;
+    function foo() {
+      console.log(a)
+      var a = 2;
+      console.log(a)
+    }
+    foo();
+    console.log(a)
+
+    // 3
+    var a = 1;
+    function foo() {
+      console.log(a);
+      a = 2;
+      console.log(a);
+    }
+    foo();
+    console.log(a);
+
+    // 4 
+    var a = 1;
+    function outer() {
+      console.log(a);
+      var a = 2;
+      function inner() {
+        console.log(a);
+      }
+      inner();
+    }
+    outer();
+    console.log(a);
+
+    // 5
+    var a = 1;
+    function foo() {
+      console.log(a);
+      var a = 2;
+      function bar() {
+        console.log(a); 
+      }
+      return bar;
+    }
+    var baz = foo();
+    baz();
+
+  </script>
+</body>
+</html>

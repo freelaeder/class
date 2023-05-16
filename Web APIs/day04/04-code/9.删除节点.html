@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>我会被隐藏</div>
+  <div>我会被删除</div>
+  <script>
+    const divs = document.querySelectorAll('div')
+    // console.log(divs)
+    divs[0].style.display = 'none'
+    // 自杀, 自己干掉自己, 从 DOM 树上移除掉
+    divs[1].remove()
+  </script>
+</body>
+</html>

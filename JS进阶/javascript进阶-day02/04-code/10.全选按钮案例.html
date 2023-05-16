@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 500px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+      height: 35px;
+    }
+
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+
+
+    .allCheck {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allCheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+      </th>
+      <th>商品</th>
+      <th>商家</th>
+      <th>价格</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米净水器</td>
+      <td>小米</td>
+      <td>￥4999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米电视</td>
+      <td>小米</td>
+      <td>￥5999</td>
+    </tr>
+  </table>
+  <script>
+    // 需求1: 全选框勾选或取消勾选时, 小选框全部跟随
+    // 1.1 找到全选框绑定点击事件
+    // change: 状态改变事件
+    const cks = document.querySelectorAll('.ck')
+    const checkAll = document.querySelector('#checkAll')
+    checkAll.addEventListener('change', function() {
+      // console.log(this.checked)
+      // 1.2 当全选框被点击时, 设置所有小选框的勾选状态
+      // if (this.checked) {
+      //   cks.forEach(item => item.checked = true)
+      // } else {
+      //   cks.forEach(item => item.checked = false)
+      // }
+      cks.forEach(item => item.checked = this.checked)
+    })
+
+    // 需求2: 小选框全部选中时全选框勾选, 只要有一个小选框没有选中, 全选框不勾选
+    // 2.1 给所有的小选框注册点击事件
+    cks.forEach(ck => {
+      ck.addEventListener('change', function() {
+        // 2.2 点击后再判断所有小选框是否都勾选了
+        // console.log('我被改了', this.checked)
+        // every()
+        // 伪数组不能使用数组的方法
+        // console.log(cks)
+        // 把伪数组转成真数组
+        // 静态方法 Array.from()
+        // console.log(Array.from(cks))
+        // const result = Array.from(cks).every(item => item.checked === true)
+
+        // console.log(result)
+        checkAll.checked = Array.from(cks).every(item => item.checked)
+      })
+    })
+  </script>
+</body>
+
+</html>

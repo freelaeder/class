@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>通讯录案例</title>
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding-bottom: 50px;
+    }
+
+    .address-header {
+      position: fixed;
+      width: 100%;
+      height: 46px;
+      line-height: 45px;
+      color: #fff;
+      border-bottom: 1px solid #e4e4e4;
+      text-align: center;
+      background-color: #f4664f;
+      z-index: 999;
+    }
+
+    .address-header i {
+      position: absolute;
+      right: 10px;
+    }
+
+    .address-book {
+      margin: 0 15px;
+      overflow: hidden;
+      padding-top: 50px;
+    }
+
+    .address-book .item {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      border-bottom: 1px solid #e9e9e9;
+      position: relative;
+      transition: all 0.3s linear;
+    }
+
+    /* 实现滑动效果 */
+    .address-book .item.active {
+      transform: translateX(-50px);
+    }
+
+    .address-book .item>.circle {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      background-color: #f38383;
+      border-radius: 50%;
+    }
+
+    .address-book .item>.name {
+      width: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .address-book .item>.tel {
+      margin-left: 20px;
+      color: #666;
+    }
+
+    .address-book .item>.del {
+      position: absolute;
+      right: -50px;
+      top: 0;
+      height: 50px;
+      width: 50px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      background-color: #eee;
+    }
+
+    .address-book .item>.del i {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 10px;
+      border-radius: 50%;
+      background-color: #f60;
+    }
+
+    .address-footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      border-top: 1px solid #e4e4e4;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .address-footer input {
+      appearance: none;
+      border: 0;
+      outline: 0;
+      width: 130px;
+    }
+
+    .address-footer button {
+      appearance: none;
+      border: 0;
+      outline: 0;
+      background-color: #069;
+      color: #fff;
+      padding: 5px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="address-header">
+    通讯录
+    <i class="iconfont icon-tianjiayonghu"></i>
+  </div>
+  <div class="address-book">
+    <!-- 添加item 核心区域-->
+    <!-- <div class="item">
+      <p class="circle">华</p>
+      <p class="name">刘德华</p>
+      <p class="tel">13511112222</p>
+      <a class="del" href="javascript:;" ">
+        <i class=" iconfont icon-shanchutianchong"></i>
+      </a>
+    </div> -->
+
+  </div>
+  <div class="address-footer">
+    <input id="name" type="text" placeholder="请输入姓名" />
+    <input id="tel" type="text" placeholder="请输入手机号" />
+    <button id="add">添加联系人</button>
+  </div>
+  <!-- 引入手势插件 -->
+  <!-- <script src="https://unpkg.com/alloyfinger@0.1.16/alloy_finger.js"></script> -->
+  <script src="../alloy_finger.js"></script>
+  <script>
+    // 初始化数据
+    const arr = [
+      { name: "周杰伦", tel: "13411112222" },
+      { name: "刘德华", tel: "13511112222" },
+      { name: "张学友", tel: "13711112222" },
+      { name: "岳云鹏", tel: "13911112222" },
+      { name: "紫阳", tel: "13911112222" },
+    ]
+
+    const book = document.querySelector('.address-book')
+    
+    function render() {
+      // 需求1: 渲染数据
+      // 1.1 使用 forEach 遍历数组
+      let str = ''
+      arr.forEach(function(item, index) {
+        // console.log(item, index)
+        // 1.2 字符串拼接
+        str += `
+        <div class="item">
+          <p class="circle">${item.name.substring(item.name.length - 1)}</p>
+          <p class="name">${item.name}</p>
+          <p class="tel">${item.tel}</p>
+          <a class="del" href="javascript:;" ">
+            <i data-i="${index}" class=" iconfont icon-shanchutianchong"></i>
+          </a>
+        </div>
+        `
+      })
+      // 1.3 使用 innerHTML 渲染
+      // console.log(str)
+      book.innerHTML = str
+
+      // 渲染后再添加事件
+      init()
+    }
+
+    // 页面初始化渲染
+    render()
+
+    function init() {
+      // 需求2: 使用 AlloyFinger 实现滑动操作
+      // 2.1 引入滑动手势插件
+      // 2.2 给每一个 item 元素添加滑动操作
+      // console.log(book.children)
+      // book.children 它是伪数组, 不具备数组的方法
+      // forEach 是数组的方法
+      // book.children.forEach(function(item) {
+      //   console.log(item)
+      // })
+
+      // 不是所有的伪数组功能都完全一样
+      // children 伪数组就不能使用 forEach
+      // querySelectorAll 拿到的伪数组可以使用 forEach, 因为这个伪数组自己实现了一个和数组一样的 forEach
+      const items = document.querySelectorAll('.item')
+      // console.log(items)
+      items.forEach(function(item) {
+        // console.log(item)
+        // 循环给每一个 item 添加滑动操作
+        new AlloyFinger(item, {
+          swipe: function (evt) {
+            // console.log(evt.direction)
+            // 2.3 判断用户左滑时添加 active 其他操作移除 active
+            if (evt.direction === 'Left') {
+              // console.log('此时用户在左滑')
+              // 2.4 利用排他思想, 让现有的 active 先移除
+              const old = document.querySelector('.item.active')
+              // 判断有 active 的元素后才移除 active 类
+              old && old.classList.remove('active')
+              item.classList.add('active')
+            } else {
+              item.classList.remove('active')
+            }
+          }
+        })
+      })
+    }
+    
+    // 需求3: 新增功能
+    const add = document.querySelector('#add')
+    const name = document.querySelector('#name')
+    const tel = document.querySelector('#tel')
+    add.addEventListener('click', function() {
+      // 3.1 在用户点击添加按钮时进行非空校验
+      // console.log(name.value)
+      // console.log(tel.value)
+      // 优化2: 使用 ! 取反来优化非空校验
+      if (!name.value || !tel.value) {
+        // return 返回结果并结束当前函数的执行
+        // 优化1: 两行代码可以写作一行, 表示提醒用户并返回结果, 终止函数执行
+        return alert('请输入姓名或手机号')
+      }
+      
+      // alert('我要添加')
+      // 3.2 往数组 arr 里添加一个对象
+      arr.push({
+        name: name.value,
+        tel: tel.value
+      })
+
+      // console.log(arr)
+      render()
+
+      name.value = ''
+      tel.value = ''
+    })
+
+    // 需求4: 删除功能
+    // 4.1 给 book 大盒子绑定点击事件, 利用事件委托
+    book.addEventListener('click', function(e) {
+      if (e.target.tagName === 'I') {
+        // alert('点我删除')
+        // 4.2 找到数组中对应的元素, 进行删除
+        // console.log(e.target.dataset.i)
+        arr.splice(e.target.dataset.i, 1)
+        // 4.3 重新渲染
+        render()
+      }
+    })
+  </script>
+</body>
+
+</html>

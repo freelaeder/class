@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 0 - 9  A - F
+    let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    // 需求: 生成随机颜色, 传入 true 返回十六进制, 传入 false 返回 rgb 格式
+
+    // 目标1: 定义函数, 传入 true 或不传参数则返回 #0094FF, 传入 false 就返回 rgb(255,235,233)
+    // 1. 定义函数 isHex 是否需要 16 进制
+    function randomColor(isHex = true) {
+      // 目标2: 生成随机的 16 进制的字符串
+      if (isHex) {
+        // 定义一个 str 准备拼接
+        let str = ''
+        // 去 arr 中随机取一个字符
+        for (let i = 1; i <= 6; i++) {
+          let index = Math.floor(Math.random() * arr.length)
+          // console.log(arr[index])
+          str += arr[index]
+        }
+        return '#' + str
+      } else {
+        // 目标3: 随机生成 rgb 的字符串
+        // 0 ~ 255 之间
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
+        return `rgb(${r},${g},${b})`
+      }
+    }
+
+    console.log(randomColor())
+    console.log(randomColor(true))
+    console.log(randomColor(false))
+  </script>
+</body>
+</html>

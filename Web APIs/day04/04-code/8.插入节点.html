@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>我是原本存在的 li</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+    // ul.innerHTML = `<li>我是原本存在的 li</li><li>我是新来的 li</li>`
+    // 插入子节点
+    // 1. 新建
+    const li = document.createElement('li')
+    li.innerText = '你好哇, 我是新来的'
+    // 2. 插入
+    // 父节点.append()  在后面插入
+    // ul.append(li)
+    // 父节点.prepend() 在前面插入
+    ul.prepend(li)
+  </script>
+</body>
+</html>

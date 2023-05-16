@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    用户名:<input type="text" name="username" />
+    <button>提交</button>
+  </form>
+  <button>搜索鲁迅</button>
+  <a href="#Bottom">我是锚点</a>
+  <button id="refresh">点我刷新</button>
+  <script>
+    // console.log(window.location)
+    // location.href 可以获取或设置浏览器的 url, 如果设置 url 会直接跳转网页
+    // console.log(location.href) // http://127.0.0.1:5500/4.location.html
+    // location.href = 'https://www.itheima.com'
+    document.querySelector('button').addEventListener('click', function() {
+      location.href = 'https://www.baidu.com/s?wd=%E9%B2%81%E8%BF%85'
+    })
+
+    // location.search 获取 url 的参数
+    console.log(location.search)
+
+    // location.hash 获取 url 的 #hash
+    console.log(location.hash)
+
+    // Vue 进行页面跳转时会用到这个 hash
+
+    // 点击按钮刷新页面
+    document.querySelector('#refresh').addEventListener('click', function() {
+      // 传入 true 表示强制刷新
+      // 不传就是普通刷新
+      location.reload(true)
+    })
+  </script>
+</body>
+</html>

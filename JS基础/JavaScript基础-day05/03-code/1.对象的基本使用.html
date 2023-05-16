@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let foo = function() {}
+    // 对象的方法就是函数
+    // 函数放到一个对象就被称为方法
+    // 描述一下郑凯亚
+    // let 变量名 = {}
+    let person = {
+      // 属性: 对象的一些信息, 通常是名词, 用来描述对象的
+      // 属性名: 属性值, 多个属性用 , 隔开
+      uname: '郑凯亚',
+      gender: '男',
+      age: 18,
+      hobby: '唱 跳 RAP 打篮球',
+      // 方法: 对象的一些功能, 通常是动词, 指对象可以做的事情
+      // 方法名: 函数
+      sing: function(name) { // 形参
+        console.log('我很会唱歌, 鸡你太美!, 唱一首:' + name)
+      },
+      dance: function() {
+        console.log('我很会跳舞, 鸡你太美!')
+      }
+    }
+    // console.log(person)
+
+    // 访问对象属性
+    // 对象名.属性名
+    console.log(person.uname)
+    console.log(person.age)
+    // 对象名.方法名() 调用方法
+    console.log(person.sing('我爱我的祖国')) // 实参
+    
+    // 总结:
+    // 1. 对象是一种数据类型, 也是用来存储数据的
+    // 2. 对象是无序的
+    // 3. 对象由属性和方法构成, 属性可以理解为变量, 方法可以理解为函数
+    // 对象是无序属性的集合
+    // 数组是有序数据的集合
+    // 任务: 描述一下你的同桌
+    // 4. 访问对象属性, 对象名.属性名
+    // 5. 访问对象方法, 对象名.方法名()
+    // 函数名()
+
+    // 属性: 放到对象里的变量叫属性
+    // 方法: 放到对象里的函数叫方法
+  </script>
+</body>
+</html>

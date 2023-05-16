@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 使用对象字面量创建对象
+    const o1 = {
+      name: '陈钦旭',
+      age: 18
+    }
+    console.log(o1)
+
+    // 2. new Object() 创建对象, 创建后添加属性
+    const o2 = new Object()
+    o2.name = '龙志豪'
+    o2.age = 18
+    console.log(o2)
+
+    // 3. new Object() 创建时就添加属性
+    const o3 = new Object({
+      name: '董振海',
+      age: 28
+    })
+    console.log(o3)
+
+    // 以上两种创建对象的方式, 可以理解为完全相同, 字面量就是 new Object() 的简写形式
+  </script>
+</body>
+</html>

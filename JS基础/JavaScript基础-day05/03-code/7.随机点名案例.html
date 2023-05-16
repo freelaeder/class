@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 随机取出数组中的名字显示
+    let names = ['纯真丁一郎', '日本天皇', '纯鹿人', '青龙', '黑马', '红牛', '孙笑川']
+    // 求 n ~ m 之间的随机数, 包含 n 也包含 m, 加不加 1 取决于是否要包含 m
+    // console.log( Math.floor(Math.random() * (差值 + 1)) + 起点 )
+    
+    // 生成一个随机数: 0 ~ 6 之间
+    // console.log( Math.floor(Math.random() * names.length) )
+    let random = Math.floor(Math.random() * names.length)
+    // names[随机数]
+    console.log(names[random])
+  </script>
+</body>
+</html>

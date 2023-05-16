@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allCheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+      </th>
+      <th>商品</th>
+      <th>商家</th>
+      <th>价格</th>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="check" class="ck"></td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="check" class="ck"></td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="check" class="ck"></td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+  </table>
+  <script>
+    const checkAll = document.querySelector('#checkAll')
+    const cks = document.querySelectorAll('.ck')
+    checkAll.addEventListener('click', function () {
+      cks.forEach(function(item) {
+        item.checked = checkAll.checked
+      })
+    })
+
+    cks.forEach(function(ck) {
+      ck.addEventListener('click', function() {
+        let isAll = true
+        cks.forEach(function(item) {
+          if (!item.checked) {
+            isAll = false
+          }
+        })
+        checkAll.checked = isAll
+      })
+    })
+  </script>
+</body>
+
+</html>

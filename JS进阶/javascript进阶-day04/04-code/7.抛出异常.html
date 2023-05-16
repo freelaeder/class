@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // document.querySelector('div').addEventListener()
+    function fn(x, y) {
+      if (!x || !y) {
+        // 抛出异常 - 提醒别人处理, 交给别人来解决
+        // throw 可以抛出字符串错误, 通过文本提醒用户
+        // throw '请传入 x 或 y'
+        // 还可以抛出一个错误对象! Error
+        throw new Error('请传入 x 或 y')
+      }
+      
+      console.log('你好哇')
+      return x + y
+    }
+
+    // console.log(fn(1, 2))
+    console.log(fn())
+  </script>
+</body>
+</html>

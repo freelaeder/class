@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button>点我打 this</button> -->
+  <button>点我 5s 后修改颜色</button>
+  <script>
+    // function 函数的 this 指向
+    // 不出意外的情况下 this 永远指向调用者
+    // let fn = function() {
+    //   console.log(this) // window
+    // }
+    // fn()
+
+    // const btn = document.querySelector('button')
+    // btn.addEventListener('click', function() {
+    //   console.log(this)
+    // })
+
+    // 箭头函数的 this 指向和当前作用域的 this 指向一样, 他没有自己的 this 指向
+    // 箭头函数的 this 取决于当前箭头函数定义的位置, 不看是谁调用的箭头函数
+    // let arrowFn = () => {
+    //   console.log(this)
+    // }
+    // arrowFn()
+    
+    // 一般事件处理函数不要用箭头函数, 因为普通的 function 更容易让我们找到事件源
+    // btn.addEventListener('click', () => {
+    //   console.log(this)
+    // })
+
+    // 事件处理函数最好不要用箭头函数
+    document.querySelector('button').addEventListener('click', function() {
+      // document.querySelector('button').style.color = 'yellow'
+      // this.style.color = 'green'
+
+      // setTimeout(function() {
+      //   console.log(this) // this 指向 window, 因为定时器属于 window 对象, 定时器的函数也由 window 触发
+      //   this.style.color = 'green'
+      // }, 5000)
+
+      // 此处最好使用箭头函数
+      setTimeout(() => {
+        this.style.color = 'green'
+      }, 5000)
+    })
+
+    // 如何去记忆到底该用箭头函数还是普通 function?
+    // 默认优先考虑箭头函数, 不行了就换 function
+  </script>
+</body>
+</html>

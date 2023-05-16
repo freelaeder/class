@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 变量的声明和使用
+    // 1. let 声明变量
+    let uname
+    // 2. 给变量赋值
+    uname = '紫阳' // 字符串
+    // 3. 输出到控制台 直接使用变量名即可访问到变量内部的数据
+    // console.log('输出的内容')
+    console.log(uname)
+
+    // 声明并赋值
+    let age = 15
+    console.log(age)
+
+    // 修改变量
+    age = 18
+    console.log(age)
+
+    // 变量不能重复声明
+    // 未捕获的语法错误: 标识符 age 已经被定义了
+    // Uncaught SyntaxError: Identifier 'age' has already been declared
+    // let age = 22
+    // console.log(age)
+
+    // 不是很直观, 可读性较差
+    // let sex = '男', address = '黄陂区'
+
+    // let sex = '男',
+    // address = '黄陂区'
+
+    // 建议一个变量占一行
+    let sex = '男'
+    let address = '黄陂区'
+  </script>
+</body>
+</html>

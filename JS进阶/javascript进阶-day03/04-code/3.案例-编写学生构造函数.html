@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 10 mins
+    // 1. 创建一个构造函数 Student
+    // 2. 学生需要具备 姓名 / 年龄 / 性别 属性
+    // 3. 所有的学生都是 90 期这个班级的
+    // 4. 所有的学生都具备学习的方法
+
+    function Student(name, age, gender) {
+      this.name = name
+      this.age = age
+      this.gender = gender
+      // 公共属性不要放在实例身上
+      // this.class = 90
+    }
+
+    // 公共的属性和方法放在原型上!!!
+    Student.prototype.class = 90
+
+    Student.prototype.study = function() {
+      console.log('我爱学习')
+    }
+    
+    const s1 = new Student('龚皓', 18, '男')
+    const s2 = new Student('余烽', 18, '男')
+
+    Student.prototype.class = 89
+
+    console.log(s1.class)
+    s1.study()
+    console.log(s2.class)
+    s2.study()
+
+    console.log(s1.study === s2.study)
+  </script>
+</body>
+</html>

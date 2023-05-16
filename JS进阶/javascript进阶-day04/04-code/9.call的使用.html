@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // call() 方法是所有函数都能使用的方法
+    // 1. 调用函数
+    // 2. 修改函数内部的 this 指向
+    function fn(a, b) {
+      console.log('结果:', a + b, this)
+    }
+
+    fn(1, 2) // this => window, fn 是全局的, 所以等于是 window.fn()
+    // 修改 this 指向
+    const obj = {
+      name: '龚皓',
+      age: 18,
+      // fn: fn
+    }
+    // 不要修改 obj 内部的任何代码, 但就要让 fn 的 this 指向 obj
+    // obj.fn()
+
+    // call()
+    // 参数1: this 要指向的对象
+    // 参数2 ~ 参数n (剩余参数)
+    fn.call(obj, 3, 3)
+
+    // call() 的应用场景, 检测数据类型
+    let arr = [10, 20 ,30]
+    // Array.prototype.toString()
+    console.log(arr.toString()) // Array.prototype
+    console.log(obj.toString()) // Object.prototype
+    console.log(Object.prototype.toString.call(arr))
+
+  </script>
+</body>
+</html>

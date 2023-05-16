@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // break: 终止整个循环
+    // 案例: 找小朋友, 找到第三个就停下
+    // for (let i = 1; i <= 6; i++) {
+    //   console.log(`正在找第${i}个`)
+    //   if (i === 3) {
+    //     console.log('找到小孩啦!')
+    //     // 终止掉整个循环, 不要再走后面的循环了
+    //     break
+    //   }
+    // }
+
+    // continue: 跳过本次循环, 后面的循环继续
+    // 案例: 电影院检票, 第三个人没票, 跳过他
+    for (let i = 1; i <= 6; i++) {
+      if (i === 3) {
+        continue
+      }
+      console.log(`正在检第${i}个票`)
+    }
+  </script>
+</body>
+</html>

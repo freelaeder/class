@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // apply() 方法是所有函数都能使用的方法
+    // 1. 调用函数
+    // 2. 修改函数内部的 this 指向
+    function fn(a, b) {
+      console.log('结果:', a + b, this)
+    }
+
+    fn(1, 2) // this => window, fn 是全局的, 所以等于是 window.fn()
+    // 修改 this 指向
+    const obj = {
+      name: '龚皓',
+      age: 18,
+      // fn: fn
+    }
+    // 不要修改 obj 内部的任何代码, 但就要让 fn 的 this 指向 obj
+    // obj.fn()
+
+    // apply()
+    // 参数1: this 要指向的对象
+    // 参数2: 必须是数组, 可以把原方法需要的参数全部放到数组中一起传入
+    fn.apply(obj, [10, 20])
+    // 与 call 的区别仅仅只是传参方式不一样
+
+    // 应用场景:
+    // 直接使用 Math.max 求数组最大值
+
+    console.log(Math.max(1, 2, 3))
+    
+    const arr = [30, 20, 15, 8, 66]
+    console.log(Math.max.apply(null, arr))
+    console.log(Math.max(...arr))
+
+    // call / apply 方法小结
+    // 相同点:
+    // 1. 都会调用函数
+    // 2. 都会改变函数内部 this 指向
+    // 不同点:
+    // 1. 传参方式不同, call 是以参数列表一个一个传进去的, apply 是传入一个数组
+
+  </script>
+</body>
+</html>

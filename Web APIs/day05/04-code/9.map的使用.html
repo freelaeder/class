@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let arr = ['小亚亚', '陈厚霖', '刘文浩']
+    // // 请把数组里的每个元素取出来, 变成 xxx是大美女
+    // // 与 forEach 的基本语法差不多
+    // // 区别在于:
+    // // 1. 回调函数中可以有返回值, map 会将返回值收集到一个新数组中
+    // // 2. map 方法返回新数组
+    // const newArr = arr.map(function(item, index) {
+    //   // console.log(item)
+    //   // console.log(index)
+    //   return item + '是大美女'
+    // })
+
+    // console.log(newArr)
+
+    const arr = [
+      {
+        stuId: 1,
+        uname: '张泽文',
+        age: 30,
+        gender: '男',
+        salary: '13500',
+        city: '北京',
+        time: '2099/9/9 08:08:08'
+      },
+      {
+        stuId: 2,
+        uname: '小亚亚',
+        age: 18,
+        gender: '男',
+        salary: '33500',
+        city: '北京',
+        time: '2099/9/9 08:08:08'
+      }
+    ]
+
+    const newArr = arr.map(function(item, index) {
+      // console.log(item)
+      return `
+        <tr>
+          <td>${item.stuId}</td>
+          <td>${item.uname}</td>
+          <td>${item.age}</td>
+          <td>${item.gender}</td>
+          <td>${item.salary}</td>
+          <td>${item.city}</td>
+          <td>${item.time}</td>
+          <td>
+            <a href="javascript:">
+              <i class="iconfont icon-shanchu"></i>
+              删除
+            </a>
+          </td>
+        </tr>`
+    })
+
+    console.log(newArr.join(''))
+
+    // 最后一步: 将数组转成字符串
+    // join() 默认的分隔符是 ,
+    // const arr2 = ['你好哇', '我是机器人']
+    // console.log(arr2.join(''))
+
+    // let str = ''
+    // arr.forEach(function(item, index) {
+    //   // 1.4 拼接字符串
+    //   str += `
+    //     <tr>
+    //       <td>${item.stuId}</td>
+    //       <td>${item.uname}</td>
+    //       <td>${item.age}</td>
+    //       <td>${item.gender}</td>
+    //       <td>${item.salary}</td>
+    //       <td>${item.city}</td>
+    //       <td>${item.time}</td>
+    //       <td>
+    //         <a href="javascript:">
+    //           <i class="iconfont icon-shanchu"></i>
+    //           删除
+    //         </a>
+    //       </td>
+    //     </tr>`
+    //   })
+
+    //   console.log(str)
+  </script>
+</body>
+</html>

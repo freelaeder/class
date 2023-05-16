@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      line-height: 100px;
+      margin: 10px;
+      border: 3px solid #000;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div v-show="isShow" class="box">我是v-show控制的盒子</div>
+    <div v-if="isShow" class="box">我是v-if控制的盒子</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标: 控制盒子显示隐藏
+     *    v-show 底层原理: 通过设置 display: none 来改变盒子的显示状态
+     *    v-if   底层原理: 通过创建 / 删除 DOM 元素来实现盒子的显示隐藏
+     * 
+     * v-show 比较适合频繁切换显示隐藏的场景
+     * v-if 比较适合初始状态就决定了显示隐藏的场景
+     * */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        isShow: false
+      }
+    })
+  </script>
+
+</body>
+
+</html>

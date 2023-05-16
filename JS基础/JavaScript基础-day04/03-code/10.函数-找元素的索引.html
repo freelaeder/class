@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 传入一个数组和要找的元素, 如果找到了就返回元素的索引, 没找到就返回 -1
+    function findIndex(name, arr) {
+      // 分析思路
+      // 1. 定一个变量, 默认值为 -1 : 假设法
+      let index = -1
+      // 2. 遍历数组
+      for (let i = 0; i < arr.length; i++) {
+        if (name === arr[i]) {
+          // 3. 找元素, 找到了就把 index 改为当前元素的索引
+          index = i
+          // 性能优化
+          break
+        }
+      }
+      // 4. 返回 index
+      return index
+    }
+
+    let arr1 = ['红毛丹', '芭乐', '人参果', '榴莲', '黑加仑']
+    let result1 = findIndex('榴莲', arr1)
+    console.log(result1)
+    let result2 = findIndex('橙子', arr1)
+    console.log(result2)
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 短路或主要用于给函数的参数设置默认值
+    // function sum(x, y) {
+    //   // 如果调用者没有传第二个参数, y 就是 undefined
+    //   // x + undefined 就是 NaN
+    //   // 为了避免这种情况出现, 如果能给 y 加一个默认值就好了
+    //   x = x || 0
+    //   y = y || 0
+    //   return x + y
+    // }
+    
+    // 函数参数的默认值, 以前通过短路或来处理
+    // 现在一般都会直接使用函数的默认值操作 (新语法)
+    // 语法:
+    // function 函数名(参数1 = 默认值, 参数2 = 默认值, ...) {}
+    // 当调用者没有传入实参, 或传入的是 undefined 时, 就会自动使用默认值, 正常传入实参则使用实参
+    function sum(x = 0, y = 0) {
+      return x + y
+    }
+
+    console.log(sum())
+
+    
+  </script>
+</body>
+</html>

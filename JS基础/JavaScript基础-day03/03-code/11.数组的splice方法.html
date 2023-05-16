@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = ['蠢沐沐', 'CPU 炸了', '不如吃茶tree', '高源']
+
+    // splice()
+    // 作用: 既可以删除, 也可以添加
+    // 仅用作删除
+    // arr.splice(起始的索引, 删除的个数)
+    // let result = arr.splice(1, 2)
+    // console.log(result)
+    // 返回结果是被删除的元素
+    // console.log(arr.splice(1, 1))
+
+    // 删除并添加
+    // 需求: 把 CPU 炸了 删掉, 换成硬盘炸了
+    // arr.splice(1, 1, '硬盘炸了')
+
+    // 不删除直接添加
+    // 需求: 直接在 CPU 炸了的地方添加硬盘炸了
+    arr.splice(1, 0, '硬盘炸了')
+    console.log(arr)
+
+    // splice: 碾接
+  </script>
+</body>
+</html>

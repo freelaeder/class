@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 剩余参数, 在最后一个形参前加上 ...
+    function fn(...nums) {
+      // 实现任意参数的求和
+      // console.log(nums)
+      let sum = 0
+      nums.forEach(function(item) {
+        sum += item
+      })
+      return sum
+    }
+
+    console.log(fn(1))
+    console.log(fn(1, 2, 3))
+
+    // 注意: 必须是最后一个形参
+    // function foo(a, ...b) {
+    //   console.log(a, b)
+    // }
+    // foo(1, 2, 3)
+
+    // ES6 2015 年提出的
+  </script>
+</body>
+</html>

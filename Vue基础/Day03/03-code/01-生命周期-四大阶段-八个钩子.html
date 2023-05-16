@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h3>{{ title }}</h3>
+    <div>
+      <button @click="count--">-</button>
+      <span>{{ count }}</span>
+      <button @click="count++">+</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 100,
+        title: '计数器'
+      },
+      /**
+       * 生命周期: Vue 实例从创建到销毁的全部过程
+       * 在这个过程中, 不同阶段, 程序自动运行的函数, 就被称为 钩子函数
+       * 四个阶段, 八个方法
+       * 创建阶段: beforeCreate / created
+       * 挂载阶段: beforeMount / mounted
+       * 更新阶段: beforeUpdate / updated
+       * 销毁阶段: beforeDestroy / destroyed
+       * 
+       * 这些钩子函数需要程序员在 Vue 实例中提供, 它们都会自动执行
+       */
+      beforeCreate() {
+        // 此时数据还没有初始化完成, 无法访问数据
+        console.log('beforeCreate 创建前', this.count)
+      },
+      created() {
+        // 此时数据已经初始化完成, 可以访问数据, 所以推荐在此处发送 ajax 请求
+        console.log('created 创建后', this.count)
+        // 此时真实的 DOM 元素还没有加载到页面上, 这里只是拿到模板代码
+        // console.log(document.querySelector('button'))
+      },
+      beforeMount() {
+        console.log('beforeMount 挂载前')
+      },
+      mounted() {
+        console.log('mounted 挂载后')
+        // 此处才能拿到真实 DOM
+        console.log(document.querySelector('button'))
+      },
+      beforeUpdate() {
+        console.log('beforeUpdate 更新前')
+      },
+      updated() {
+        console.log('updated 更新后')
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy 销毁前')
+        // 一般会在此处清理定时器 / 卸载事件等等
+      },
+      destroyed() {
+        console.log('destroyed 销毁后')
+      },
+    })
+  </script>
+</body>
+</html>

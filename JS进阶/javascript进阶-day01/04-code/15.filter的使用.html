@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [20, 15, 9, 8, 1, 13]
+    // 需求: 把大于 10 的数, 筛选出来, 放到新数组中
+    // let newArr = arr.filter((item, index) => {
+    //   // console.log(item, index)
+    //   // return true
+    //   // if (item > 10) {
+    //   //   return true
+    //   // } else {
+    //   //   return false
+    //   // }
+    //   return item > 10
+    // })
+    // 函数内要返回筛选条件, 符合条件的情况会把当前遍历的元素加到新数组中, 最后 filter 返回新数组
+    let newArr = arr.filter((item, index) => item > 10)
+    console.log(newArr)
+  </script>
+</body>
+</html>

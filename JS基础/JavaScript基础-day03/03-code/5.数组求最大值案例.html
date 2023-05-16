@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [4, 2, 55, 6, 20]
+
+    // 1. 定义一个 max 变量, 假设数组中第一个元素为最大值
+    let max = arr[0]
+
+    // 2. 遍历数组, 拿 max 去和每一项进行比较, 如果有比 max 还大的元素, 就赋值给 max
+    for (let i = 1; i < arr.length; i++) {
+      // 3. 比较两者, 如果比 max 大就赋值给 max
+      if (arr[i] > max) {
+        max = arr[i]
+      }
+    }
+    // 打印输出
+    console.log(max)
+
+    // 如果要求最小值, 会吗?
+  </script>
+</body>
+</html>

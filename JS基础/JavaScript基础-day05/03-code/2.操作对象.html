@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let foo = function() {}
+    // 对象的方法就是函数
+    // 函数放到一个对象就被称为方法
+    // 描述一下郑凯亚
+    // let 变量名 = {}
+    let person = {
+      // 属性: 对象的一些信息, 通常是名词, 用来描述对象的
+      // 属性名: 属性值, 多个属性用 , 隔开
+      uname: '郑凯亚',
+      gender: '男',
+      age: 18,
+      hobby: '唱 跳 RAP 打篮球',
+      // 方法: 对象的一些功能, 通常是动词, 指对象可以做的事情
+      // 方法名: 函数
+      sing: function(name) { // 形参
+        console.log('我很会唱歌, 鸡你太美!, 唱一首:' + name)
+      },
+      dance: function() {
+        console.log('我很会跳舞, 鸡你太美!')
+      },
+      // nickname
+      // 属性名如果是非法字符, 可以通过 '' 把他变成字符串, 合法的存储到对象中
+      'nick-name': '小亚亚'
+    }
+    console.log(person)
+
+    // 怎么取这个 nick-name 呢?
+    // 新语法: 对象['属性名']
+    // console.log(person['nick-name'])
+
+    // let arr = ['张三', '李四']
+    // console.log(arr)
+    // arr[0]  数组[键] 来取值
+    // 数组也可以看做是键值对, 索引是键 数据是值
+    // 对象['键']
+    // 结论: 数组也是对象, 比较特殊, 键是自动增长, 且有顺序
+
+    // 总结:
+    // 访问对象的属性有两种方式
+    // 1. 对象.属性名, 属性名是合法的, 都可以这样访问
+    // 2. 对象['属性名'], 属性名即便不合法, 也可以访问
+
+
+    // 访问对象属性 —— 查
+    // 对象名.属性名
+    // console.log(person.uname)
+    // console.log(person.age)
+    // // 对象名.方法名() 调用方法
+    // console.log(person.sing('我爱我的祖国')) // 实参
+
+    // // 修改对象的属性
+    // // arr[0] = 1   // arr[0]
+    // // person.uname  //  person.uname = 'xxx'
+    // person.uname = '胡昊'
+    // console.log(person)
+    
+    // // 添加属性 / 方法
+    // person.height = 150
+    // person.playBasketball = function() {
+    //   console.log('我篮球打得非常好! 360度扣篮从三分线开始')
+    // }
+    // console.log(person)
+    // person.playBasketball()
+    
+    // // 删除属性 (了解) 平时很少会用到
+    // delete person.dance
+    // delete person.gender
+    // console.log(person)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let str = '前端90期学的真牛逼!'
+    // // replace() 方法
+    // // 参数1: 要搜索的字符串
+    // // 参数2: 替换成什么
+    // // 返回值: 替换后的字符串
+    // console.log(str.replace('牛逼', '**'))
+    // console.log(str.replace('90', '**'))
+    let str = '前端学科是传智播客的王牌学科, 大家来学习前端, 一定可以高薪就业, 做一个优秀前端人!!'
+    // 只会替换第一个, 使用字符串来替换的弊端
+    // console.log(str.replace('前端', 'web'))
+    
+    // replace() 方法非常强大的地方在于, 第一个参数除了可以传字符串以外, 还可以传入正则表达式
+    // 正则后面可以添加一个修饰符 /前端/g
+    // g: global 全局模式
+    console.log(str.replace(/前端/g, 'web'))
+  </script>
+</body>
+</html>

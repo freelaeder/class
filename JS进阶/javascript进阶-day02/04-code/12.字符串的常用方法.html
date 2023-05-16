@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  用户名: <input type="text"><br>
+  <button>登录</button>
+  <script>
+    // split() 分割字符串
+    // 作用: 根据用户传入的分隔符来切割字符串
+    // 参数: 分隔符
+    // 返回值: 数组, 分割成一段一段的字符串
+    // let str = '今天天气真好哇,鸟语花香,风和日丽'
+    // console.log(str.split(','))
+
+    // startsWith() / endsWith()
+    // 作用: 判断字符串是否以 xxx 开头
+    // 参数1: 要判断的开头字符串
+    // 参数2: 从哪里开始找
+    // 返回值: 布尔值, true 表示是的
+    // let str = '传智播客传播知识'
+    // console.log(str.startsWith('传智'))
+    // console.log(str.startsWith('智', 1))
+    // console.log(str.endsWith('知识'))
+
+    // 应用场景:
+    // let url = 'https://www.baidu.com'
+    // 可以用来判断 url 是不是以 https://www.baidu.com
+
+    // includes() 判断字符串是否包含某段字符
+    // 参数: 要查找的字符串
+    // 返回值: 布尔值, true 表示包含
+    // let str = '龙志豪会喷火'
+    // console.log(str.includes('喷火'))
+    // console.log(str.includes('喷水'))
+
+    // trim()
+    // 作用: 去除字符串两端的空白字符(空格,回车换行,制表符 tab)
+    // 返回值: 新的字符串
+    // let str = '  你好  世界  '
+    // console.log(str.trim())
+
+    const username = document.querySelector('[type=text]')
+    document.querySelector('button').addEventListener('click', function() {
+      // 非空校验
+      if (username.value.trim() === '') {
+        return alert('请输入用户名')
+      }
+      console.log('登录')
+    })
+  </script>
+</body>
+</html>

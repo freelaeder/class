@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 开启严格模式, 去搜一搜
+    "use strict"
+    // 需求: 求和函数, 参数不限数量
+    // 解决方案: arguments 伪数组
+    function sum() {
+      // 它非常特殊, 只存在于 function 函数中
+      // 这个伪数组中装着所有的实参
+      // console.log(arguments)
+      // 求和: 遍历伪数组求和
+      // 不是每一个伪数组都有 forEach
+      // arguments.forEach(function() {})
+      let sum = 0
+      for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+      }
+      return sum
+    }
+
+    // console.log(arguments)
+    // console.log(sum(10, 20, 30))
+    // console.log(sum(10, 20, 30, 40))
+    // console.log(sum(10, 20, 30, 40, 50))
+    // console.log(sum(10, 20, 30, 40, 50, 60))
+
+    // console.log(Math.max(1, 10, 50, 20))
+    // console.log(Math.max(1, 10, 50))
+
+    // 为什么现在不用 arguments 了?
+    // 1. 是剩余参数的出现 ES6 新特性
+    // 2. 性能原因
+
+    function fn(a) {
+      // 开启严格模式后, 无法使用啊 arguments
+      // console.log(arguments.callee) // fn
+      // console.log(a)
+      // console.log(arguments[0])
+      arguments[0] = 50
+      console.log(arguments[0])
+      // arguments 是动态伪数组, 如何理解这个动态?
+      // 如果内部的数据发生变化, 会自动同步到形参
+      console.log(a)
+    }
+    fn(10)
+    // 面试题回答框架: 总分总
+    // 聊一聊 arguments 这个对象
+    // arguments 现在已经被淘汰, 原因有两个:
+    // 1. 因为剩余参数的出现
+    // 2. 性能问题
+    // arguments 就是一个伪数组, 仅存在于 function 中, 它的作用是装载着所有的实参, 因为 arguments 是动态伪数组, 数据变化带来的性能损耗较大, 每次都会同步更新所有参数, 如果参数过多则会出现问题, 在开启严格模式后就会彻底禁用 arguments, 现在开发中基本不用 arguments 了, 可以使用剩余参数完全替代 arguments 的功能
+    // arguments.callee 代表函数本身, 一般用于匿名函数自调用, 后来由于 ES6 的出现, 不让用 arguments 了, 所以 callee 自然也无法使用了, 官方建议给函数起名字
+  </script>
+</body>
+</html>

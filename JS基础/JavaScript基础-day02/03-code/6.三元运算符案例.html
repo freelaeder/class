@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // // 需求: 用户输入 2 个数, 页面弹出较大的那个数
+    // let num1 = +prompt('请输入第一个数')
+    // let num2 = +prompt('请输入第二个数')
+
+    // // 用 if 来写
+    // // if (num1 > num2) {
+    // //   alert(num1)
+    // // } else {
+    // //   alert(num2)
+    // // }
+
+    // // 用三元运算符
+    // // 语法
+    // // 条件 ? 执行的代码1 : 执行的代码2
+    // // 只推荐使用在比较简单的双分支语句情况下
+    // // console.log(num1, num2, num1 > num2)
+    // num1 > num2 ? alert(num1) : alert(num2)
+
+    // 需求: 自动补零
+    // 用户输入一个数字, 如果小于 10 就需要在前面补零, 如果大于等于 10 则不需要
+    let num = +prompt('请输入一个数')
+
+    // 进行判断: num < 10 的时候才需要补零
+    // alert('0' + num)
+    // 三元运算符整个式子会得到一个结果, 这个结果取决于当前满足什么条件
+    num = num < 10 ? '0' + num : num
+    alert(num)
+  </script>
+</body>
+</html>

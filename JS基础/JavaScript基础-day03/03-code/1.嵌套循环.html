@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+      width: 80px;
+      border: 1px solid #000;
+      padding: 8px;
+      margin: 2px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 嵌套循环
+    // 每天记单词: 一共记三天 每天记五个单词
+    // 外层循环表示天数
+    // for (let i = 1; i <= 3; i++) {
+    //   document.write(`今天是第${i}天<br>`)
+    //   // 内层循环表示单词数量
+    //   for (let j = 1; j <= 5; j++) {
+    //     document.write(`今天记了${j}个单词<br>`)
+    //   }
+    // }
+    // 嵌套循环的特点小结:
+    // 外层循环执行一次, 内层循环要执行完所有循环次数
+    // 一般习惯外层循环变量用 i 内层循环变量用 j
+
+    // let row = +prompt('请输入行数')
+    // let col = +prompt('请输入列数')
+
+    // // 案例: 打印 5 行 5 列的星星
+    // // 外层 for 循环控制的是打印多少行
+    // for (let i = 1; i <= row; i++) {
+    //   // 内层 for 循环表示打印 5 颗星星
+    //   for (let j = 1; j <= col; j++) {
+    //     document.write('☆')
+    //   }
+    //   // 每次 5 颗星星打印后需要换行
+    //   document.write('<br>')
+    // }
+    // 拓展练习: 让用户自己输入星星的行数和列数
+    
+    // 画三角形
+    // 外层循环控制行数
+    // for (let i = 1; i <= 5; i++) {
+    //   // 内层循环控制每行的个数
+    //   for (let j = 1; j <= i; j++) {
+    //     document.write('☆')
+    //   }
+    //   document.write('<br>')
+    // }
+    // 额外小需求: 自己用调试工具断点调试一下执行流程
+
+    // 九九乘法表
+    // 式子里有两个运算数
+    // 1 x 1
+    // 1 x 2  2 x 2
+    // 1 x 3  2 x 3  3 x 3
+    // 右边的运算数正好和行数一样
+    // 左边的运算数正好和列数(每行有多少个)一样
+    for (let i = 1; i <= 9; i++) {
+      // 内层循环控制每行的个数
+      for (let j = 1; j <= i; j++) {
+        document.write(`<span>${j} x ${i} = ${j * i}</span>`)
+      }
+      document.write('<br>')
+    }
+  </script>
+</body>
+</html>

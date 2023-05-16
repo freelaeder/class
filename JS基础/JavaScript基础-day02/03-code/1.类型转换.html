@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 获取的是字符串类型
+    // let price1 = prompt('请输入价格1')
+    // let price2 = prompt('请输入价格2')
+    // console.log(typeof price1)
+    // alert(price1 + price2)
+    // 数据类型转换
+    // 显式转换
+
+    // 将其他类型转成 number 类型
+    // 1. Number(要转换的数据)
+    // let p1 = Number(price1)
+    // let p2 = Number(price2)
+    // console.log(p1, p2)
+
+    // alert(p1 + p2)
+    // 在 + 左右两侧任意一方是字符串, 都表示字符串的拼接
+
+    // Number() 虽好, 但是无法转换混合字符串, 如果字符串中有非数字, 则会转成 NaN
+    // let price = '500元'
+    // let p1 = Number(price) // NaN 不是一个数字
+    // console.log(p1)
+
+    // 2. parseInt(要转换的数据) 极其推荐! 
+    // 注意事项: 开头是数字, 会自动舍弃数字后的字符串, 必须保证开头是数字, 否则一样也是 NaN
+    // let price = '500.9 元!'
+    // let p1 = parseInt(price)
+    // console.log(p1)
+    // console.log(typeof p1)
+
+    // 3. parseFloat(要转换的数据)
+    // 注意事项同 parseInt()
+    // let price = '500.9 元!'
+    // let p1 = parseFloat(price)
+    // console.log(p1)
+    // console.log(typeof p1)
+
+    // 布尔转数字 true 为 1 false 为 0
+    // let isLogin = false
+    // // let l1 = Number(isLogin)
+    // console.log( Number(isLogin) )
+    // // undefined 转数字 了解即可
+    // let age // age 是 undefined 转成数字就是 NaN
+    // console.log(parseInt(age))
+    // // null 转数字 了解即可
+    // let uname = null
+    // console.log(Number(uname)) // 0
+
+    // 将其他类型转为布尔值 boolean
+    // 只有以下 6 种情况转成布尔值是 false 其余都是 true
+    // false 0 '' undefined null NaN 都有一个共性的表达: 无 没有 有一种否定的表达, 所以不需要死记硬背
+    // Boolean(要转换的数据) 显式转换
+    // console.log(Boolean(false))
+    // console.log(Boolean(0))
+    // console.log(Boolean(''))
+    // console.log(Boolean(undefined))
+    // console.log(Boolean(null))
+    // console.log(Boolean(NaN))
+    // // 在字符串中只有 '' 是 false
+    // console.log(Boolean(' ')) // 空格也是字符
+    // console.log(Boolean(-1))
+
+    // 其他类型转字符串
+    // 1. String(要转的数据)
+    console.log(String(123))
+    console.log(String(undefined))
+    console.log(String(true))
+    // 2. 要转的数据.toString(进制)
+    // 生活中都用 10 进制, 程序中其实有很多种进制
+    // 例如: 16 进制  0 - 9 ABCDEF, 用于颜色
+    // 2 进制, 最底层执行的代码 01
+    let age = 18 
+    console.log(age.toString(2))
+  </script>
+</body>
+</html>

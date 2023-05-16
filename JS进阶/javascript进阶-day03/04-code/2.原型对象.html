@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+      // this.sayHi = function() {
+      //   console.log('你好哇')
+      // }
+    }
+
+    // 原型对象:
+    // 所有的构造函数都有一个属性: prototype
+    // 它是一个对象, 所以我们称它为原型对象
+    // console.log(Person.prototype)
+    // 特点:
+    // 1. 所有通过构造函数创建出来的实例对象, 都可以访问原型对象中的成员
+    // 2. 实例对象创建时, 不会重复创建原型对象, 每个构造函数的原型对象是唯一的, 因为它是跟随构造函数走的
+    // 3. 对象会优先找自己身上的属性和方法, 找不到才去原型上查找属性和方法, 就近原则
+    Person.prototype.sayHi = function() {
+      console.log('你好哇, 我是原型的 sayHi')
+    }
+
+    Person.prototype.name = '我是原型的名字'
+
+    const zs = new Person('张三', 18)
+    // zs.name = '张三'
+    console.log(zs)
+    zs.sayHi()
+    
+    const ls = new Person('李四', 19)
+    // ls.name = '李四'
+    console.log(ls)
+    ls.sayHi()
+
+    // 测试 zs.sayHi 和 ls.sayHi 是否为同一个 sayHi
+    console.log(zs.sayHi === ls.sayHi)
+
+    const arr = ['陈厚霖', '龚皓']
+    arr.push('李紫薇')
+    console.log(arr)
+    console.log(Array.prototype)
+
+    // 需求: 10 mins
+    // 1. 创建一个构造函数 Student
+    // 2. 学生需要具备姓名 / 年龄 / 性别 属性
+    // 3. 所有的学生都是 90 期这个班级的
+    // 4. 所有的学生都具备学习的方法
+  </script>
+</body>
+</html>

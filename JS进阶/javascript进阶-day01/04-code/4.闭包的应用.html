@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>点我延迟 5 秒打印宽度</button>
+  <script>
+    // 需求: 统计函数的调用次数
+    // 全局变量, 所有人都可以随意访问, 这种数据就叫公共数据, 极其容易被篡改, 导致出现一些严重的 bug
+    function getCount() {
+      // 把 count 变成了私有的变量, 只有在内部才能修改
+      let count = 0
+      function fn() {
+        count++
+        console.log(`我被调用了${count}次`)
+      }
+      return fn
+    }
+
+    let result = getCount()
+    result()
+    result()
+    result()
+
+    // 总结:
+    // 闭包是什么:
+    // 闭包就是函数的嵌套, 内层函数访问了外层函数的局部变量
+    // 闭包有什么用:
+    // 实现变量的私有化, 让外面的人无法修改内部的变量
+    // 闭包会产生什么现象或问题:
+    // 1. 内存泄漏
+    // 2. 本该被释放的变量, 无法及时释放, 会存在闭包空间中
+
+    document.querySelector('button').addEventListener('click', function() {
+      const w = this.offsetWidth
+      setTimeout(function() {
+        console.log(w)
+      }, 5000)
+    })
+  </script>
+</body>
+</html>

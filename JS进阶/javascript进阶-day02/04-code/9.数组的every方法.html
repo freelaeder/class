@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 数组的 every() 方法
+    // 作用: 遍历数组中所有元素, 遍历过程都返回 true 就返回 true, 否则就是 false
+    // 遍历数组中所有的元素, 判断有没有不符合条件的元素, 只要有一个不符合条件就返回 false
+    // 必须所有元素都满足条件才会是 true
+    const ages = [18, 15, 13, 8, 10]
+    // 希望判断所有人都是未成年, 只要有一个不是未成年就不允许进来
+    // 需求: 所有的数都满足小于等于 18
+    // 假设法
+    // let flag = true
+    // ages.forEach(item => {
+    //   if (item > 18) {
+    //     flag = false
+    //   }
+    // })
+    // console.log(flag)
+
+    // every() 专门解决这个需求
+    // 原理: 遍历数组, 每一个元素进行判断, 只要有一个返回的是 false, 整个 every 结果就是 false
+    console.log(ages.every(item => item <= 18))
+
+    // some()
+    // 原理: 遍历数组, 每一个元素进行判断, 只要有一个返回时 true, 整个 some 结果就是 true
+
+    // 总结:
+    // some 是只要有一个满足条件就返回 true
+    // every 是必须每一个都满足条件才返回 true, 只要有一个不满足就是 false
+  </script>
+</body>
+</html>

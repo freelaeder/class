@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 程序生成一个随机数 1 ~ 10 之间(整数), 用户输入一个数字, 返回猜的是否正确, 如果不正确需要提示猜大了还是小了并让用户继续猜
+
+    // 1. 生成一个随机数 1 ~ 10 之间的整数
+    let random = Math.floor(Math.random() * 10) + 1
+    // console.log(random)
+    // 2. 无限循环让用户猜, 直到猜对了才停止循环
+    while (true) {
+      let num = +prompt('请您猜一个数字:')
+      if (num < random) {
+        alert('猜小了, 继续猜!')
+      } else if (num > random) {
+        alert('猜大了, 继续猜!')
+      } else {
+        alert('恭喜您, 猜对了!')
+        // 退出循环
+        break
+      }
+    }
+  </script>
+</body>
+</html>

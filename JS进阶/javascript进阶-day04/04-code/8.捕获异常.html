@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    今天天气真好!
+  </div>
+  <script>
+    // 异常处理语法: try {} catch(error) {} finnaly {}
+    // 使用 try 包裹可能出错的代码
+    try {
+      const box = document.querySelector('.box')
+      // 想在哪里打断点就在哪里写 debugger
+      // 在未来学习框架的时候非常方便!
+      debugger
+      box.style.color = 'yellowgreen'
+    } catch (error) {
+      // console.log(error)
+      // 捕获了错误, 但是不做任何处理
+      // 提醒用户: 错误设置颜色失败
+      alert('未知错误,颜色设置失败')
+    } finally {
+      console.log('最后一定会执行的代码')
+    }
+    console.log('你好哇, 我想写代码')
+
+    // 总结:
+    // try 里面的代码有可能会出错, 如果出错会进入到 catch, 代码不会终止, 继续往后执行
+    // 如果有 finally, 则不论成功还是失败都会执行 finally 中的代码
+    // 错误处理一般广泛运用于网络请求中, 因为网络请求是未知的, 受多方因素影响, 例如: 网速 / 网络稳定性 / 用户中断 ...
+  </script>
+</body>
+</html>

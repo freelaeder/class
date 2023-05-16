@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '龙志豪',
+      family: {
+        father: '龙傲天'
+      },
+      hobby: ['喷火', '洒水', '吃沙尘暴炒饭'],
+      lover: undefined,
+      eat: function() {}
+    }
+
+    // 1. 封装递归函数
+    function cloneDeep(oldObj) {
+      // let newObj
+      // if (Array.isArray(oldObj)) {
+      //   newObj = []
+      // } else {
+      //   newObj = {}
+      // }
+      // 
+      // 2. 判断要拷贝的是对象还是数组
+      let newObj = Array.isArray(oldObj) ? [] : {}
+      // 3. 遍历老对象, 把属性复制到新对象中 
+      // 此处为止只能算浅拷贝
+      for (let k in oldObj) {
+        // console.log(k, oldObj[k])
+        if (typeof oldObj[k] === 'object') {
+          // 深拷贝
+          newObj[k] = cloneDeep(oldObj[k])
+        } else {
+          // oldObj[k] > 这不是旧对象的值吗?
+          // obj['name'] = 'zs'
+          // obj.name = 'zs'
+          // obj.name
+          // obj['name']
+          // newObj[k] > 获取新对象的值吗?
+          newObj[k] = oldObj[k] 
+        }
+      }
+      return newObj
+    }
+
+    const newObj = cloneDeep(obj)
+    // const newObj = cloneDeep([])
+    newObj.family.father = '李傲天'
+    console.log(obj)
+    console.log(newObj)
+
+    const obj2 = {
+      name: 'zs',
+      age: 18
+    }
+    cloneDeep(obj2)
+
+    // const arr = [1, 2, 3]
+    // cloneDeep(arr)
+  </script>
+</body>
+</html>

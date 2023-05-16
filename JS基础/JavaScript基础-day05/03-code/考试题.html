@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function getSum(num1, num2) {
+    //   let sum = 0
+    //   for (let i = num1; i <= num2; i++) {
+    //     sum += i
+    //   }
+    //   return sum
+    // }
+
+    // console.log(getSum(1, 3))
+
+function getSumOrAvg(arr, isSum = true) {
+  if (isSum) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i]
+    }
+    return sum
+  } else {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i]
+    }
+    return sum / arr.length
+  }
+}
+
+function getSumOrAvg(arr, isSum = true) {
+  let sum = 0
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i]
+  }
+
+  if (isSum) {
+    return sum
+  } else {
+    return sum / arr.length
+  }
+}
+
+    console.log(getSumOrAvg([1, 2, 3], false))
+  </script>
+</body>
+</html>

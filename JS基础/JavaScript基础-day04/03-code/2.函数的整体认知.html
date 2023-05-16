@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 函数是有参数和返回值的
+    // 可以想象成榨汁机, 用户投递什么原料, 最后就会得到什么汁水
+    // 参数: 由调用者传入的数据
+    // 返回值: 函数执行完后, 将结果返回给调用者
+    // 语法:
+    // function 函数名(参数1, 参数2, 参数3...) {
+    //   进行函数内部的操作
+    //   return 结果
+    // }
+    function sum(x, y) {
+      // console.log(x + y)
+      // 运算完后把结果交给调用者
+      return x + y
+    }
+
+    // 调用函数时, 传入参数
+    let result1 = sum(10, 50)
+    document.write(result1)
+
+    let result2 = sum(100, 200)
+    console.log(result2)
+
+    // 总结:
+    // 函数如果没有参数和返回值, 那只一个包裹代码的工具, 非常不灵活
+    // 参数相当于是榨汁机的入口, 可以自行决定投递什么食材
+    // 返回值相当于是榨汁机的出口, 处理完后给出结果到调用者, 等同于出汁水了!
+  </script>
+</body>
+</html>

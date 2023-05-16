@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 初始的钱
+    let money = 100
+    // 1. 无限循环提醒用户
+    while (true) {
+      let num = +prompt(`请选择您的操作:
+        1. 取款
+        2. 存款
+        3. 查看余额
+        4. 退出
+      `)
+      
+      // if 和 switch 的选择:
+      // switch (用户输入的是固定的 1/2/3/4)
+      // switch (num) {
+      //   // 2. 用户输入 4 就退出循环
+      //   // 退出循环要用到 break
+      //   // 这个 break 和 switch 的 break 重名了, 所以不能使用 switch
+      //   case 4:
+      //     break
+      //     break
+      // }
+
+      // 最终结论: 使用 if
+      if (num === 4) {
+        document.write(`欢迎下次光临, 您现在的余额是:${money}元`)
+        break
+      } else if (num === 1) {
+        // 取款 (减法)
+        let qu = +prompt('请问您想取多少钱?') 
+        // money = money - qu
+        money -= qu
+      } else if (num === 2) {
+        // 存款
+        let cun = +prompt('请问您想存多少钱?') 
+        money += cun
+      } else if (num === 3) {
+        // 查看余额
+        alert(money)
+      }
+    }
+  </script>
+</body>
+</html>

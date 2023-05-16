@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h3>小黑水果店</h3>
+    <ul>
+      <!--
+        v-for 写在 li 上就是重复渲染 li
+        语法:
+          v-for="(每一项, 索引) in 数组"
+       -->
+      <li v-for="(item, index) in list">{{ item }} --- {{ index }}</li>
+    </ul>
+    <button @click="change">修改数组中第二个元素</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标: 使用 v-for 循环渲染 li
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        list: ['西瓜', '苹果', '鸭梨', '榴莲']
+      },
+      methods: {
+        change() {
+          // Vue 不会重新渲染
+          // this.list[1] = '香蕉'
+
+          // Vue 会重新渲染的情况:
+          // 1. 规定的 7 个方法: push pop shift unshift splice sort reverse 都会改变原数组
+          // filter() => 不会修改原数组, 就不会重新渲染
+          // 2. 给数组重新赋值
+          // this.list = ['西瓜', '香蕉', '鸭梨', '榴莲']
+          // 3. Vue 提供了一个 API: this.$set()
+          // this.$set 内部就是对 splice 的封装
+          // function $set(arr, index, content) {
+          //   arr.splice(index, 1, content)
+          // }
+          // this.$set(this.list, 1, '香蕉')
+          this.list.splice(1, 1, '香蕉')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

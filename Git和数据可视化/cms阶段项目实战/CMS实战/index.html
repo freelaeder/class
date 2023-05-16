@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 导入bootstrap -->
+  <script src="./assets/lib/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./assets/lib/bootstrap/bootstrap.min.css" />
+  <script src="./assets/lib/bootstrap/bootstrap.min.js"></script>
+  <!-- bootstrap提示框 -->
+  <script src="./assets/lib/toasts.js"></script>
+  <!-- 导入字体图标 -->
+  <link rel="stylesheet" href="./assets/iconfont/iconfont.css" />
+  <!-- 导入axios + axios全局配置 -->
+  <script src="./assets/lib/axios.js"></script>
+  <script src="./assets/utils/request.js"></script>
+  <!-- 导入自己写的css -->
+  <link rel="stylesheet" href="./assets/css/index.css" />
+
+  <title>学员管理首页</title>
+</head>
+
+<body>
+  <div class="viewport">
+    <div class="leftside">
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo2.png" alt="logo" />
+      </a>
+      <ul class="nav">
+        <li><a href="./student.html" target="myframe">学员信息</a></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="./score.html" target="myframe">分数管理</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="top">
+        <div class="menu">
+        
+        </div>
+        <div class="init">点我初始化数据</div>
+        <div class="user">
+          <img class="avatar" src="./assets/images/avatar.png" alt="" />
+          <span>Admin</span>
+        </div>
+        <div class="logout">
+          <a href="javascript:;">
+            <span class="iconfont icon-tuichu"></span>
+            退出
+          </a>
+        </div>
+      </div>
+      <div class="content">
+        <iframe frameborder="0" src="./student.html" name="myframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页面js代码 -->
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

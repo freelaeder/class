@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    // 原型对象中方法的 this 指向: 调用者, 实例对象
+    Person.prototype.sayHi = function() {
+      console.log('你好哇, 我是' + this.name)
+      console.log(this)
+    }
+
+    // console.log(this)
+    // Person.prototype.sayHi = () => {
+    //   // 此时 this 指向 window
+    //   console.log('你好哇, 我是' + this.name)
+    //   console.log(this)
+    // }
+
+    // 注意事项:
+    // 1. 构造函数不能是箭头函数, 因为箭头函数的 this 指向和当前环境有关
+    // 2. 原型的函数要根据情况判断, 如果用了箭头函数意味着 this 不再指向实例对象
+
+    const zs = new Person('张三', 18)
+    zs.sayHi()
+    
+    const ls = new Person('李四', 19)
+    ls.sayHi()
+  </script>
+</body>
+</html>

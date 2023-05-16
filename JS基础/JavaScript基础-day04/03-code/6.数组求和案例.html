@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 数组求和
+    // 需求: 用户传入什么数组, 求和后返回结果
+    function sumArray(array = []) {
+      // 形参可以理解为函数内部定义的变量
+      // 对这一段求和的功能进行封装
+      // 用于累加
+      let sum = 0
+      for (let i = 0; i < array.length; i++) {
+        sum += array[i]
+      }
+      // console.log(sum)
+      return sum
+    }
+
+    let arr1 = [11, 22, 66, 22]
+    let arr2 = [88, 322, 166, 22, 1]
+
+    // let result1 = sumArray(arr1)
+    // let result2 = sumArray(arr2)
+
+    document.write( sumArray(arr1) )
+    console.log( sumArray(arr2) )
+    sumArray()
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 递归: 函数自己调用自己
+    // 注意事项:
+    // 必须要有结束的条件, return
+    // 如果没有会导致栈溢出错误
+    let i = 0
+    function fn() {
+      i++
+      console.log('我在不断执行' + i)
+      if (i === 3) {
+        return 
+      }
+      fn()
+    }
+    fn()
+
+    // 案例: 使用递归函数结合 setTimeout 实现类似于 setInterval 的效果
+    // 每秒打印当前时间
+    function timeFn() {
+      console.log(new Date().toLocaleString())
+      setTimeout(timeFn, 1000)
+    }
+    timeFn()
+  </script>
+</body>
+</html>

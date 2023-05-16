@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <p>我是 ul 前面的 p</p>
+  <ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+  </ul>
+  <div>我是 ul 后面的 div</div>
+  <script>
+    const ul = document.querySelector('ul')
+    // const lis = document.querySelectorAll('li')
+    // console.log(lis)
+    // 获取 ul 的所有子元素
+    console.log(ul.children)
+
+    // 获取兄弟元素
+    // ul 的上一个兄弟元素
+    console.log(ul.previousElementSibling)
+    // ul 的下一个兄弟元素
+    console.log(ul.nextElementSibling)
+  </script>
+</body>
+
+</html>

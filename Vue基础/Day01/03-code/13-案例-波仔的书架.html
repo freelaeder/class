@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h3>小黑的书架</h3>
+    <ul>
+      <!-- 1. 使用 v-for 循环渲染 li -->
+      <li v-for="item in booksList">
+        <span>{{ item.name }}</span>
+        <span>{{ item.author }}</span>
+        <!-- 2. 使用 v-on 给删除按钮绑定点击事件 -->
+        <button @click="del(item.id)">删除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标:
+     *  1. 渲染书籍信息
+     *  2. 实现删除功能
+     * 
+     * 思路:
+     *  1. 使用 v-for 循环渲染 li
+     *  2. 使用 v-on 给删除按钮绑定点击事件
+     *  3. 点击后传入 id
+     *  4. 根据 id 删除数据
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        booksList: [
+          { id: 1, name: '《红楼梦》', author: '曹雪芹' },
+          { id: 2, name: '《西游记》', author: '吴承恩' },
+          { id: 3, name: '《水浒传》', author: '施耐庵' },
+          { id: 4, name: '《三国演义》', author: '罗贯中' }
+        ]
+      },
+      methods: {
+        // 3. 点击后传入 id
+        del(id) {
+          // 4. 根据 id 删除数据 4.1 和 4.2 任选其一去实现即可
+          // console.log('我要删除', id)
+          // 4.1 根据 id 找到索引, 根据索引删除元素
+          // forEach map reduce find findIndex
+          // const index = this.booksList.findIndex(item => item.id === id)
+          // this.booksList.splice(index, 1)
+
+          // 4.2 filter 筛选不符合 id 的元素, 把新数组覆盖回老数组
+          // filter 不会修改原数组, 返回一个新数组
+          this.booksList = this.booksList.filter(item => item.id !== id)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

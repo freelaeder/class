@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多级对象解构</title>
+</head>
+
+<body>
+  <script>
+    // // 对象解构重命名
+    // const user = {
+    //   name: '张三',
+    //   age: 18
+    // }
+
+    // // 解构并重命名变量
+    // let { name: username, age } = user
+
+    // console.log(username, age)
+
+    // 多级对象解构
+    // 练习 1：要求把所有家庭成员解构出来
+    // const pig = {
+    //   name: '佩奇',
+    //   family: {
+    //     mother: '猪妈妈',
+    //     father: '猪爸爸',
+    //     sister: '乔治'
+    //   },
+    //   age: 6
+    // }
+
+    // let { name, age, family: { mother, father, sister } } = pig
+    // console.log(name, age, mother, father, sister)
+
+    // 练习2：要求把所有家庭成员解构出来
+    const person = [
+      {
+        name: '佩奇',
+        family: {
+          mother: '猪妈妈',
+          father: '猪爸爸',
+          sister: '乔治'
+        },
+        age: 6
+      }
+    ]
+
+    let [{ name, age, family: { mother, father, sister } }] = person
+    console.log(name, age, mother, father, sister)
+  </script>
+</body>
+
+</html>

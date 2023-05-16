@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 隐式转换: 在参与运算的过程中, 某些运算符会自动进行转换, 不需要程序员人为干预
+    // 1. 转为数字型
+    // a. 算术运算符 (- * / %) 会自动转换
+    // 因为 + 如果遇到字符串, 就是拼接
+    // let age = '18'
+    // // console.log(age - 2)
+    // // console.log(age / 3)
+    // // b. 比较运算符, 除了全等都会转
+    // console.log(age < 20)
+    // console.log(age == 18)
+    // console.log(age === 18)
+    // // c. 正号会进行转换 + 放在字符串前面, 就是正号
+    // console.log(+age)
+
+    // 2. 转成字符串型
+    // let age = 18
+    // console.log(age + '岁')
+
+    // 3. 转成布尔型
+    let age = 18
+    // console.log(Boolean(age))
+    // ! 取反, 一元运算符, 逻辑运算
+    // ! 按理说只能对布尔值进行使用, 但 age 不是布尔值, 所以会先隐式转换成布尔值, 后取反
+    console.log(!age)
+
+    // 实际开发场景, 将来我们会做登录功能, 所谓的登录功能就是登录成功后, 服务器会给一个 '令牌' 让我们存储起来, 令牌就是一个字符串
+    // 将来我们可以根据本地是否有这个令牌来判断用户是否登录
+  </script>
+</body>
+</html>

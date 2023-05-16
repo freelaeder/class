@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 有两个变量, 分别存储着苹果汁和橙子汁
+    let cup1 = '苹果汁'
+    let cup2 = '橙子汁'
+
+    // 1. 声明一个临时变量 temp
+    let temp
+
+    // 2. 将 cup1 的苹果汁倒入 temp
+    temp = cup1
+    
+    // 3. 将 cup2 的橙子汁倒入 cup1
+    cup1 = cup2
+    
+    // 4. 将 temp 的苹果汁倒入 cup2
+    cup2 = temp
+
+    // 输出看结果
+    // console.log(cup1)
+    // console.log(cup2)
+    console.log(cup1, cup2, temp)
+  </script>
+</body>
+</html>

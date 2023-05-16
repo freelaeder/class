@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arr = [1, 2, 3]
+    const arr2 = [10, 20, 30]
+    // 求最大值方法应该加在原型对象上, 让所有的数组都具备求最大值的能力
+    Array.prototype.max = function() {
+      // 怎么求最大值?
+      // ... 展开运算符
+      return Math.max(...this)
+    }
+
+    // 此处给原型加方法, 可以用箭头函数吗?
+    // 不可以
+    Array.prototype.sum = function() {
+      return this.reduce((prev, item) => prev + item, 0)
+    }
+
+    console.log(arr.max())
+    console.log(arr2.max())
+    console.log(arr.sum())
+    console.log(arr2.sum())
+    // 扩展一个 min 求最小值
+  </script>
+</body>
+</html>

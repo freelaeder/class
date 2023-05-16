@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    Person.prototype.sayHi = function() {}
+
+    // __proto__ 不是标准属性, 在浏览器中已经将其弱化显示: [[Prototype]]
+    const zs = new Person('张三', 18)
+    console.log(zs.__proto__ === Person.prototype)
+    const ls = new Person('李四', 19)
+    console.log(ls.__proto__ === Person.prototype)
+    console.log(zs.__proto__ === ls.__proto__)
+
+    console.log(zs)
+  </script>
+</body>
+</html>

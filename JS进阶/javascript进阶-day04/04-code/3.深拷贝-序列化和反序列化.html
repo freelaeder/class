@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '龙志豪',
+      family: {
+        father: '龙傲天'
+      },
+      hobby: ['喷火', '洒水', '吃沙尘暴炒饭'],
+      lover: undefined,
+      eat: function() {}
+    }
+
+    // 需求: 拷贝一个新的对象, 修改对象内的引用数据类型属性, 也不会对原对象有任何影响
+    // 浅拷贝无法实现需求
+    // 深拷贝
+    // 利用 JSON 的序列化和反序列化机制, 取巧的方案, 非常简单好用
+    // 序列化: 将对象转成字符串 JSON.stringify()
+    // 反序列化: 将字符串转成对象 JSON.parse()
+    // const str = JSON.stringify(obj)
+    console.log(str)
+    // const newObj = JSON.parse(str)
+    const newObj = JSON.parse(JSON.stringify(obj))
+
+    // console.log(obj === newObj)
+    // console.log(obj.family === newObj.family)
+    // console.log(obj.hobby === newObj.hobby)
+
+    newObj.name = '李紫薇'
+    newObj.family.father = '李傲天'
+    newObj.hobby[0] = '喝水'
+    console.log(obj)
+    console.log(newObj)
+
+    // 注意事项:
+    // 使用 JSON.stringify 和 JSON.parse 进行深拷贝, 无法拷贝 undefined 和 function
+  </script>
+</body>
+</html>

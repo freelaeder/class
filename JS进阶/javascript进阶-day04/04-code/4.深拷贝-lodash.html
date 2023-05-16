@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/lodash.min.js"></script>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '龙志豪',
+      family: {
+        father: '龙傲天'
+      },
+      hobby: ['喷火', '洒水', '吃沙尘暴炒饭'],
+      lover: undefined,
+      eat: function() {}
+    }
+
+    // 需求: 拷贝一个新的对象, 修改对象内的引用数据类型属性, 也不会对原对象有任何影响
+    // 浅拷贝无法实现需求
+    // 深拷贝
+    // 使用 lodash 的深拷贝方法
+    // 参数: 需要深拷贝的对象
+    // 返回值: 拷贝好的新对象
+    // 连同 undefined 和函数一并拷贝过来
+    const newObj = _.cloneDeep(obj)
+
+    // console.log(obj === newObj)
+    // console.log(obj.family === newObj.family)
+    // console.log(obj.hobby === newObj.hobby)
+
+    newObj.name = '李紫薇'
+    newObj.family.father = '李傲天'
+    newObj.hobby[0] = '喝水'
+    console.log(obj)
+    console.log(newObj)
+
+    // 相较于序列化和反序列化的优势是更完善
+    // 缺点是需要额外引入一个第三方的 js 文件, 增加项目体积
+  </script>
+</body>
+</html>

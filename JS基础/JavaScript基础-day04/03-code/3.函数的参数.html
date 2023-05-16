@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 参数:
+    // 1. 形式参数
+    // 在函数定义时, 小括号内的就是形参, 在定义函数时, 我也不知道参数的值是什么, 所以它就是形式上的一个参数, 可以理解为一个变量, 没赋值
+    // 2. 实际参数
+    // 在函数调用时, 小括号内传递进去的数据, 就表示具体的值了
+    // 执行过程: 调用函数时, 会将实参的值赋给形参
+    function sum(x, y) {
+      // console.log(x, y) // 10 + undefined 结果是 NaN
+      return x + y
+    }
+
+    // sum(1, 2)
+    // let a = 55
+    // let b = 66
+    // sum(a, b)
+
+    // 注意事项: 如果形参和实参的数量不一致会怎么样?
+    // 这是 JS 的特点, 其他很多语言是不允许这样的, 例如 java c#, 这些语言严格要求实参和形参数量一致
+    // 但是 JS 是一门极其灵活的语言, 没有这个要求
+    // 1. 实参比形参多 —— 会丢弃多余的实参
+    // console.log( sum(10, 20, 30) )
+    // 2. 实参比形参少 —— 没接收到实参的形参值为 undefined
+    // 所谓的参数传递, 就是实参给形参赋值, 形参就是一个变量
+    console.log( sum(10) )
+  </script>
+</body>
+</html>

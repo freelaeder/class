@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+      width: 80px;
+      border: 1px solid #000;
+      padding: 8px;
+      margin: 2px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 函数: 一个代码块, 可以封装一段代码, 重复使用
+    // 1. 定义函数
+    // function 函数名() {
+    //   // 函数体
+    //   // 要封装的代码
+    // }
+    // function sum() {
+    //   // 求和功能: 求 x 和 y 的和
+    //   let x = 10
+    //   let y = 20
+    //   console.log(x + y)
+    // }
+    // // 2. 调用函数
+    // // 函数名()
+    // sum()
+
+    // 复用: 代码重复使用
+    // 加强练习: 自行封装一个九九乘法表的函数
+    // function export99() {
+    //   for (let i = 1; i <= 9; i++) {
+    //     // 内层循环控制每行的个数
+    //     for (let j = 1; j <= i; j++) {
+    //       document.write(`<span>${j} x ${i} = ${j * i}</span>`)
+    //     }
+    //     document.write('<br>')
+    //   }
+    // }
+
+    // // 调用函数
+    // export99()
+    // export99()
+    // export99()
+
+    // 总结: 函数最大的好处是将重复的代码封装起来, 多次使用只需要调用函数即可
+    // 注意点:
+    // 1. 命名规则与规范和变量一样, 建议小驼峰
+    // 2. 一般我们都习惯用动词来命名  do something... 做某些事情...
+    // parse: 解析   Int: 整数 integer
+    // 例如: alert()  parseInt() prompt() Number() Boolean() String()...
+    // 上面的这些函数我们有定义吗?
+    // alert() // 调用
+    // 为什么可以直接调用? 这些都是内置函数 (浏览器和 JS 提供的)
+    
+    // 封装一个函数, 计算 1 ~ 100 的累加和
+    // 变量名和函数名不能用同一个, 会产生冲突!!!
+    function sum100() {
+      let sum = 0
+      for (let i = 1; i <= 100; i++) {
+        sum += i
+      }
+      console.log(sum)
+    }
+
+    sum100()
+    sum100()
+    sum100()
+  </script>
+</body>
+</html>

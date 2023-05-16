@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [4, 2, 55, 6, 20]
+
+    // 1. 定义两个变量, sum(总和) avg(平均数)
+    let sum = 0
+    let avg = 0
+
+    // 2. 循环遍历数组的每一个元素
+    for (let i = 0; i < arr.length; i++) {
+      // 3. 使用 sum 与每一项进行累加
+      // sum = sum + arr[i]
+      sum += arr[i]
+    }
+    
+    // 4. 计算平均值
+    avg = sum / arr.length
+    console.log(`总和是: ${sum}, 平均值是: ${avg}`)
+  </script>
+</body>
+</html>

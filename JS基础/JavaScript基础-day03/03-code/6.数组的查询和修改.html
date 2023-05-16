@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = ['大聪明小兰子', 'JS王-耀文哥', '小心超人', '龚浩驾到', '带带大师兄']
+
+    // 查询
+    console.log(arr[1])
+    // 修改
+    arr[1] = 'HTML王-耀文哥'
+    // 特殊情况: 修改超过数组长度的元素时, 等于是添加, 不建议这么干!!! 工作中千万别这么做! 因为会导致中间的数据为 undefined, 数组就不连续了
+    // arr[6] = '前端之父小篮子'
+    // console.log(arr[5])
+    // console.log(arr)
+
+    // 等于变相的向数组中追加一个元素
+    // 这样做可以保证数组是连续的, 但依然不够优雅
+    // 不推荐
+    arr[5] = '前端之父小篮子'
+    console.log(arr)
+  </script>
+</body>
+</html>

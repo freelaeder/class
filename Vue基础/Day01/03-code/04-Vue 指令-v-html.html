@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>{{ msg }}</div>
+    <!-- 
+      v-html: 设置元素的 innerHTML
+      v-html="表达式"
+      注意: 如果使用了 v-html 则标签内不能再写内容了, 会被 v-html 的结果覆盖掉
+    -->
+    <div v-html="msg">123</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标:
+     *   将带有标签的 msg 数据解析标签并渲染到 div 中
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '<h1>学前端~来黑马！</h1>'
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

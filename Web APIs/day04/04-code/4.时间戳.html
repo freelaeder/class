@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 时间戳
+    // 一种计算机中计量时间的同一单位, 从 1970 年 1 月 1 日 0:0:0 开始至指定时间的毫秒值
+    // 1. date对象.getTime()
+    // 2. +new Date()
+    // 3. Date.now() 只能获取当前时间
+    console.log(Date.now())
+    console.log(+new Date())
+    const d = new Date()
+    console.log(d.getTime())
+
+    // 比较推荐使用 +new Date()
+    // console.log(+new Date('2023-03-27 18:20:00'))
+    const endTime = +new Date('2023-03-27 18:20:00')
+    console.log('距离下课还有:', (endTime - +new Date()) / 1000 / 60 / 60)
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    {{ msg }}
+    {{ count }}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <script>
+    /**
+     * 目标: 理解响应式数据的特性
+     * 好处: 程序员以后不用再操心视图如何渲染了, 把精力全部放在操作数据上面, 只要数据变化, 视图会自动更新
+     */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        // 响应式数据 → 数据变化了，视图自动更新
+        msg: '你好，黑马',
+        count: 100
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // i 是定义在 for 里的
+    // for (let i = 0; i < 3; i++) {
+    //   document.write('你好哇!')
+    // }
+    // console.log(i)
+
+    // function fn() {
+    //   let num = 20
+    // }
+
+    // fn()
+    // console.log(num)
+
+    // 作用域: 变量作用的范围, 这个变量在哪里可以使用, 在哪里不可以使用
+    // 作用: 提高程序逻辑的局部性, 避免出现大量的命名冲突
+    // JS 的作用域分为全局作用域和局部作用域
+    // 1. 全局作用域
+    // 全局作用域的成员, 所有局部都可以访问和修改
+    // script 标签
+    // js 文件
+    // 2. 局部作用域
+    // 2.1 函数
+    // function fn() {
+    //   // 此处定义的 num 只能在 fn 内部访问, 超出这个函数都无法访问
+    //   let num = 10
+    // }
+
+    // console.log(num)
+    // 2.2 块级作用域
+    // if for while 等等有 {} 组成的语句, 大括号就是一个局部作用域
+    // if (true) {
+    //   let num = 20
+    // }
+    // console.log(num)
+
+    // 直接包裹一个大括号, 都是块级作用域
+    // {
+    //   let num = 30
+    //   console.log('你好哇', num)
+    // }
+
+    // console.log(num)
+
+    // 全局变量可以被局部访问和修改
+    // let num = 40
+    // function fn() {
+    //   num = 80
+    // }
+    // fn()
+    // console.log(num)
+
+    // 特殊情况:
+    // 1. 如果在函数内没声明变量直接赋值, 那也是全局变量
+    // 2. 函数内部的形参可以理解为是局部变量
+    function fn() {
+      // 声明变量一定要记得加 let, 如果没加, 就是全局变量
+      // 严重后果, 天坑, 此时 num 是一个全局变量
+      num = 20
+    }
+    fn()
+    console.log(num)
+
+    // 总结:
+    // 全局作用域有 script 标签和 js 文件, 在此处声明的变量被称为全局变量, 可以被任意地方访问和修改
+    // 局部作用域有: 函数 / 块级作用域, 局部作用域声明的变量被称为局部变量, 只能在当前作用域中访问和修改
+    // 注意事项: 在局部作用域中如果没有使用 let 声明变量, 就是全局变量
+  </script>
+</body>
+</html>

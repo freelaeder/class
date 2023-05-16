@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>取消行动</button>
+  <script>
+    // 延时 5s 后爆炸
+    const button = document.querySelector('button')
+    // 参数1: 回调函数, 里面写我们要做的事情
+    // 参数2: 延时的时间, 单位是毫秒
+    // 返回值: 定时器 id 用于取消定时器
+    const timerId = setTimeout(function() {
+      console.log('炸了')
+    }, 5000)
+
+    button.addEventListener('click', function() {
+      // 点击后取消定时任务
+      clearTimeout(timerId)
+    })
+  </script>
+</body>
+</html>

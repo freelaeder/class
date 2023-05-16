@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 常量: 不可变的数据存储在常量中, 常量也是一个容器
+    // 与变量的区别仅仅是不可变
+    // 注意事项:
+    // 1. 不允许重新赋值 (无法修改)
+    // 2. 声明时必须赋值
+    // 拓展: 一般情况下常量大家都习惯用全大写, _ 连接
+    const PI = 3.1415926
+    console.log(PI)
+    PI = 3.14 // Assignment to constant variable. 不允许给常量赋值
+    // 在运行的过程中一旦报错, 会终止代码的执行, 所以 21 行的打印不会出现
+    console.log(PI)
+  </script>
+</body>
+</html>

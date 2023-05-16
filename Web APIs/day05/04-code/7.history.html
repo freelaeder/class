@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="forward">前进</button>
+  <button id="back">后退</button>
+  <script>
+    document.querySelector('#forward').addEventListener('click', function() {
+      // 前进
+      history.forward()
+    })
+    document.querySelector('#back').addEventListener('click', function() {
+      // 后退
+      // history.back()
+      // go 可以传入一个数字, 1 表示前进一步, -1 表示后退一步
+      history.go(-1)
+    })
+  </script>
+</body>
+</html>

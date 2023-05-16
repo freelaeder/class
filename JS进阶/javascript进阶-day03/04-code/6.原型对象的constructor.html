@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    // Person.prototype.sayHi = function() {
+    //   console.log('你好哇, 我是' + this.name)
+    // }
+    // Person.prototype.eat = function() {
+    //   console.log('你好哇, 我是' + this.name)
+    // }
+    // Person.prototype.sleep = function() {
+    //   console.log('你好哇, 我是' + this.name)
+    // }
+    // Person.prototype.drink = function() {
+    //   console.log('你好哇, 我是' + this.name)
+    // }
+
+    Person.prototype = {
+      // 自己加一个 constructor 属性
+      // 给你找爸爸, 告诉别人 Person.prototype 是有主的
+      constructor: Person,
+      sayHi() {},
+      eat() {},
+      sleep() {},
+      drink() {}
+    }
+
+    console.log(Person.prototype)
+
+    const zs = new Person('张三', 18)
+    const ls = new Person('李四', 19)
+  </script>
+</body>
+</html>

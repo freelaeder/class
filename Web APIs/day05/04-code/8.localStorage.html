@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 本地存储 - localStorage
+    // 存储数据: localStorage.setItem()
+    // 参数1: 存储的键名, 给你存储的数据起个名字  key: value
+    // 参数2: 存储的值, 必须是字符串, 如果不是, 会自动转换成字符串
+    // localStorage.setItem('name', '纯真丁一郎')
+
+    // 读取数据: localStorage.getItem()
+    // 参数: 要读取的键名, 当时存储用的 key
+    // console.log(localStorage.getItem('name'))
+
+    // 删除数据: localStorage.removeItem()
+    // 参数: 要删除的键名
+    // localStorage.removeItem('name')
+
+    // localStorage 只能存储字符串, 如果传入其他类型会自动转为字符串
+    let obj = {
+      name: '纯真丁一郎',
+      age: 18
+    }
+
+    // 不行, 存储的是 [object Object]
+    // localStorage.setItem('obj', obj)
+    // console.log(obj.toString())
+    // 将对象转成 JSON 格式的字符串
+    // 对象 => JSON 字符串
+    // console.log(JSON.stringify(obj))
+    localStorage.setItem('obj', JSON.stringify(obj))
+    
+    let arr = [1, 2, 3]
+    // localStorage.setItem('arr', arr)
+    // console.log(arr.toString())
+    localStorage.setItem('arr', JSON.stringify(arr))
+
+    // 取出 JSON 字符串
+    let result = localStorage.getItem('obj')
+    // 取出来的是字符串, 所以还需要转换成对象
+    // JSON 字符串 => 对象
+    console.log(JSON.parse(result))
+  </script>
+</body>
+</html>

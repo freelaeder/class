@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 使用正则表达式的流程
+    // // 1. 定义正则表达式
+    // const reg = /帅哥/
+    // // 2. 调用 test() 方法来匹配字符串得到结果
+    // const str = '我们班的美女真多!'
+    // console.log(reg.test(str))
+
+    // 边界符: 要求字符串以 xxx 开头和 xxx 结尾, 或者做精确匹配 (使用最多)
+    // ^ 以 xxx 开头
+    // $ 以 xxx 结尾
+    // const reg = /^abc/
+    // console.log(reg.test('bcd')) // false
+    // console.log(reg.test('a')) // false
+    // console.log(reg.test('abc')) // true
+    // console.log(reg.test('abcd')) // true
+    // const reg2 = /abc$/
+    // console.log(reg2.test('abcd')) // false
+    // console.log(reg2.test('123abc')) // true
+
+    // 精确匹配 ^$ 同时出现
+    // abcabc 都是 false, 必须完整的满足这个模式
+    // const reg3 = /^abc$/
+    // console.log(reg3.test('abc'))
+    // console.log(reg3.test('123abc'))
+    // console.log(reg3.test('abc123'))
+    // console.log(reg3.test('abcabc'))
+    // console.log(reg3.test('abcabcabc'))
+
+    // 量词: 表示规则重复的次数
+    // * 0 次以上
+    // + 1 次以上, 最少出现一次
+    // ? 0 次或 1 次
+    // const reg4 = /^a*$/
+    // console.log(reg4.test('')) // true 
+    // console.log(reg4.test('a')) // true 
+    // console.log(reg4.test('aaa')) // true
+    // const reg4 = /^a+$/
+    // console.log(reg4.test('')) // false 
+    // console.log(reg4.test('a')) // true 
+    // console.log(reg4.test('aaa')) // true
+    // const reg4 = /^a?$/
+    // console.log(reg4.test('')) // true 
+    // console.log(reg4.test('a')) // true 
+    // console.log(reg4.test('aaa')) // false
+
+    // {} 表示精确的出现次数
+    // {4} 表示出现 4 次
+    // {4,} 表示出现 4 次及以上
+    // {4,9} 表示出现 4 ~ 9 次
+    // * => {0,}
+    // + => {1,}
+    // ? => {0,1}
+    // 切记 {1,2} 逗号后面不要有空格
+    // const reg4 = /^a{4,9}$/
+    // console.log(reg4.test('')) // false 
+    // console.log(reg4.test('a')) // false 
+    // console.log(reg4.test('aaa')) // false
+    // console.log(reg4.test('aaaa')) // true
+    // console.log(reg4.test('aaaaaaaaa')) // true
+    // console.log(reg4.test('aaaaaaaaaa')) // false
+
+    // 范围 []
+    // [] 表示匹配一个字符, 内部的字符是或者的关系
+    // const reg5 = /^[abc]$/
+    // console.log(reg5.test('a')) // true
+    // console.log(reg5.test('b')) // true
+    // console.log(reg5.test('c')) // true
+    // console.log(reg5.test('d')) // false
+    // const reg5 = /^[a-e]$/
+    // console.log(reg5.test('a')) // true
+    // console.log(reg5.test('b')) // true
+    // console.log(reg5.test('c')) // true
+    // console.log(reg5.test('d')) // true
+    // console.log(reg5.test('f')) // false
+    // [] 内是一个特殊的区域, 里面的 ^ 和 外面的 ^ 不一样
+    // [] 内部的 ^ 表示取反, 外面的表示边界符
+    // const reg5 = /^[^a-e]{1,2}$/
+    // console.log(reg5.test('a')) // false
+    // console.log(reg5.test('b')) // false
+    // console.log(reg5.test('c')) // false
+    // console.log(reg5.test('d')) // false
+    // console.log(reg5.test('f')) // true
+    // console.log(reg5.test('你')) // true
+    // // console.log(reg5.test('你好')) // false 中括号只能匹配一个字符
+    // console.log(reg5.test('你好')) // true 中括号后有量词来匹配多个
+
+    // const reg6 = /^\d$/
+    // \d 表示数字 => digit
+    // console.log(reg6.test('a'))
+    // console.log(reg6.test('1'))
+    // const reg6 = /^\d{11}$/
+    // // \d 表示数字 => digit
+    // console.log(reg6.test('a'))
+    // console.log(reg6.test('1'))
+    // console.log(reg6.test('11012013011'))
+    // const reg6 = /^\D$/
+    // console.log(reg6.test('你'))
+
+    // \w 表示一个数字字母下划线 => word
+    // const reg6 = /^\w$/
+    // console.log(reg6.test('你'))
+    // console.log(reg6.test('a'))
+
+    // \s 表示一个空白字符, 包括回车 换行 空格 tab制表符 垂直制表符
+    // const reg6 = /^\s$/
+    // console.log(reg6.test(' '))
+    // console.log(reg6.test(''))
+    // console.log(reg6.test(``))
+
+    // \S 表示非空白字符
+    const reg6 = /^\S*$/
+    console.log(reg6.test('你'))
+    console.log(reg6.test('你好'))
+    console.log(reg6.test('你好 世界'))
+    console.log(reg6.test('好'))
+    console.log(reg6.test('世'))
+    console.log(reg6.test('界'))
+
+  </script>
+</body>
+</html>

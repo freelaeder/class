@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 需求: 创建多个同学对象, 每个同学对象都有自己的名字/年龄/爱好
+    // let s1 = {
+    //   name: '龙志豪',
+    //   age: 18,
+    //   hobby: '喷火'
+    // }
+    // let s2 = {
+    //   name: '陈厚霖',
+    //   age: 18,
+    //   hobby: '收作业'
+    // }
+
+    // 构造函数: 一种特殊的函数, 专门用于帮助程序员创建对象的
+    // 构造函数本质就是普通函数, 只有在使用 new 关键字调用它的时候, 就被称为构造函数
+    // 定义时和普通函数没有任何区别, 只有在调用时才能决定它是否为构造函数
+    // 特点:
+    // 1. 调用构造函数会自动创建一个新对象
+    // 2. 将函数中的 this 指向这个新对象
+    // 3. 执行函数的代码, 可以给当前创建的新对象添加属性
+    // 4. 默认返回这个新对象, 不需要写 return
+    function Student(name, age, hobby) {
+      // console.log('你好我是 Student 函数')
+      // this => 指向刚刚我们创建的那个新对象
+      // 新对象就是实例, this 指向它, this.name 就是给实例添加属性
+      // this.name 就是实例属性
+      this.name = name
+      this.age = age
+      this.hobby = hobby
+      this.study = function() {
+        console.log(this.name + '在学习')
+      }
+    }
+
+    const s1 = new Student('彭立武', 19, '跳舞')
+    // 可以添加属性
+    // s1.name = '彭立武'
+    // s1.age = 19
+    console.log(s1)
+    s1.study()
+    
+    const s2 = new Student('李惠强', 19, '刷墙')
+    // 可以添加属性, 但不方便
+    // s2.name = '李惠强'
+    // s2.age = 19
+    console.log(s2)
+    s2.study()
+
+    const s3 = new Student('李紫薇', 18, '写代码')
+    console.log(s3)
+    s3.study()
+
+    // 全等比较是比较地址值
+    console.log(s1 === s2)
+    console.log(s1 === s3)
+    console.log(s2 === s3)
+    const ss1 = s1
+    console.log(s1 === ss1)
+
+    // 实例是什么? new 构造函数创建的对象就是实例
+    // 实例成员: 实例身上的属性或方法
+    // 这些成员都是存在实例上面的, 所以不同的实例之间成员无不干扰
+
+    // 静态成员: 构造函数身上的属性或方法
+    // 这些成员是存在构造函数身上的, 一般存储一些所有对象都公共的属性或方法
+    Student.sleep = function() {
+      console.log('学生在睡觉', this)
+    }
+    Student.eat = function() {
+      console.log('学生在干饭')
+    }
+    Student.eyes = 2
+
+    // Date.now()
+    Student.sleep()
+
+    // new String()
+    // let str = '123'
+    // new Number()
+    // let num = 123
+    // num.
+  </script>
+</body>
+</html>

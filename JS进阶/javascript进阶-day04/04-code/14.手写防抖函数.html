@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+    // 防抖的解决方案:
+    // 引入 lodash 一个方法搞定防抖
+    let i = 0
+    // 绑定鼠标移动事件
+    function moveFn() {
+      i++
+      // box.innerHTML = i
+      this.innerHTML = i
+      // console.log(this)
+    }
+    // _.debounce() 方法
+    // 参数1: 传入要防抖的函数
+    // 参数2: 延时的时间
+    // 返回值: 防抖后的函数
+    // document.querySelector('.box').addEventListener('mousemove', _.debounce(moveFn, 300))
+    // document.querySelector('.box').addEventListener('mousemove', function() {})
+    box.addEventListener('mousemove', debounce(moveFn, 300))
+
+    // 参数1: 传入的函数, 我们需要对他进行防抖处理
+    // 参数2: 防抖延时的时间
+    function debounce(fn, t) {
+      let timerId // 发生闭包了!
+      return function() {
+        // 这个函数会不断触发
+        // console.log('我被不断执行了')
+        clearTimeout(timerId)
+        timerId = setTimeout(() => {
+          // 改变函数内部 this 指向
+          fn.call(this)
+        }, t)
+      }
+    }
+  </script>
+</body>
+
+</html>

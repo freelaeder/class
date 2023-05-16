@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let num1 = 88
+    let num2 = 76
+
+    // 只能交换数字类型
+    num1 = num1 + num2 // 164
+    num2 = num1 - num2 // 164 - 76 = 88
+    num1 = num1 - num2 // 164 - 88 = 76
+    console.log(num1, num2)
+
+    // 如果需要实现字符串的交换 (不使用第三个变量)
+    // 异或运算符 ^ : 满足了交换律和结合律 (算法)
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 案例1: 打印 5 颗小星星
+    // for (初始值; 循环条件; 变量计数) {
+      // 循环的代码
+    // }
+    // for (let i = 0; i < 5; i++) {
+    //   document.write('★')
+    // }
+
+    // 案例2: 页面输出年龄: 今年 n 岁了
+    // for (let i = 0; i < 100; i++) {
+    //   document.write(`今年${i + 1}岁了<br>`)
+    // }
+
+    // 案例3: 页面输出 1 ~ 100 的偶数
+    // for(let i=0;i<100;i++) {} // 不好看
+    // for (let i = 1; i <= 100; i++) {
+    //   // 循环中是可以加入 if 判断的
+    //   if (i % 2 === 0) {
+    //     document.write(`${i}<br>`)
+    //   }
+    // }
+
+    // 案例4: 求 1 ~ 100 的累加和
+    // let sum = 0
+    // for (let i = 1; i <= 100; i++) {
+    //   // sum = sum + i
+    //   sum += i // 赋值运算符
+    //   // console.log(i)
+    // }
+    // document.write(sum)
+
+    // 案例5: 求 1 ~ 100 的偶数和
+    let sum = 0
+    for (let i = 1; i <= 100; i++) {
+      if (i % 2 === 0) {
+        sum += i // 赋值运算符
+      }
+    }
+    document.write(sum)
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <a href="https://img0.baidu.com/it/u=3200238064,331094530&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=564">
+      <img width="100" src="https://img0.baidu.com/it/u=3200238064,331094530&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=564" alt="">
+    </a>
+    <a href="https://www.baidu.com">去百度</a>
+    用户名: <input type="text" name="username">
+    <input type="submit" value="提交">
+  </form>
+  <script>
+    // 事件: form 的提交事件
+    const form = document.querySelector('form')
+    const input = document.querySelector('input[name=username]')
+    const a = document.querySelector('a')
+
+    // console.log(input)
+    // submit 事件, 提交事件, 当表单被提交时触发
+    form.addEventListener('submit', function(e) {
+      if (input.value === '') {
+        // 阻止浏览器的默认行为
+        e.preventDefault()
+        console.log('我被阻止提交了')
+      }
+    })
+
+    // e: 事件对象
+    // 它是浏览器传给你的, 记录了本次事件中所有的信息, 例如: 点在哪里了? 点的谁? 键盘按的是哪个键?
+    // 也会提供一些方法:
+    // e.stopPropagation() 阻止冒泡
+    // e.preventDefault() 阻止默认行为
+    a.addEventListener('click', function(e) {
+      console.log('我是a 我被点了', e)
+      e.preventDefault()
+    })
+
+    // 浏览器的默认行为:
+    // a 标签跳转
+    // 表单提交
+    // ...
+  </script>
+</body>
+</html>

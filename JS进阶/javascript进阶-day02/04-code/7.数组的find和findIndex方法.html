@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 数组的遍历方法: forEach map filter reduce find findIndex some every
+    // find 查找数组中的元素, 找到了就返回
+    const arr1 = [10, 20, 50, 80]
+    const arr2 = [{
+      name: '张三',
+      age: 18
+    }, {
+      name: '李四',
+      age: 28
+    }, {
+      name: '王五',
+      age: 38
+    }]
+    // indexOf() 查找数组中元素的方法, 局限性较大, 一般只用于查找基本数据类型的数组
+    // 参数1: 要查找的数据
+    // 参数2(可选): 从哪里开始找, 如果不传则从头开始找
+    // 返回值: 数据对应的索引, 没找到返回 -1
+    console.log(arr1.indexOf(50))
+    console.log(arr1.indexOf(60))
+    console.log(arr2.indexOf('张三'))
+
+    // findIndex()
+    // 查找数组中元素的方法, 返回索引, 可以查找任意数据
+    // 参数: 回调函数
+    // 回调函数的参数和 forEach / map / filter 一样
+    // 原理: 也会遍历一遍数组, 遍历时执行回调函数, 我们返回的结果是 true 表示找到该元素了, findIndex 的返回值就是该元素对应的索引, 找到元素后会中止循环, 提高效率
+    const index = arr1.findIndex((item, index) => {
+      console.log(item, index)
+      return item === 50 // 返回查找的条件, 满足就是 true 表示找到了
+    })
+
+    console.log(index)
+
+    console.log(arr2.findIndex(item => item.name === '李四'))
+    console.log(arr2.findIndex(item => item.name === '李五'))
+
+    // find 作用: 找到指定的对象, 
+    // find 和 findIndex 的区别是:
+    // findIndex 返回的是索引
+    // find 返回的是对象
+    console.log(arr2.find(item => item.name === '李四'))
+    console.log(arr2.find(item => item.name === '李五'))
+  </script>
+</body>
+</html>

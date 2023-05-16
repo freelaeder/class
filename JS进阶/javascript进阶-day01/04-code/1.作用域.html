@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 局部作用域 (通俗总结)
+    // 1. 块级作用域
+    // for  if  while  {} 代码块
+    // for (let i = 0; i < 10; i++) {
+    //   console.log(i)
+    // }
+    // 一旦离开大括号, 在外面就无法访问 i 变量了
+    // console.log(i)
+
+    // 2. 函数作用域
+    // function fn() {
+    //   let a = 10
+    //   console.log(num) // 20
+    // }
+    // console.log(a)
+
+    // 以下两种情况尽量避开使用
+    // 1. var 关键字声明变量
+    // 弊端:
+    // a. 用 var 声明的变量都被放到 window 身上了, 就是 window 的属性
+    // 平时尽量不要使用 var 来声明变量, 而应该使用 let / const
+    // 尽量减少全局变量的定义, 避免不必要的冲突和污染
+    // var num = 20
+    // console.log(num) // 20
+    // fn()
+    // console.log(window)
+
+    // 2. 在函数中使用变量, 但没有进行声明
+    // 我们指局部变量是说在局部定义的变量
+    // 如果该变量不是在局部定义的, 就不是当前的局部变量
+    // function foo() {
+    //   num2 = 100
+    // }
+
+    // foo()
+
+    // console.log(num2, window)
+
+    // if (false) {
+    //   // var 没有块级作用域的概念
+    //   // 声明在 if for while {}代码块里的变量都是全局变量
+    //   var num = 10
+    // }
+
+    // console.log(num)
+
+    // function fn() {
+    //   console.log(a)
+    //   // 变量声明提升, 只会提升声明, 不会提升赋值
+    //   var a = 10
+    // }
+    // fn()
+    // // console.log(a)
+    
+    function fn() {
+      console.log(a)
+      let a = 10
+    }
+    fn()
+
+  </script>
+</body>
+</html>
