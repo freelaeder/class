@@ -280,16 +280,15 @@
     </div>
   </footer>
   <script>
-    // 1. 查找元素
     const tabs = document.querySelector('.tabs-list')
     const line = document.querySelector('.line')
-    // 2. 事件委托来绑定点击事件
+
+    // 1. 使用事件委托绑定事件
     tabs.addEventListener('click', function(e) {
       if (e.target.tagName === 'A') {
-        // console.log('我被点了', e.target.offsetLeft)
-        // 3. 获取被点击的 a 所在的位置
-        // 4. 设置给 line 的 transform 属性即可
-        line.style.transform = `translateX(${e.target.offsetLeft}px)`
+        // 2. 获取到当前的 A 标签位置, 设置给 line
+        // console.log(e.target.offsetLeft)
+        line.style.transform = `translateX(${e.target.offsetLeft - 3}px)`
       }
     })
   </script>

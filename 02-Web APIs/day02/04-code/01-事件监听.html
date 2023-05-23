@@ -9,21 +9,27 @@
 </head>
 
 <body>
-  <button class="btn">唐伯虎</button>
+  <button class="btn">点我有惊喜</button>
   <script>
-    // 需求： 点击button按钮，页面会弹出一个警示框，内容显示 '秋香'
-
+    // 需求：点击 button 按钮，页面会弹出一个警示框
     // 事件监听语法:
     // 元素对象.addEventListener('事件类型', 事件处理函数)
-
     // 1. 获取元素对象 button按钮
     const btn = document.querySelector('.btn')
 
-    // 2. 事件监听 
-    btn.addEventListener('click', function () {
-      alert('秋香')
+    // 2. 事件监听
+    // 参数1: 事件类型 click => 点击事件
+    // 参数2: 事件处理函数
+    btn.addEventListener('click', function() {
+      alert('惊喜')
     })
 
+    // 注意:
+    // 事件三要素
+    // 1. 事件源 => 谁触发事件, 一般是 DOM 元素
+    // 2. 事件类型 => 什么事儿, click 表示被点击
+    // 3. 事件处理函数 => 干啥, 具体要做的任务
+    // btn 被点击时, 具体执行一个函数
   </script>
 </body>
 

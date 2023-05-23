@@ -11,22 +11,25 @@
 <body>
   <script>
     // 定时器之间隔函数
-
     // 1. 开启定时器
-    // setInterval(function () {
-    //   console.log('我是1秒钟执行一次')
-    // }, 1000)
-    function repeat() {
-      console.log('我是一个1秒钟自动执行的函数')
+    // setInterval()
+    // 参数1: 函数
+    // 参数2: 间隔时间, 单位为毫秒
+    // 返回值: 当前开启的定时器 id
+    const timerId1 = setInterval(function() {
+      console.log('你好哇')
+    }, 1000)
+
+    function fn() {
+      console.log('Hello')
     }
+    const timerId2 = setInterval(fn, 1000)
 
-    let timer = setInterval(repeat, 1000)  // 注意调用的时候直接写函数名字不需要写小括号
-    console.log(timer) //  1
-    let timer1 = setInterval(repeat, 1000)  // 注意调用的时候直接写函数名字不需要写小括号
-    console.log(timer1) //  2
-
+    // console.log(timerId1, timerId2)
     // 2. 关闭定时器
-    clearInterval(timer)
+    // clearInterval()
+    // 参数: 定时器 id
+    clearInterval(timerId2)
 
   </script>
 </body>

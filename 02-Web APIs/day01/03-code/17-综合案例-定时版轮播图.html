@@ -126,54 +126,42 @@
       { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
       { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
-    // 获取元素
-    const img = document.querySelector('.slider-wrapper img')
-    const p = document.querySelector('.slider-footer p')
+    // 获取元素 (根据多年的经验分析将所有要用到的元素获取出来)
+    const img = document.querySelector('img')
+    const title = document.querySelector('.slider-footer p')
     const footer = document.querySelector('.slider-footer')
-
-    // 1. 声明1个变量，利用定时器实现变量++，依次拿到下一个数组中的对象
-    // 1.1 声明变量 i 
-    let i = 0  // 信号量
-
-    // 1.2 开启定时器实现i++
-    setInterval(function () {
+    // querySelectorAll() 方法, 获取伪数组
+    const lis = document.querySelectorAll('.slider-indicator li')
+    // 1. 定义一个索引, 每隔一秒钟自动 +1
+    let i = 0
+    // 2. 开启定时器
+    setInterval(function() {
+      // 3. 索引自增
       i++
-      // 无缝衔接 如果播放到了最后一张 第8张，则快速复原为第1张播放
-      // 其实这个8就是数组的长度
-      // if (i >= sliderData.length) {
+      // 4. 自增完后, 做越界处理
+      // if (i >= 8) {
       //   i = 0
       // }
-
-      // 改为三元运算符的写法
-      // i = i >= sliderData.length ? 0 : i
-
-      // 利用取余来实现
-      i = i % sliderData.length
-
-
-      console.log(i)
-      // 1.3 依次拿到下一个数组中的对象
+      // 三元, 比较低级, 某内某鸟
+      // i = i >= 8 ? 0 : i
+      // 黑马
+      // % 取余数: i % 8, 结果永远是 0 ~ 7 之间, 余数永远不可能超过除数
+      i %= sliderData.length
+      
+      // sliderData[i] 取出的数据对象
       // console.log(sliderData[i])
-
-      // 2. 利用对象更换图片、文字、背景颜色、小圆点
-      // 2.1 更换图片
+      // 5. 修改信息
+      // 修改图片
       img.src = sliderData[i].url
-
-      // 2.2 更换文字内容
-      p.innerText = sliderData[i].title
-
-      // 2.3 更换背景颜色
+      // 修改标题
+      title.innerHTML = sliderData[i].title
+      // 修改背景色
       footer.style.backgroundColor = sliderData[i].color
-
-      // 2.4 更换小圆点
-      // 先把以前的 active 类 移除掉  顺序不能颠倒
-      document.querySelector('.slider-indicator .active').classList.remove('active')
-
-      // 添加小圆点
-      document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
-
+      // 修改小圆点高亮
+      // 添加 active 之前要移除掉现有的 active
+      document.querySelector('.active').classList.remove('active')
+      lis[i].classList.add('active')
     }, 1000)
-
   </script>
 </body>
 

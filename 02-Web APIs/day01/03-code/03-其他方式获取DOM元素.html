@@ -10,7 +10,7 @@
 
 <body>
   <div id="box">我是id盒子</div>
-  <div class="item">我是类盒子</div>
+  <div name="username" class="item">我是类盒子</div>
   <div class="item">我是类盒子</div>
   <div class="item">我是类盒子</div>
   <p>我是段落</p>
@@ -19,23 +19,23 @@
   <input type="text" name="username">
   <input type="password" name="password">
   <script>
+    // querySelector()  querySelectorAll()
     // 其他获取DOM元素方式（了解） 
     // 1. getElementById   根据id获取
-    const box = document.getElementById('box')
-    console.log(box)
+    // const box = document.getElementById('box')
+    // console.log(box) // 对象 => id 是唯一的
 
     // 2. getElementsByClassName   根据类名获取  返回伪数组
-    const items = document.getElementsByClassName('item')
-    console.log(items)
+    // const items = document.getElementsByClassName('item')
+    // console.log(items) // 伪数组 => 类名可以用在多个元素上
 
     // 3. getElementsByTagName  根据标签名获取 返回伪数组
-    const ps = document.getElementsByTagName('p')
-    console.log(ps)
+    // const pp = document.getElementsByTagName('p')
+    // console.log(pp)
 
     // 4. getElementsByName  根据name属性获取 返回伪数组
-    const inputs = document.getElementsByName('username')
-    console.log(inputs)
-
+    const username = document.getElementsByName('username')
+    console.log(username)
 
   </script>
 </body>

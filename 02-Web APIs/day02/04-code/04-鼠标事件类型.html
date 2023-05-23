@@ -18,23 +18,23 @@
 <body>
   <div class="box"></div>
   <script>
-    // 鼠标事件类型
     const box = document.querySelector('.box')
-
+    // 鼠标事件类型
     // 1. 鼠标点击
-    box.addEventListener('click', function () {
-      console.log('我点击了盒子')
+    box.addEventListener('click', function() {
+      alert('我被点了')
+    })
+    
+    // 2. 鼠标经过 mouseenter
+    box.addEventListener('mouseenter', function() {
+      console.log('鼠标经过')
     })
 
-    // 2. 鼠标经过
-    box.addEventListener('mouseenter', function () {
-      console.log('我鼠标经过了盒子')
+    // 3. 鼠标离开 mouseleave
+    box.addEventListener('mouseleave', function() {
+      console.log('鼠标离开')
     })
 
-    // 3. 鼠标离开
-    box.addEventListener('mouseleave', function () {
-      console.log('我鼠标离开了盒子')
-    })
   </script>
 </body>
 

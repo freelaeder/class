@@ -19,6 +19,5 @@ mock
 
 视频
 *.mkv
-作业
 ~$*.pptx
 ~$*.ppt

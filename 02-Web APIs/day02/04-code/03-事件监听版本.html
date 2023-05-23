@@ -13,24 +13,23 @@
   <script>
     // 事件监听版本
     const btn = document.querySelector('button')
-
     // 1. DOM L0  注册同名 onclick 事件，会出现覆盖的情况
-    // btn.onclick = function () {
-    //   alert('我是弹窗1')
+    // btn.onclick = function() {
+    //   alert('我被点了嘿嘿嘿1')
     // }
-
-    // btn.onclick = function () {
-    //   alert('我是弹窗2')
+    // btn.onclick = function() {
+    //   alert('我被点了哈哈哈2')
     // }
 
     // 2. DOM L2  注册同名 click 事件，不会出现覆盖的情况
-    btn.addEventListener('click', function () {
-      alert('我是弹窗1')
+    // 如果有多个同名事件是可以添加多个事件监听器的, 按照顺序触发
+    btn.addEventListener('click', function() {
+      alert('我被点了嘿嘿嘿1')
     })
-    btn.addEventListener('click', function () {
-      alert('我是弹窗2')
+    btn.addEventListener('click', function() {
+      alert('我被点了哈哈哈2')
     })
-
+    // 新方法还支持一些特性, 事件的捕获和冒泡 (day03)
 
   </script>
 </body>

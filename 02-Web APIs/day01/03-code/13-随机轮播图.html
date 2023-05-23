@@ -126,44 +126,31 @@
       { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
       { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
-
-    // 1. 利用随机数选取数组中的一个对象
-    const random = Math.floor(Math.random() * sliderData.length)
-    console.log(random) // 随机整数
-    console.log(sliderData[random])  // 数组里面的每个对象
-
-    // 2. 利用选取的对象来更换图片
-    console.log(sliderData[random].url)  // 数据的图片地址
-    // 需求：把图片元素的地址换成数据里面的图片地址
-    // 2.1 获取图片元素
-    const img = document.querySelector('.slider-wrapper img')
-    console.log(img)
-
-    // 2.2 把随机生成的图片地址 赋值给 图片元素.src 
-    img.src = sliderData[random].url
-
-    // 3. 更换文字内容
-    // 3.1 获取文字盒子 p
-    const p = document.querySelector('.slider-footer p')
-
-    // 3.2 把随机生成的文字赋值给 p元素.innerText 
-    p.innerText = sliderData[random].title
-
-    // 4. 更换背景颜色  slider-footer 盒子
-    // 4.1 获取 slider-footer 盒子
+    // 需求1: 刷新页面随机渲染图片-标题-背景色
+    // 获取元素
+    const img = document.querySelector('img')
+    const title = document.querySelector('.slider-footer p')
     const footer = document.querySelector('.slider-footer')
+    const lis = document.querySelectorAll('.slider-indicator li')
+    // console.log(lis) // 伪数组
 
-    // 4.2 把随机生成的背景颜色赋值给 footer元素 style
+    // 1.1 生成随机数
+    const random = parseInt(Math.random() * sliderData.length)
+    // console.log(sliderData[random], random)
+    // 修改图片
+    img.src = sliderData[random].url
+    // 修改标题
+    title.innerHTML = sliderData[random].title
+    // 修改背景色
     footer.style.backgroundColor = sliderData[random].color
 
-    // 5. 更换小圆点
-    // 5.1 先选择对应的小圆点
-    // console.log(random + 1)
-    const li = document.querySelector(`.slider-indicator li:nth-child(${random + 1})`)
-    console.log(li)
-
-    // 5.2 让选出来的小圆点高亮显示
-    li.classList.add('active')
+    // 需求2: 小圆点高亮
+    // 2.1 通过索引找到对应的小圆点
+    // console.log(lis[random])
+    // 2.2 给它添加类名 active
+    // className
+    // classList (推荐)
+    lis[random].classList.add('active')
   </script>
 </body>
 

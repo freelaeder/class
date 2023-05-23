@@ -9,17 +9,16 @@
 </head>
 
 <body>
-  <div class="box" data-id="1" data-name="box"></div>
+  <div class="box" data-id="110" data-name="box"></div>
   <script>
     // 自定义属性
-    // 1. 获取盒子
+    // 注意事项: 一律以 data- 开头, 会自动将所有自定义属性放到 dataset 对象中
+    // 1. 获取 box 元素对象
     const box = document.querySelector('.box')
+    // 2. 获取自定义属性值
+    console.log(box.dataset.id)
+    console.log(box.dataset.name)
 
-    // 2. 得到自定义属性值
-    // console.log(box.dataset)  // 得到一个对象集合
-    // console.log(box.dataset.id) // 1
-    // console.log(box.dataset)  // 得到一个对象集合
-    console.log(box.dataset.name) // box
   </script>
 </body>
 

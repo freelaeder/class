@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面滚动事件</title>
+  <style>
+    body {
+      height: 3000px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // 页面滚动事件
+    window.addEventListener('scroll', function() {
+      // console.log('我滚动了')
+      // 页面滚动到底是谁在滚动? HTML 元素 => document.documentElement
+      // 如何获取滚动出去的距离? scrollTop 顶部距离 / scrollLeft 左侧距离
+      console.log(document.documentElement.scrollTop)
+    })
+  </script>
+</body>
+
+</html>

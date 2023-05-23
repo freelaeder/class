@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面加载事件</title>
+  <script>
+    // 页面加载事件
+    // window 有一个 load 事件
+    // 作用: 等待网页中所有的资源加载完成后执行 (页面结构/图片/音频/视频等等所有资源)
+    // window.addEventListener('load', function() {
+    //   console.log('页面加载完成了!')
+    //   const btn = document.querySelector('button')
+    //   // console.log(btn)
+    //   btn.addEventListener('click', function() {
+    //     alert('我被点了')
+    //   })
+    // })
+
+    // document 有一个 DOMContentLoaded 事件
+    // 作用: 等待网页中的 DOM 结构加载完成后就会立即执行 (不会去等待图片/视频/音频等资源的加载)
+    // WebAPIs 阶段最重要的学习方法不是背下每一个知识点, 而是学会查文档
+    document.addEventListener('DOMContentLoaded', function() {
+      // console.log('页面加载完成了!')
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function() {
+        alert('嘿嘿嘿')
+      })
+    })
+
+    // 总结: load 和 DOMContentLoaded 事件都是页面加载事件, load 需要等所有资源加载完毕, 所以执行时机较晚, DOMContentLoaded 执行时机较早, 使用更频繁
+  </script>
+</head>
+
+<body>
+  <button>点击我</button>
+  <script>
+  </script>
+</body>
+
+</html>

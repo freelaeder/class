@@ -32,46 +32,41 @@
   <script>
     // 数组
     const arr = ['迪丽热巴', '古丽扎娜', '佟丽丫丫', '马尔扎哈']
-    // 1. 一等奖的做法
-    // 1.1 利用随机数选取数组中的名字
-    const random = Math.floor(Math.random() * arr.length)
-    console.log(random) // 0 ~ 3 之间的随机整数
-    console.log(arr[random]) // 随机名字
+    const spans = ['.one', '.two', '.three']
 
-    // 1.2 把名字放入对应的盒子里面 span
-    const one = document.querySelector('.one')
-    one.innerText = arr[random]
+    // 拓展: 使用循环来执行重复的操作
+    for (let i = 0; i < spans.length; i++) {
+      // 生成随机数: 0 ~ arr.length (不包括)
+      const random = parseInt(Math.random() * arr.length)
+      // console.log(arr[random])
+      const span = document.querySelector(spans[i])
+      span.innerHTML = arr[random]
+      // 数组删除元素: splice() 删除
+      // splice(索引, 删除的数量, 删除后添加的元素)
+      arr.splice(random, 1)
+    }
 
-    // 1.3 不允许重复抽奖，所以要把刚才选出来的名字从数组中删除
-    // arr.splice(随机数, 1)  // 可以删除刚才抽取的名字
-    arr.splice(random, 1)
-    console.log(arr)
+    // // 生成随机数: 0 ~ arr.length (不包括)
+    // const random = parseInt(Math.random() * arr.length)
+    // // console.log(arr[random])
+    // const one = document.querySelector('.one')
+    // one.innerHTML = arr[random]
+    // // 数组删除元素: splice() 删除
+    // // splice(索引, 删除的数量, 删除后添加的元素)
+    // arr.splice(random, 1)
 
-    // 2. 二等奖的做法
-    // 2.1 利用随机数选取数组中的名字
-    const random2 = Math.floor(Math.random() * arr.length)
-    console.log(arr[random2]) // 数组里面的名字
+    // // 生成随机数: 0 ~ arr.length (不包括)
+    // const random2 = parseInt(Math.random() * arr.length)
+    // // console.log(arr[random])
+    // const two = document.querySelector('.two')
+    // two.innerHTML = arr[random2]
+    // arr.splice(random2, 1)
 
-    // 2.2 把名字放入对应的盒子里面 span
-    const two = document.querySelector('.two')
-    two.innerText = arr[random2]
-
-    // 2.3 不允许重复抽奖，所以要把刚才选出来的名字从数组中删除
-    arr.splice(random2, 1)
-    console.log(arr)
-
-    // 3. 三等奖的做法
-    // 3.1 利用随机数选取数组中的名字
-    const random3 = Math.floor(Math.random() * arr.length)
-    console.log(arr[random3]) // 数组里面的名字
-
-    // 3.2 把名字放入对应的盒子里面 span
-    const three = document.querySelector('.three')
-    three.innerText = arr[random3]
-
-    // 3.3 不允许重复抽奖，所以要把刚才选出来的名字从数组中删除
-    arr.splice(random3, 1)
-    console.log(arr)
+    // const random3 = parseInt(Math.random() * arr.length)
+    // // console.log(arr[random])
+    // const three = document.querySelector('.three')
+    // three.innerHTML = arr[random3]
+    // arr.splice(random3, 1)
   </script>
 </body>
 

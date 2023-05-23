@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件委托</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+  </ul>
+  <script>
+    // 需求： 点击每个小li都会有弹窗效果
+    // 以前的写法
+    // const lis = document.querySelectorAll('li')
+    // for (let i = 0; i < lis.length; i++) {
+    //   lis[i].addEventListener('click', function() {
+    //     // alert('我被点了')
+    //     this.style.color = 'green'
+    //   })
+    // }
+    // 事件委托:
+    // 就是利用事件冒泡原理, 将事件绑给 ul, 子元素 li 触发点击事件时会冒泡到父元素 ul 上
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function(e) {
+      // 需求2: 使用事件委托实现, 点击 li 修改被点击的 li 的颜色
+      // alert('我被点了')
+      // 此处的 this 指向 ul, 因为事件是绑给 ul 的
+      // this.style.color = 'green'
+      // 获取事件目标: 真正被点击的那个元素
+      // e.target
+      // console.dir(e.target)
+      // 判断: 当前事件目标到底是不是 li
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'green'
+      }
+    })
+  </script>
+</body>
+
+</html>

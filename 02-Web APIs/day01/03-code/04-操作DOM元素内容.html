@@ -8,44 +8,41 @@
   <title>操作DOM元素内容</title>
   <style>
     strong {
-      color: pink;
+      color: green;
     }
   </style>
 </head>
 
 <body>
-  <div class="box">古丽扎娜</div>
+  <div class="box">紫阳</div>
   <div class="box1"></div>
   <script>
-    // 首先需要获取这个dom对象
+    // 获取元素对象
     const box = document.querySelector('.box')
-    // console.log(box)
-    // console.dir(box)
-
-    // 操作DOM元素内容
-
+    const box1 = document.querySelector('.box1')
     // 1. 对象.innerText 增删改查
-    // 1.1 查
-    console.log(box.innerText)  // 古丽扎娜
+    // 1.1 查 获取元素的文本内容
+    console.log(box.innerText)
 
     // 1.2 改
-    box.innerText = '迪丽热巴'
+    box.innerText = '荣幸'
 
     // 1.3 增
-    const box1 = document.querySelector('.box1')
-    console.log(box1)
-    box1.innerText = '佟丽丫丫'
+    box1.innerText = 'Seven'
 
     // 1.4 删  给空字符串可以删除内容
     box.innerText = ''
-    box1.innerText = ''
 
     // 1.5 innerText 不能解析标签
-    // box.innerText = '<strong>迪丽热巴</strong>'
+    // 会将标签的当做纯文本输出
+    // box.innerText = '<strong>荣幸</strong>'
 
     // 2. 对象.innerHTML  会解析标签
-    box.innerHTML = '<strong>迪丽热巴</strong>'
+    box.innerHTML = '<strong>荣幸</strong>'
 
+    // 纠结: 到底用哪个?
+    // 如果真的拿不准, 默认使用 innerHTML
+    // innerHTML 使用更多
 
   </script>
 </body>

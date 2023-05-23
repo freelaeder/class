@@ -24,14 +24,10 @@
       './images/3.png',
       './images/4.png'
     ]
-    // 获取图片元素
+    // 1. 生成随机数
+    const random = parseInt(Math.random() * arr.length)
+    // 2. 取出图片地址, 设置给 img.src
     const img = document.querySelector('img')
-
-    // 1. 利用随机数抽取数组中的一个地址
-    const random = Math.floor(Math.random() * arr.length)
-    console.log(arr[random]) // 得到图片地址
-
-    // 2. 把地址赋值给图片src属性
     img.src = arr[random]
   </script>
 </body>

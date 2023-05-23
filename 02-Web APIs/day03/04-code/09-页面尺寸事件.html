@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面尺寸事件</title>
+  <style>
+    /* 
+      相对长度单位:
+      em:   相对于当前元素的字体大小
+      rem:  相对于根元素(HTML)的字体大小
+     */
+    .box {
+      width: 2rem;
+      height: 2rem;
+      padding: 5px;
+      border: 10px solid red;
+      background-color: green;
+      margin: 20px;
+    }
+  </style>
+  <script src="./flexible.js"></script>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    // 页面尺寸事件, 在浏览器窗口大小发生变化时自动触发
+    window.addEventListener('resize', function() {
+      console.log('窗口大小变化了')
+    })
+
+    // 获取元素可视区的大小 (既可以获取元素, 也可以获取整个网页)
+    const box = document.querySelector('.box')
+    // clientWidth: 可视区的宽度
+    // clientHeight: 可视区的高度
+    // client 可视区的大小, 包括元素的宽高 + padding, 不包括 border 和 margin
+    console.log(box.clientWidth, box.clientHeight)
+  </script>
+</body>
+
+</html>

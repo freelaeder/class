@@ -18,7 +18,6 @@
 <body>
   <script>
     // 随机显示背景图片案例
-
     // 背景图片地址数组
     const arr = [
       './images/bg1.jpg',
@@ -27,15 +26,14 @@
       './images/bg4.jpg',
       './images/bg5.jpg'
     ]
-
-    // 1. 利用随机数得到数组的图片地址
-    const random = Math.floor(Math.random() * arr.length)
-    console.log(arr[random])
-
-    // 2. 修改body背景样式
-    // console.log(document.body) 
-    // 2.1 因为页面就一个body标签，所以获取body可以通过document.body
+    // 1. 生成随机数
+    const random = parseInt(Math.random() * arr.length)
+    // 2. 设置给 body
+    // const body = document.querySelector('body') // 可以获取到
+    // body.style.backgroundImage = `url(${arr[random]})`
+    // 由于 body 标签非常重要, 在网页中唯一, 所以 DOM 给我们提供了一个快捷访问的方式
     document.body.style.backgroundImage = `url(${arr[random]})`
+
   </script>
 </body>
 

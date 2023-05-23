@@ -41,7 +41,7 @@
 
     /* 下拉菜单 */
     .result-list {
-      /* 先隐藏下拉菜单 */
+      /* 默认隐藏 */
       display: none;
       position: absolute;
       left: 0;
@@ -85,21 +85,23 @@
     // 1. 先隐藏我们的下拉菜单
 
     // 2. 获得焦点，显示下拉菜单，并且修改搜索框的边框颜色
-    const search_text = document.querySelector('.search-text')
-    const result_list = document.querySelector('.result-list')
-    search_text.addEventListener('focus', function () {
-      // console.log('获得焦点')
-      result_list.style.display = 'block'
-      // 搜索框添加边框颜色
-      search_text.classList.add('search')
+    const search = document.querySelector('.search-text')
+    const ul = document.querySelector('.result-list')
+    search.addEventListener('focus', function() {
+      // 显示 ul
+      ul.style.display = 'block'
+      // 将 input 的边框变成橙色
+      search.classList.add('search')
     })
 
     // 3. 失去焦点，隐藏下拉菜单，并且修改搜索框的边框颜色为原先的灰色
-    search_text.addEventListener('blur', function () {
-      result_list.style.display = 'none'
-      // 搜索框复原为原来灰色
-      search_text.classList.remove('search')
+    search.addEventListener('blur', function() {
+      // 隐藏 ul
+      ul.style.display = 'none'
+      // 将 input 的边框变成灰色
+      search.classList.remove('search')
     })
+
   </script>
 </body>
 

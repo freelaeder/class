@@ -32,20 +32,21 @@
   <textarea id="tx" placeholder="发一条友善的评论" rows="2"></textarea>
 
   <script>
-    // 事件对象
+    // 事件对象: 在事件触发时, 浏览器传给我们事件处理函数的一些信息, 存到对象中在
     const box = document.querySelector('.box')
+    // 所有事件处理函数的第一个参数就是事件对象
+    // 一般定义形参 e / event / evt
     box.addEventListener('click', function (e) {
+      // console.log('我被点了')
       console.log(e)
     })
 
     const tx = document.querySelector('#tx')
-    tx.addEventListener('keyup', function (e) {
-      // e 就是事件对象
-      // console.log(e)
-      // console.log(e.key)  // a 
-      // 用户如果按下的是回车键，则弹出框提示按下了回车键
+    tx.addEventListener('keydown', function (e) {
+      // console.log('键盘按下了:', e.key)
+      // 希望捕获用户输入回车做一些事情, 请问该怎么做?
       if (e.key === 'Enter') {
-        alert('您按下了回车键')
+        console.log('用户按下了回车')
       }
     })
   </script>

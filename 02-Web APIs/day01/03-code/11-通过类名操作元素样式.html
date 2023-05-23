@@ -27,14 +27,13 @@
   <div class="box">类名操作样式</div>
   <script>
     // 通过类名操作元素样式
-    // 1. 获取box盒子
+    // 1. 获取 box 元素对象
     const box = document.querySelector('.box')
-
     // 2. 利用类名操作元素样式
-    // box.className = 'circle'
+    // 会直接覆盖掉整个 class, 导致以前的类名全部丢失
+    // 使用时如果是追加类名, 还需要把以前的类名带上
     box.className = 'box circle'
-
-    // 3. 利用类名操作样式添加的新的类名会覆盖掉原先的类名
+    // 此方法操作类名相对比较麻烦, 如果是添加删除还需要记录以前的类名, 所以不推荐使用 (最传统的方法)
   </script>
 </body>
 

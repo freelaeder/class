@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>移除事件监听</title>
+</head>
+
+<body>
+  <button class="l2">移除L2事件监听</button>
+  <button class="l0">移除L0事件监听</button>
+  <script>
+    // 需求：按钮就点击一次，然后移除点击事件
+    // 1. l2事件监听
+    const l2 = document.querySelector('.l2')
+    function fn() {
+      alert('你好, 我是按钮l2')
+      // 移除事件: removeEventListener()
+      // 必须传入事件类型和绑定事件时用到的事件处理函数!!!
+      // 所以必须是有名字的函数, 不能是匿名函数
+      l2.removeEventListener('click', fn)
+    }
+    l2.addEventListener('click', fn)
+
+    // 2. l0事件监听
+    const l0 = document.querySelector('.l0')
+    l0.onclick = function() {
+      alert('你好, 我是按钮l0')
+      // 移除事件
+      l0.onclick = null
+    }
+    
+  </script>
+</body>
+
+</html>

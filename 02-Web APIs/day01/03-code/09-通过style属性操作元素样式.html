@@ -10,7 +10,7 @@
     .box {
       width: 200px;
       height: 200px;
-      background-color: green;
+      background-color: pink;
     }
   </style>
 </head>
@@ -19,17 +19,17 @@
   <div class="box"></div>
   <script>
     // 通过style操作元素样式
-    // 1. 先要获取这个box元素对象
+    // 1. 获取 box 元素对象
     const box = document.querySelector('.box')
-    // 2. 通过style来从操作样式
-    box.style.width = '300px'
-    box.style.marginTop = '50px'
+    // 2. 通过 style 来操作样式
+    box.style.width = '500px'
+    box.style.height = '500px'
+    // 颜色改成黄色
     box.style.backgroundColor = 'yellow'
-
     // 3. 注意事项
-    // 3.1 给样式赋值的时候，千万不要忘了加单位比如 300px
-    // 3.2 如果有-的样式，我们采取的是小驼峰命名法比如 marginTop
-    // 3.3 一定不要忘了加 style 属性
+    // 3.1 所有元素添加样式都需要 对象.style.样式属性名 = 属性值
+    // 3.2 所有需要加单位的样式, 都需要带上单位
+    // 3.3 在样式中所有 - 连接的多单词属性, 全部改为小驼峰命名法, 例如: background-color => backgroundColor
   </script>
 </body>
 

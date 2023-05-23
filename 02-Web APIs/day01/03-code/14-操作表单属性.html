@@ -10,33 +10,40 @@
 
 <body>
   <input type="text" name="username" value="用户名">
+  <!-- disabled: 禁用 -->
   <button>按钮</button>
-  <input type="checkbox" name="agree">
+  <input type="checkbox" name="agree"> 我统一签署卖身契
   <script>
     // 操作表单属性
     // 1. 操作表单 type 和 value 属性
+    const username = document.querySelector('input[name=username]')
+    // console.log(username)
     // 1.1 修改type属性
-    const username = document.querySelector('[name=username]')
-    console.log(username)
     // username.type = 'password'
 
     // 1.2 操作表单的 value 属性
-    // console.log(username.value)  // 查
-    // username.value = '用户名试试'  // 增
-    // username.value = '请输入用户名' // 改
-    // username.value = ''  // 删
+    // 查
+    console.log(username.value)
+    // 改
+    username.value = '荣幸'
+    // 删
+    username.value = ''
+    // 增
+    username.value = 'Seven'
 
-    // 2. 禁用按钮或者是勾选复选框  布尔型
-    // 2.1 禁用按钮  
-    const button = document.querySelector('button')
-    // button.disabled = true  // true 是禁用
-    button.disabled = false  // false 是不禁用
+    // 2. 禁用按钮或勾选复选框 - 布尔型
+    const btn = document.querySelector('button')
+    // 2.1 disabled 禁用按钮, true 表示禁用, false 表示不禁用
+    btn.disabled = true
 
     // 2.2 勾选复选框
-    const agree = document.querySelector('[name=agree]')
-    console.log(agree)
-    // agree.checked = true // true 是选中复选框
-    agree.checked = false // flase 是不选中复选框
+    const agree = document.querySelector('input[name=agree]')
+    // checked 勾选状态
+    // 获取: false
+    // console.log(agree.checked)
+    agree.checked = true
+
+    // 总结: 其实表单元素的属性也就是 DOM 元素属性, 一样的, 只是部分属性比较特殊, disabled / checked / selected 都是 boolean 值
   </script>
 </body>
 

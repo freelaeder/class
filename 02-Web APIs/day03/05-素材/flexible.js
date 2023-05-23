@@ -2,7 +2,6 @@
   var docEl = document.documentElement
   var dpr = window.devicePixelRatio || 1
 
-  // adjust body font size
   function setBodyFontSize() {
     if (document.body) {
       document.body.style.fontSize = (12 * dpr) + 'px'
@@ -23,13 +22,14 @@
 
   // reset rem unit on page resize
   window.addEventListener('resize', setRemUnit)
+  // 下面是针对于火狐浏览器
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
       setRemUnit()
     }
   })
 
-  // detect 0.5px supports
+  // detect 0.5px supports  修改移动端关于 0.5px的问题
   if (dpr >= 2) {
     var fakeBody = document.createElement('body')
     var testElement = document.createElement('div')

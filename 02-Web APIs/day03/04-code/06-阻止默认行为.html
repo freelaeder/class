@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阻止默认行为</title>
+</head>
+
+<body>
+  <!-- 可以将表单内容提交给服务器 -->
+  <form action="">
+    姓名: <input type="text" name="username">
+    <button>提交</button>
+  </form>
+  <a href="http://www.baidu.com">点击跳转</a>
+  <script>
+    // 浏览器默认行为:
+    // 1. 表单提交
+    // 2. 点击 a 标签跳转
+    // 3. keydown 落入字符到文本框
+
+    // 阻止默认行为
+    // 需求1: 如果用户名为空, 则不允许提交
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', function(e) {
+      // e.stopPropagation() // 阻止冒泡
+      e.preventDefault() // 阻止默认行为
+      console.log('发请求进行登录...')
+    })
+    // 需求2: 点击 a 标签不跳转到百度
+    const a = document.querySelector('a')
+    a.addEventListener('click', function(e) {
+      // prevent 阻止 default 默认
+      e.preventDefault()
+    })
+    const input = document.querySelector('input')
+    input.addEventListener('keydown', function(e) {
+      e.preventDefault() // 不允许字符落入到输入框中
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素的尺寸和位置</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .father {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      padding: 5px;
+      border: 10px solid red;
+      margin: 100px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 100px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son">
+      里面包含一些文字
+      里面包含一些文字
+      里面包含一些文字
+    </div>
+  </div>
+  <script>
+    const father = document.querySelector('.father')
+    const son = document.querySelector('.son')
+    // offset 系列属性
+    // 获取父盒子在页面上分位置:
+    // offsetLeft / offsetTop
+    // 获取当前元素到定位父元素顶部的距离, 如果整条链路上没有父元素带有定位, 则获取的就是到 body 的距离
+    console.log(father.offsetTop)
+    console.log(son.offsetTop)
+
+    // 获取元素的大小
+    // offsetWidth 包含元素的宽度 + padding + border, 不包含 margin
+    console.log(father.offsetWidth)
+    console.log(son.offsetWidth)
+  </script>
+</body>
+
+</html>

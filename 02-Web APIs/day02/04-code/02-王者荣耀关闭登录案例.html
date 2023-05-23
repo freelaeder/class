@@ -39,13 +39,15 @@
     // 点击关闭按钮可以关闭父盒子
     // 获取父盒子
     const pop = document.querySelector('.pop')
-    // 1. 事件源  a链接
-    const closeBtn = document.querySelector('.close')
+    // 1. 事件源是谁? => a 标签
+    const a = document.querySelector('.close')
+
     // 2. 注册事件
-    closeBtn.addEventListener('click', function () {
-      // 3. 关闭父盒子  主要利用 display：none
+    a.addEventListener('click', function() {
+      // 3. 关闭父盒子 主要利用 display: none
       pop.style.display = 'none'
     })
+
   </script>
 </body>
 

@@ -25,27 +25,28 @@
   <script>
     // 获取元素
     const tx = document.querySelector('#tx')
-
     // 1. 键盘事件 
     // 1.1 键盘按下事件  keydown  当我们按下键盘的时候就触发
-    tx.addEventListener('keydown', function () {
-      console.log('我是keydown事件' + tx.value)
+    tx.addEventListener('keydown', function() {
+      // 按下事件触发时无法获取到最新的那一个字符
+      // 原因: 按下后才会将字符输入到文本框中, 所以在按下时还未更新最新的数据
+      console.log('我按下了!', tx.value)
     })
-
-    // 1.2 键盘弹起事件  keyup 当我们键盘弹起的时候就触发
-    tx.addEventListener('keyup', function () {
-      console.log('我是keyup事件' + tx.value)
+    
+    // 1.2 键盘弹起事件 keyup 当我们键盘弹起的时候就触发
+    tx.addEventListener('keyup', function() {
+      // 按下事件触发时无法获取到最新的那一个字符
+      // 原因: 按下后才会将字符输入到文本框中, 所以在按下时还未更新最新的数据
+      console.log('我弹起了!', tx.value)
     })
 
     // 2. 用户输入事件 input ，是表单value的值发生变化的时候触发
-    tx.addEventListener('input', function () {
-      console.log('我是input事件' + tx.value)
+    tx.addEventListener('input', function() {
+      // 只要文本框的值发生了变化就会触发这个事件执行
+      console.log('内容变了!', tx.value)
     })
 
-    // 3. 注意事项
-    // 3.1 执行顺序  keydown →  input   →  keyup
-    // 3.2 keydown 获取值的时候得不到最后一次按键的值， keyup和input可以得到用户输入内容
-
+    // 3. 执行顺序: keydown => input => keyup
   </script>
 </body>
 

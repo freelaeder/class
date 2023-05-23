@@ -120,29 +120,21 @@
     </div>
   </div>
   <script>
-    // 需求1： 文本域获得焦点则让 total 透明度改为1，失去焦点则改为0
+    // 需求1: 文本域获得焦点则让 total 透明度改为 1, 失去焦点则改为 0
     const tx = document.querySelector('#tx')
     const total = document.querySelector('.total')
-    // 1.1 得到焦点
-    tx.addEventListener('focus', function () {
-      // 透明度为1
+    tx.addEventListener('focus', function() {
       total.style.opacity = 1
     })
-
-    // 1.2 失去焦点
-    tx.addEventListener('blur', function () {
-      // 透明度为0
+    tx.addEventListener('blur', function() {
       total.style.opacity = 0
     })
-
-    // 需求2： 得到用户输入的字符长度，写到total盒子里面
-    // 2.1 根据input事件，得到用户的字符长度
-    tx.addEventListener('input', function () {
-      console.log(tx.value)  // 得到用户输入的字符
-      console.log(tx.value.length)  // 得到用户输入的字符的长度
-
-      // 2.2 把字符长度写到 total盒子里面
-      total.innerText = `${tx.value.length}/200字`
+    
+    // 需求2: 得到用户输入的字符长度, 写到 total 盒子里面
+    // keydown keyup input
+    tx.addEventListener('input', function() {
+      // console.log('弹起:', tx.value.length)
+      total.innerHTML = `${tx.value.length}/200字`
     })
   </script>
 </body>
